@@ -2,7 +2,7 @@
 
 # Read file names...
 echo 'Inserire i nomi dei file da aggiungere, comprensivi di estensione, separati da uno spazio (digitare "all" per aggiungerli tutti): '
-read files
+ISF=',' read files
 
 # ...and add them: all or just what it was inserted
 if [ $files = 'all' ]; then
