@@ -5,7 +5,7 @@ echo 'Inserire i nomi dei file da aggiungere, comprensivi di estensione, separat
 ISF=',' read files
 
 # ...and add them: all or just what it was inserted
-if [ $files = 'all' ]; then
+if [ "$files" = 'all' ]; then
   git add --all
 else
   git add $files
