@@ -16,7 +16,7 @@ echo 'Inserire il messaggio del commit: '
 read message
 
 # ...and commit
-git commit -a -m '${message}'
+git commit -a -m "$message"
 
 # Finally, push to origin
 git push
