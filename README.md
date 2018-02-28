@@ -1,3 +1,1 @@
-cicciocaiosempronio
-
-Vincenzo è scemo
+# Progetto Informatica 7 Aprile
