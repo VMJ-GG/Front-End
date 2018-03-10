@@ -1,5 +1,8 @@
 html,body{
   height: 100%;
+}
 
-
+.cover{
+  background: url(./img1.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
