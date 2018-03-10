@@ -2,7 +2,12 @@ html,body{
   height: 100%;
 }
 
-.cover{
+.cover1{
   background: url(./img1.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.cover2{
+  background: url(./img2.jpg) no-repeat center center fixed;
   background-size: cover;
 }
