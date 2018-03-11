@@ -1,13 +1,29 @@
 html,body{
   height: 100%;
 }
-
+p{
+  font-size: 400%;
+  width: 100%;
+  padding: 20px;
+  background: rgba(225, 225, 225, .8);
+  border: 2px solid white;
+  border-radius: 25px 50px 
+}
 .cover1{
-  background: url(./img1.jpg) no-repeat center center fixed;
+  background: url(./images/img1.jpg) no-repeat center center fixed;
   background-size: cover;
+
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+
 }
 
 .cover2{
-  background: url(./img2.jpg) no-repeat center center fixed;
+  background: url(./images/img2.jpg) no-repeat center center fixed;
   background-size: cover;
+
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
 }
