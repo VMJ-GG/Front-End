@@ -1,13 +1,50 @@
-html,body{
+html, body {
   height: 100%;
 }
 
-.cover1{
-  background: url(./img1.jpg) no-repeat center center fixed;
-  background-size: cover;
+/* Cover Component */
+.cover {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.cover-img {
+  max-width: 100%;
+  min-height: 100%;
+  transition: all .5s ease;
+  transform: scale3d(1, 1, 1);
+}
+.cover:hover > .cover-img {
+  transform: scale3d(1.05, 1.05, 1);
 }
 
-.cover2{
-  background: url(./img2.jpg) no-repeat center center fixed;
-  background-size: cover;
+/* Caption Component */
+.caption {
+  position: absolute;
+  top: 40%;
+  bottom: 40%;
+  left: 15%;
+  right: 15%;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+.caption-head {
+
+}
+.caption-body {
+
+}
+
+.filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
 }
