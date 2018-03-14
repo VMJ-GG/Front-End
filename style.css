@@ -8,9 +8,25 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
-.cover-img {
+.cover-img1 {
+  background: url(./images/img1.jpg) no-repeat center center fixed;
+  background-size: cover;
   max-width: 100%;
   min-height: 100%;
+
+  transition: all .5s ease;
+  transform: scale3d(1, 1, 1);
+}
+.cover:hover > .cover-img {
+  transform: scale3d(1.05, 1.05, 1);
+}
+
+.cover-img2 {
+  background: url(./images/img2.jpg) no-repeat center center fixed;
+  background-size: cover;
+  max-width: 100%;
+  min-height: 100%;
+
   transition: all .5s ease;
   transform: scale3d(1, 1, 1);
 }
@@ -20,6 +36,7 @@ html, body {
 
 /* Caption Component */
 .caption {
+  border: solid 2px;
   position: absolute;
   top: 40%;
   bottom: 40%;
@@ -36,7 +53,8 @@ html, body {
 
 }
 .caption-body {
-
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .filter {
