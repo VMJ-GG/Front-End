@@ -1,6 +1,9 @@
 html, body {
   height: 100%;
+  font-family: 'Helvetica Neue';
 }
+
+
 
 /* Cover Component */
 .cover {
@@ -20,10 +23,10 @@ html, body {
 .caption {
   border: 1px solid #fff;
   position: absolute;
-  top: 35%;
-  bottom: 35%;
-  left: 15%;
-  right: 15%;
+  top: 40%;
+  bottom: 40%;
+  left: 10%;
+  right: 10%;
   z-index: 15;
   display: flex;
   flex-direction: column;
@@ -45,10 +48,16 @@ html, body {
 .caption-head {
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 0;
 }
 .caption-body {
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 0;
+}
+
+.text-warning{
+  padding-left: 15px;
 }
 
 .filter {
@@ -67,4 +76,20 @@ html, body {
 
 .section-2 {
   border-left: 1px solid #fff;
+}
+
+/*------------------------------ Media e breakpoint -----------------------*/
+
+@media (max-width: 1325px){
+  .caption{
+    top: 39%;
+    bottom: 39%;
+  }
+}
+
+@media (max-width: 1166px){
+  .caption{
+    top: 34%;
+    bottom: 34%;
+  }
 }
