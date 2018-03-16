@@ -1,7 +1,7 @@
 /* Font Rules */
 @font-face {
   font-family: 'Roboto';
-  src: url('https://fonts.googleapis.com/css?family=Roboto');
+  src: url('./fonts/Roboto-Light.ttf') format('truetype');
 }
 *, *::before, *::after {
   font-family: 'Roboto', Helvetica, sans-serif;
@@ -50,10 +50,16 @@ section:nth-child(2) {
   flex-direction: column;
   justify-content: center;
   color: #fff;
-  transition: 0.5s;
+
+  transition: all .5s ease;
 }
+
 .caption:hover ~ .cover-img {
   transform: scale3d(1.05, 1.05, 1);
+}
+
+.caption:hover .material-icons {
+  transform: translateX(4px);
 }
 
 .caption:hover{
@@ -82,6 +88,7 @@ section:nth-child(2) {
 .show-more > .material-icons {
   position: relative;
   bottom: 1px;
+  transition: all .3s ease;
 }
 
 .filter {
