@@ -16,10 +16,18 @@ section.col-lg {
   padding: 0;
 }
 section:first-child {
+  background: linear-gradient(#0080C0, #00C0FF);
   border-right: 1px solid white;
 }
+
 section:nth-child(2) {
-  border-right: 1px solid white;
+  background: linear-gradient(#e65f17, #e66d22);
+  border-left: 1px solid white;
+}
+
+.row:nth-child(2) > section.col-lg{
+  height: 300px;
+  background: white;
 }
 
 /*=== Cover Component ===*/
@@ -28,24 +36,16 @@ section:nth-child(2) {
   height: 100%;
   overflow: hidden;
 }
-.cover-img {
-  max-width: 100%;
-  min-height: 100%;
-
-  transition: all .7s ease;
-  transform: scale3d(1, 1, 1);
-}
 
 /*=== Caption Component ===*/
 .caption {
   position: absolute;
-  top: 36%;
-  bottom: 36%;
+  top: 34%;
+  bottom: 34%;
   left: 10%;
   right: 10%;
   z-index: 15;
-  border: 1px solid #fff;
-  padding: 1rem;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,38 +54,36 @@ section:nth-child(2) {
   transition: all .5s ease;
 }
 
-.caption:hover ~ .cover-img {
-  transform: scale3d(1.05, 1.05, 1);
-}
-
 .caption:hover .material-icons {
   transform: translateX(4px);
 }
 
 .caption:hover{
-  box-shadow:
-    0 0 5px lightblue,
-    inset 0 0 5px lightblue;
   cursor: pointer;
 }
 
 .caption-head {
-  font-size: 3.5rem;
+  font-size: 4.2rem;
   font-weight: 300;
   line-height: 1.2;
 }
-.caption-body {
-  font-size: 1.2rem;
-  text-shadow: 3px 3px 3px black;
+
+.caption:hover{
+  transform: scale3d(1.03, 1.03, 1);
 }
 
+.caption-body {
+  font-size: 1.5rem;
+  padding-left: 5px;
+}
 
 /*=== ShowMore Component ===*/
 .show-more {
   height: 30px;
   display: flex;
   align-items: center;
-  color: #ffc107;
+  color: #ffd900;
+  font-size: 1.2rem;
 }
 .show-more > .material-icons {
   position: relative;
@@ -93,15 +91,7 @@ section:nth-child(2) {
   transition: all .3s ease;
 }
 
-.filter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .6);
-}
+
 
 /*------------------------------ Media e breakpoint -----------------------*/
 
