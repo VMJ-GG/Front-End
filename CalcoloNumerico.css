@@ -1,0 +1,45 @@
+/* Font Rules */
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto-Light.ttf') format('truetype');
+}
+*, *::before, *::after {
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+/*=== Cover Component ===*/
+.cover {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*=== Caption Component ===*/
+.caption {
+  position: absolute;
+  top: 36%;
+  bottom: 36%;
+  left: 10%;
+  right: 10%;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+
+  transition: all .5s ease;
+}
+
+.caption-head {
+  font-size: 5.5rem;
+  line-height: 1.4;
+}
+
+.caption-body {
+  font-size: 1.2rem;
+  padding-left: 5px;
+}
