@@ -11,15 +11,8 @@ html, body {
   height: 100%;
 }
 
-section.col-lg:first-child {
+section.col-lg {
   background: linear-gradient(#0080C0, #00C0FF);
-}
-
-/*=== Cover Component ===*/
-.cover {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
 }
 
 /*=== Caption Component ===*/
@@ -46,8 +39,4 @@ section.col-lg:first-child {
 .caption-body {
   font-size: 1.2rem;
   padding-left: 5px;
-}
-
-.table{
-  width: 100%;
 }
