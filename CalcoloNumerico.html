@@ -17,74 +17,94 @@
   <body>
 
     <main class="container-fluid h-100">
+
       <div class="row h-100">
         <section class="col-lg">
           <div class="cover">
-            <div class="caption">
-              <section class="caption-head">
-                Calcolo Numerico
-              </section>
-              <section class="caption-body">
-                 <div class="show-more">
-                   effettua una scelta
-                  <span class="material-icons">&#xe313;</span>
-                 </div>
-              </section>
-            </div>
+            <a class="scroll-down" href="#">
+              <div class="caption">
+                <section class="caption-head">
+                  Calcolo Numerico
+                </section>
+                <section class="caption-body">
+                  <div class="show-more">
+                    effettua una scelta
+                  </div>
+                  <i class="material-icons md-48">keyboard_arrow_down</i>
+                </section>
+              </div>
+            </a>
           </div>
         </section>
       </div>
-      <div class="row h-50">
-        <div class="col-lg border-right border-bottom">
-          <div class="caption">
-            <div class="caption-head">
-             Cacca
+
+      <a href="#" class="down">
+        <div class="row h-50">
+          <div class="col-lg border-right border-bottom">
+            <div class="caption">
+              <div class="caption-head">
+               Cacca
+              </div>
+              <div class="caption-body">
+                gatto
+              </div>
             </div>
-            <div class="caption-body">
-              gatto
+          </div>
+          <div class="col-lg border-left border-bottom">
+            <div class="caption">
+              <div class="caption-head">
+               Bisezione
+              </div>
+              <div class="caption-body">
+                ELol
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg border-left border-bottom">
-          <div class="caption">
-            <div class="caption-head">
-             Bisezione
+        <div class="row h-50">
+          <div class="col-lg border-right border-top">
+            <div class="caption">
+              <div class="caption-head">
+               Pi greco
+              </div>
+              <div class="caption-body">
+                Lol
+              </div>
             </div>
-            <div class="caption-body">
-              ELol
+          </div>
+          <div class="col-lg border-left border-top">
+            <div class="caption">
+              <div class="caption-head">
+               Radice quadrata
+              </div>
+              <div class="caption-body">
+                w la cacca
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row h-50">
-        <div class="col-lg border-right border-top">
-          <div class="caption">
-            <div class="caption-head">
-             Pi greco
-            </div>
-            <div class="caption-body">
-              Lol
-            </div>
-          </div>
-        </div>
-        <div class="col-lg border-left border-top">
-          <div class="caption">
-            <div class="caption-head">
-             Radice quadrata
-            </div>
-            <div class="caption-body">
-              w la cacca
-            </div>
-          </div>
-        </div>
-      </div>
+      </a>
+
     </main>
+
 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $("a.scroll-down").click(function() {
+            $('html, body').animate({
+              scrollTop: $(".down").offset().top
+            }, 1200);
+          });
+        });
+    </script>
+
   </body>
 </html>

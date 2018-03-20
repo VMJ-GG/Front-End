@@ -24,7 +24,6 @@ section.col-lg {
   right: 10%;
   z-index: 15;
   display: flex;
-  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   color: #fff;
@@ -35,11 +34,13 @@ section.col-lg {
 section.caption-head {
   font-size: 5.5rem;
   line-height: 1.4;
+  cursor: pointer;
 }
 
 section.caption-body {
   font-size: 1.2rem;
   padding-left: 5px;
+  cursor: pointer;
 }
 
 div.caption-head {
@@ -63,12 +64,17 @@ div.caption-body {
   font-size: 1.2rem;
 }
 
+.md-48{
+  font-size: 48px !important;
+  color: #ffd900;
+  transition: all .3s ease;
+}
+
 .caption:hover .material-icons{
-  transform: translateY(10px);
+  transform: translateY(7px);
 }
 
 .show-more > .material-icons {
   position: relative;
   bottom: 1px;
-  transition: all .3s ease;
 }
