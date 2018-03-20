@@ -24,6 +24,7 @@ section.col-lg {
   right: 10%;
   z-index: 15;
   display: flex;
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   color: #fff;
@@ -31,12 +32,43 @@ section.col-lg {
   transition: all .5s ease;
 }
 
-.caption-head {
+section.caption-head {
   font-size: 5.5rem;
   line-height: 1.4;
 }
 
-.caption-body {
+section.caption-body {
   font-size: 1.2rem;
   padding-left: 5px;
+}
+
+div.caption-head {
+  color: black;
+  font-size: 5.5rem;
+  line-height: 1.4;
+}
+
+div.caption-body {
+  color: black;
+  font-size: 1.2rem;
+  padding-left: 5px;
+}
+
+/*=== ShowMore Component ===*/
+.show-more {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  color: #ffd900;
+  font-size: 1.2rem;
+}
+
+.caption:hover .material-icons{
+  transform: translateY(10px);
+}
+
+.show-more > .material-icons {
+  position: relative;
+  bottom: 1px;
+  transition: all .3s ease;
 }
