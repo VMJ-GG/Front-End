@@ -12,7 +12,7 @@ html, body {
 }
 
 section.col-lg {
-  background: linear-gradient(#0080C0, #00C0FF);
+  background: linear-gradient(#005cb3, #99ceff);
 }
 
 /*=== Caption Component ===*/
@@ -31,22 +31,26 @@ section.col-lg {
   transition: all .5s ease;
 }
 
+.caption:hover{
+  transform: scale3d(1.01, 1.01, 1);
+}
+
 section.caption-head {
   font-size: 5.5rem;
   line-height: 1.4;
+  padding-left: 3px;
   cursor: pointer;
 }
 
 section.caption-body {
   font-size: 1.2rem;
-  padding-left: 5px;
   cursor: pointer;
 }
 
 div.caption-head {
   color: black;
   font-size: 5.5rem;
-  line-height: 1.4;
+  line-height: .9;
 }
 
 div.caption-body {
@@ -59,19 +63,18 @@ div.caption-body {
 .show-more {
   height: 30px;
   display: flex;
+  padding-left: 10px;
   align-items: center;
-  color: #ffd900;
   font-size: 1.2rem;
 }
 
 .md-48{
-  font-size: 48px !important;
-  color: #ffd900;
+  font-size: 40px !important;
   transition: all .3s ease;
 }
 
 .caption:hover .material-icons{
-  transform: translateY(7px);
+  transform: translateY(20px);
 }
 
 .show-more > .material-icons {

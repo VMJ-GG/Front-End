@@ -16,12 +16,12 @@ section.col-lg {
   padding: 0;
 }
 section:first-child {
-  background: linear-gradient(#0080C0, #00C0FF);
+  background: linear-gradient(#005cb3, #99ceff);
   border-right: 1px solid white;
 }
 
 section:nth-child(2) {
-  background: linear-gradient(#e65f17, #e66d22);
+  background: linear-gradient(#e67300, #ffa64d);
   border-left: 1px solid white;
 }
 
@@ -44,8 +44,8 @@ section:nth-child(2) {
   bottom: 34%;
   left: 10%;
   right: 10%;
+  padding-left: 5px;
   z-index: 15;
-  border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,16 +60,13 @@ section:nth-child(2) {
 
 .caption:hover{
   cursor: pointer;
+  transform: scale3d(1.03, 1.03, 1);
 }
 
 .caption-head {
   font-size: 4.2rem;
   font-weight: 300;
   line-height: 1.2;
-}
-
-.caption:hover{
-  transform: scale3d(1.03, 1.03, 1);
 }
 
 .caption-body {
