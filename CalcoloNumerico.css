@@ -21,7 +21,7 @@ section.col-lg {
   top: 36%;
   bottom: 36%;
   left: 10%;
-  right: 10%;
+  right: 4%;
   cursor: pointer;
   z-index: 15;
   display: flex;
@@ -38,25 +38,32 @@ section.col-lg {
 
 section.caption-head {
   font-size: 5.5rem;
-  line-height: 1.4;
-  padding-left: 3px;
+  line-height: 1;
+  padding-left: 10px;
 }
 
 section.caption-body {
   font-size: 1.2rem;
+  padding-left: 7px;
 }
 
 div.caption-head {
   color: black;
-  font-size: 5.5rem;
+  font-size: 5rem;
   padding-left: 3px;
-  line-height: .9;
+  line-height: 1;
 }
 
 div.caption-body {
   color: black;
   font-size: 1.2rem;
   padding-left: 5px;
+}
+
+.separate
+{
+  height: 100px;
+  background-color: #BAE1F2;
 }
 
 /*=== ShowMore Component ===*/
@@ -80,4 +87,13 @@ div.caption-body {
 .show-more > .material-icons {
   position: relative;
   bottom: 1px;
+}
+
+/*------------------------------ Media e breakpoint -----------------------*/
+
+@media (max-width: 580px) {
+  .caption {
+    top: 10%;
+    bottom: 10%;
+  }
 }
