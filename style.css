@@ -7,6 +7,10 @@
   font-family: 'Roboto', Helvetica, sans-serif;
 }
 
+*:focus{
+  outline: none;
+}
+
 html, body {
   height: 100%;
 }
@@ -24,6 +28,13 @@ section:nth-child(2) {
   background: linear-gradient(#e67300, #ffa64d);
   border-left: 1px solid white;
 }
+
+/*   nav bar */
+
+a.nav-link.actve{
+  border: none !important;
+}
+
 
 .row:nth-child(2) > section.col-lg{
   height: 300px;
