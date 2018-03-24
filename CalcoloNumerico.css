@@ -51,7 +51,7 @@ div.caption-head {
   color: black;
   font-size: 5rem;
   padding-left: 3px;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 div.caption-body {
@@ -62,8 +62,7 @@ div.caption-body {
 
 .separate
 {
-  height: 100px;
-  background-color: #BAE1F2;
+  height: 200px;
 }
 
 /*=== ShowMore Component ===*/
@@ -92,8 +91,11 @@ div.caption-body {
 /*------------------------------ Media e breakpoint -----------------------*/
 
 @media (max-width: 580px) {
-  .caption {
-    top: 10%;
-    bottom: 10%;
+
+  .show-more{
+    line-height: 1.5;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
+
 }
