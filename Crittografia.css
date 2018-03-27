@@ -32,7 +32,7 @@ section.col-lg {
   transition: all .5s ease;
 }
 
-.caption:hover{
+section.caption:hover{
   transform: scale3d(1.01, 1.01, 1);
 }
 
@@ -55,8 +55,6 @@ div.caption-head {
   line-height: 1.1;
 }
 
-
-
 /*=== ShowMore Component ===*/
 .show-more {
   height: 30px;
@@ -76,13 +74,12 @@ div.caption-head {
 }
 
 
-
 .caption:hover .md-48{
   transform: translateY(20px);
 }
 
 .caption:hover .md-36{
-  transform: translateX(5px);
+  transform: translateX(10px);
 }
 
 .show-more > .material-icons {

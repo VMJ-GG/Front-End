@@ -105,9 +105,17 @@ a.nav-link.actve{
 
 footer.container-fluid{
   height: 200px;
-  background-color: #6a6969;
   box-shadow: inset 0 8px 15px -10px black;
 }
+
+footer > .cover > .caption > .caption-head{
+  font-size: 1.5rem;
+}
+
+footer > .cover > .caption:hover{
+  transform: none;
+}
+
 
 
 
