@@ -11,17 +11,17 @@ html, body {
   height: 100%;
 }
 
-a{
+.scroll-down{
   text-decoration: none;
   color: #fff;
 }
 
-a:hover{
+.scroll-down:hover{
   text-decoration: none;
   color: #fff;
 }
 
-a:hover .material-icons{
+.scroll-down:hover .material-icons{
   transform: translateY(10px);
 }
 
@@ -29,14 +29,6 @@ a:hover .material-icons{
   opacity: 0.8;
 }
 
-/*.img{
-  height: .5rem;
-}
-
-img{
-  height: 400px;
-  width: 300px;
-}*/
 
 .lead{
   margin-left: 10%;
@@ -62,6 +54,25 @@ img{
 
 .card:hover {
   box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .centered{
+  opacity: 1;
+}
+
+.card-img-top{
+  transition: : blur .3s;
+}
+
+.card:hover .card-img-top{
+  filter:blur(10px);
+}
+
+.centered {
+    position: absolute;
+    top: 20%;
+    transition: opacity .3s;
+    opacity: 0;
 }
 
 /*=== ShowMore Component ===*/
