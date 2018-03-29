@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" rel="stylesheet">
     <link rel="stylesheet" href="./Crittografia.css">
 
     <!-- Material Design Icons -->
@@ -15,142 +16,155 @@
     <title>Crittografia</title>
   </head>
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="#">Papaya</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <header class="nav-down">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Papaya</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Reti</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Algoritmi JS
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="CalcoloNumerico.html">Calcolo Numerico</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="Crittografia.html">Crittografia</a>
-            </div>
-          </li>
-
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Cerca qualcosa" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
-        </form>
-      </div>
-    </nav>
-
-    <main class="container-fluid h-100">
-
-      <div class="row h-100">
-        <section class="col-lg">
-          <div class="cover">
-            <a class="scroll-down" href="#">
-              <section class="caption border-left">
-                <section class="caption-head">
-                  Crittografia
-                </section>
-                <section class="caption-body">
-                  <div class="show-more">
-                    Una raccolta di metodi crittografici, descritti nel
-                    funzionamento e utili per nascondere a tua moglie i messaggi che
-                    mandi alle amanti.
-                  </div>
-                  <i class="material-icons md-48">keyboard_arrow_down</i>
-                </section>
-              </section>
-            </a>
-          </div>
-        </section>
-      </div>
-
-      <div class="row h-100">
-        <div class="col-lg">
-
-          <div class="row h-75">
-            <div class="col-lg-4">
-              <div class="row h-100 bg-dark">
-                <div class="col-lg">
-                  <div class="cover ">
-                    <div class="caption ">
-                      <div class="caption-head text-light border-left" >
-                        Sostituzioni:
-                      </div>
-                      <div class="caption-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8">
-              <a class="down">
-                <div class="row" style="height: 33%">
-                  <div class="col-lg border-bottom bg-light" >
-                    <div class="caption " style="border-left: 2px red solid;">
-                      <div class="caption-head text-dark" id="sos">
-                        Monografica Monoalfabetica
-                        <i class="material-icons md-36">keyboard_arrow_right</i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row" style="height: 34%">
-                  <div class="col-lg border-bottom bg-light ">
-                    <div class="caption" style="border-left: 2px green solid;">
-                      <div class="caption-head text-dark" id="sos">
-                        Monografica Polialfabetica
-                        <i class="material-icons md-36">keyboard_arrow_right</i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row" style="height: 33%">
-                  <div class="col-lg border-bottom bg-light">
-                    <div class="caption" style="border-left: 2px blue solid;">
-                      <div class="caption-head text-dark" id="sos">
-                        Poligrafica Monoalfabetica
-                        <i class="material-icons md-36">keyboard_arrow_right</i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reti</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Algoritmi JS
               </a>
-            </div>
-          </div>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="CalcoloNumerico.html">Calcolo Numerico</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Crittografia.html">Crittografia</a>
+              </div>
+            </li>
 
-          <div class="row h-25">
-            <div class="col-lg">
-              <div class="row h-100">
-                <div class="col-lg bg-light">
-                  <div class="caption border-left">
-                    <div class="caption-head text-dark">
-                      Composti
-                      <i class="material-icons md-36">keyboard_arrow_right</i>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Cerca qualcosa" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+
+    <main role="main">
+      <section class="jumbotron text-center text-light" style="background: linear-gradient(#e67300, #ffa64d);">
+       <a class="scroll-down" href="#">
+        <div class="container">
+          <h1 class="jumbotron-heading ">Crittografia</h1>
+            <div class="lead text-light">
+              Una raccolta di metodi crittografici, descritti nel
+              funzionamento e utili per nascondere a tua moglie i messaggi che
+              mandi alle amanti.
+            </div>
+            <div class="show-more">
+              Scopri
+             <i class="material-icons md-48">keyboard_arrow_down</i>
+           </div>
+        </div>
+      </a>
+
+      <!--
+
+      <div class="img">
+        <img src="./images/img2.png">
+      </div>
+
+      -->
+      </section>
+
+      <div class="album bg-light">
+        <div class="container">
+         <a class="down"></a>
+          <h2 class="pt-4 pb-2">Sostisuzioni</h2>
+           <div class="row">
+            <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/img2.png" data-holder-rendered="true" style="display: block;">
+              <div class="centered lead font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+                <div class="card-body">
+                 <h3 class="">Monografica Monoalfabetica</h3>
+                  <div class="d-flex justify-content-between align-items-center">
+                   <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                     </div>
+                   <small class="text-muted">9 mins</small>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/img2.png" data-holder-rendered="true" style="display: block;">
+              <div class="centered lead font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+               <div class="card-body">
+                <h3 class="">Monografica Polialfabetica</h3>
+                 <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                   </div>
+                   <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/img3.png" data-holder-rendered="true" style="display: block;">
+              <div class="centered lead font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+               <div class="card-body">
+                <h3 class="">Poligrafica Monoalfabetica</h3>
+                 <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </div>
+                 <small class="text-muted">9 mins</small>
+                </div>
+               </div>
+              </div>
+            </div>
           </div>
 
+          <h2 class="border-top pt-4 pb-2">Composte</h2>
+          <div class="row">
+           <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+             <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/img3.png" data-holder-rendered="true" style="display: block;">
+             <div class="centered lead font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+             <div class="card-body">
+               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                 <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                 </div>
+                <small class="text-muted">9 mins</small>
+               </div>
+              </div>
+             </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+
     </main>
 
+    <footer class="text-muted">
+     <div class="container">
+      <p class="float-right py-3">
+       <a href="#">Back to top</a>
+      </p>
+      </div>
+    </footer>
 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text  style="font-weight:bold;font-size:17pt; font-family:Arial, Helvetica, sans-serif">Thumbnail</text></svg>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -168,6 +182,48 @@
           });
         });
     </script>
+    <script type="text/javascript">
+          // Hide Header on on scroll down
+      var didScroll;
+      var lastScrollTop = 0;
+      var delta = 5;
+      var navbarHeight = $('header').outerHeight();
+
+      $(window).scroll(function(event){
+        didScroll = true;
+      });
+
+      setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+      }, 250);
+
+      function hasScrolled() {
+        var st = $(this).scrollTop();
+
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('header').removeClass('nav-down').addClass('nav-up');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('header').removeClass('nav-up').addClass('nav-down');
+            }
+        }
+
+        lastScrollTop = st;
+      }
+    </script>
+
+
 
   </body>
 </html>

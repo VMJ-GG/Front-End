@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" rel="stylesheet">
     <link rel="stylesheet" href="./CalcoloNumerico.css">
 
     <!-- Material Design Icons -->
@@ -15,121 +16,174 @@
     <title>Calcolo Numerico</title>
   </head>
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="#">Papaya</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <header class="nav-down">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Papaya</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Reti</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Algoritmi JS
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="CalcoloNumerico.html">Calcolo Numerico</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="Crittografia.html">Crittografia</a>
-            </div>
-          </li>
-
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Cerca qualcosa" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
-        </form>
-      </div>
-    </nav>
-
-    <main class="container-fluid h-100">
-
-      <div class="row h-100">
-        <section class="col-lg">
-          <div class="cover">
-            <a class="scroll-down" href="#">
-              <div class="caption border-left">
-                <section class="caption-head">
-                  Calcolo Numerico
-                </section>
-                <section class="caption-body">
-                  <div class="show-more">
-                    Una raccolta di metodi per il calcolo numerico completi di
-                    descrizione, nel caso tu abbia dimenticato la calcolatrice.
-                  </div>
-                  <i class="material-icons md-48">keyboard_arrow_down</i>
-                </section>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reti</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Algoritmi JS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="CalcoloNumerico.html">Calcolo Numerico</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Crittografia.html">Crittografia</a>
               </div>
-            </a>
-          </div>
-        </section>
-      </div>
+            </li>
 
-      <a class="down">
-        <div class="row h-25">
-          <div class="col-lg border-right border-bottom bg-light" >
-            <div class="caption border-left">
-              <div class="caption-head text-dark">
-                √
-              </div>
-              <div class="caption-body text-dark">
-                Radice quadrata
-              </div>
-            </div>
-          </div>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Cerca qualcosa" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
+          </form>
         </div>
+      </nav>
+    </header>
 
-        <div class="row h-25">
-          <div class="col-lg border-left border-bottom bg-light">
-            <div class="caption border-left ">
-              <div class="caption-head text-dark">
-                f(x)
-              </div>
-              <div class="caption-body text-dark">
-                Funzioni
-              </div>
+    <main role="main">
+      <section class="jumbotron text-center text-light" style="background: linear-gradient(#005cb3, #99ceff);">
+       <a class="scroll-down" href="#">
+        <div class="container">
+          <h1 class="jumbotron-heading ">Calcolo Numerico</h1>
+            <div class="lead text-light">
+              Una raccolta di metodi per il calcolo numerico completi di
+              descrizione, nel caso tu abbia dimenticato la calcolatrice.
             </div>
-          </div>
+            <div class="show-more">
+              Scopri
+             <i class="material-icons md-48">keyboard_arrow_down</i>
+           </div>
         </div>
-
-        <div class="row h-25">
-          <div class="col-lg border-right border-top bg-light">
-            <div class="caption border-left">
-              <div class="caption-head text-dark">
-                e
-              </div>
-              <div class="caption-body text-dark">
-                Numero di Nepero
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row h-25">
-          <div class="col-lg border-left border-top bg-light">
-            <div class="caption border-left">
-              <div class="caption-head text-dark">
-                𝜋
-              </div>
-              <div class="caption-body text-dark">
-                Pigreco
-              </div>
-            </div>
-          </div>
-        </div>
-
       </a>
 
+      <!--
+
+      <div class="img">
+        <img src="./images/img2.png">
+      </div>
+
+      -->
+      </section>
+
+      <div class="album bg-light">
+        <div class="container">
+         <a class="down"></a>
+          <h2 class="pt-4 pb-2">Algoritmi</h2>
+           <div class="row">
+            <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/pi.png" data-holder-rendered="true" style="display: block;">
+              <div class="centered lead font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+                <div class="card-body">
+                 <h3 class="">Pi Greco</h3>
+                  <div class="d-flex justify-content-between align-items-center">
+                   <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                   <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/rad.png" data-holder-rendered="true" style="display: block;">
+              <div class="centered lead font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+               <div class="card-body">
+                <h3 class="">Radice Quadrata</h3>
+                 <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                   </div>
+                   <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/funz.png" data-holder-rendered="true" style="display: block;">
+              <div class="centered lead font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+               <div class="card-body">
+                <h3 class="">Funzioni</h3>
+                 <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </div>
+                 <small class="text-muted">9 mins</small>
+                </div>
+               </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/nep.png" data-holder-rendered="true" style="display: block;">
+              <div class="centered lead font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+               <div class="card-body">
+                <h3 class="">Numero di Nepero</h3>
+                 <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </div>
+                 <small class="text-muted">9 mins</small>
+                </div>
+               </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="border-top pt-4 pb-2">Composte</h2>
+          <div class="row">
+           <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+             <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/img3.png" data-holder-rendered="true" style="display: block;">
+             <div class="centered lead font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+             <div class="card-body">
+               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                 <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                 </div>
+                <small class="text-muted">9 mins</small>
+               </div>
+              </div>
+             </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </main>
 
+    <footer class="text-muted">
+     <div class="container ">
+      <p class="float-right py-3">
+       <a href="#">Back to top</a>
+      </p>
 
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text  style="font-weight:bold;font-size:17pt; font-family:Arial, Helvetica, sans-serif">Thumbnail</text></svg>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -147,6 +201,48 @@
           });
         });
     </script>
+    <script type="text/javascript">
+          // Hide Header on on scroll down
+      var didScroll;
+      var lastScrollTop = 0;
+      var delta = 5;
+      var navbarHeight = $('header').outerHeight();
+
+      $(window).scroll(function(event){
+        didScroll = true;
+      });
+
+      setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+      }, 250);
+
+      function hasScrolled() {
+        var st = $(this).scrollTop();
+
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('header').removeClass('nav-down').addClass('nav-up');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('header').removeClass('nav-up').addClass('nav-down');
+            }
+        }
+
+        lastScrollTop = st;
+      }
+    </script>
+
+
 
   </body>
 </html>
