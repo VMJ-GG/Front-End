@@ -1,3 +1,48 @@
+/* Font Rules */
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto-Light.ttf') format('truetype');
+}
+*, *::before, *::after {
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover .material-icons{
+  transform: translateY(10px);
+}
+
+.navbar{
+  opacity: 0.8;
+}
+
+/*.img{
+  height: .5rem;
+}
+
+img{
+  height: 400px;
+  width: 300px;
+}*/
+
+.lead{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 .jumbotron {
   border-radius: 0;
   margin-bottom: 0;
@@ -17,4 +62,12 @@
 
 .card:hover {
   box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.5);
+}
+
+/*=== ShowMore Component ===*/
+i.material-icons {
+    position: relative;
+    bottom: -6px;
+
+    transition: all .5s;
 }
