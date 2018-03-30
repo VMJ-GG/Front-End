@@ -56,8 +56,8 @@ header{
 
 .card {
   border: 0;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  transition: all .25s ease;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
+  transition: all .3s ease;
 }
 
 .card:hover {
@@ -73,7 +73,7 @@ header{
 }
 
 .card:hover .card-img-top{
-  filter: blur(15px);
+  filter: blur(4px);
 }
 
 .centered {
