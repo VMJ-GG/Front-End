@@ -88,13 +88,13 @@ header{
 }
 
 .btn-orange{
-  color: orange;
-  border-color: orange;
+  color: #005cb3;
+  border-color: #005cb3;
   padding:0 20px 0 20px;
 }
 
 .btn-orange:hover{
-  background-color: orange;
+  background-color: #005cb3;
   color: white;
 }
 
