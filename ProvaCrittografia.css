@@ -79,6 +79,5 @@ html, body {
 i.material-icons {
     position: relative;
     bottom: -6px;
-
     transition: all .5s;
 }
