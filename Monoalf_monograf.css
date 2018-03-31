@@ -25,10 +25,17 @@ html, body {
   transform: translateY(10px);
 }
 
-.navbar{
-  opacity: 0.8;
+header{
+  opacity: 0.9;
+  height: 56px;
+  top: 0;
+  position: fixed;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
 }
-
+.nav-up {
+    top: -56px;
+}
 
 .lead{
   margin-left: 10%;
@@ -38,16 +45,17 @@ html, body {
 .jumbotron {
   border-radius: 0;
   margin-bottom: 0;
+  padding-top: 120px;
   }
 }
 
 .jumbotron-fluid {
   padding-right: 0;
   padding-left: 0;
-  @include border-radius(0);
 }
 
 .card {
+  border: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   transition: all .25s ease;
 }
@@ -65,13 +73,13 @@ html, body {
 }
 
 .card:hover .card-img-top{
-  filter: blur(10px);
+  filter: blur(15px);
 }
 
 .centered {
     position: absolute;
     top: 20%;
-    transition: all .3s ease;
+    transition: all .5s ease;
     opacity: 0;
 }
 
