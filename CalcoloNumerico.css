@@ -26,9 +26,9 @@ html, body {
 }
 
 header{
-  opacity: 0.9;
   height: 56px;
   top: 0;
+  z-index: 3;
   position: fixed;
   transition: top 0.2s ease-in-out;
   width: 100%;
@@ -69,11 +69,11 @@ header{
 }
 
 .card-img-top{
-  transition: all 1s ease;
+  transition: all .4s ease;
 }
 
 .card:hover .card-img-top{
-  filter: blur(4px);
+  filter: blur(3px);
 }
 
 .centered {
@@ -83,6 +83,20 @@ header{
     opacity: 0;
 }
 
+.btn{
+  background-color: #fff;
+}
+
+.btn-orange{
+  color: orange;
+  border-color: orange;
+  padding:0 20px 0 20px;
+}
+
+.btn-orange:hover{
+  background-color: orange;
+  color: white;
+}
 
 /*=== ShowMore Component ===*/
 i.material-icons {
