@@ -87,13 +87,13 @@ header{
   background-color: #fff;
 }
 
-.btn-orange{
+.btn-blue{
   color: #005cb3;
   border-color: #005cb3;
   padding:0 20px 0 20px;
 }
 
-.btn-orange:hover{
+.btn-blue:hover{
   background-color: #005cb3;
   color: white;
 }
