@@ -66,6 +66,12 @@ header{
   z-index: 1;
 }
 
+pre.prettyprint {
+    border: 1px solid #ccc;
+    margin-bottom: 0;
+    padding: 9.5px;
+  }
+  
 /*=== ShowMore Component ===*/
 i.material-icons {
     position: relative;
