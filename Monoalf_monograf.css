@@ -26,10 +26,10 @@ html, body {
 }
 
 header{
-  opacity: 0.9;
   height: 56px;
   top: 0;
   position: fixed;
+  z-index: 3;
   transition: top 0.2s ease-in-out;
   width: 100%;
 }
@@ -54,33 +54,16 @@ header{
   padding-left: 0;
 }
 
-.card {
-  border: 0;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  transition: all .25s ease;
+.menu{
+  padding-top: 71px;
+  z-index: 2;
 }
-
-.card:hover {
-  box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.5);
-}
-
-.card:hover .centered{
-  opacity: 1;
-}
-
-.card-img-top{
-  transition: all 1s ease;
-}
-
-.card:hover .card-img-top{
-  filter: blur(15px);
-}
-
-.centered {
-    position: absolute;
-    top: 20%;
-    transition: all .5s ease;
-    opacity: 0;
+.form{
+  overflow-y: scroll;
+  margin-top: 56px;
+  padding: 60px;
+  background: linear-gradient(90deg, #de1452, #e67300);
+  z-index: 1;
 }
 
 /*=== ShowMore Component ===*/
