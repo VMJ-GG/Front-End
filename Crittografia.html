@@ -56,7 +56,7 @@
       <section class="jumbotron text-center text-light" style="background: linear-gradient(50deg, #e67300, #de1452);">
        <a class="scroll-down" href="#">
         <div class="container">
-          <h1 class="jumbotron-heading ">Crittografia</h1>
+          <h1 class="jumbotron-heading">Crittografia</h1>
             <div class="lead text-light">
               Una raccolta di metodi crittografici, descritti nel
               funzionamento e utili per nascondere a tua moglie i messaggi che
@@ -71,34 +71,89 @@
 
       </section>
 
+      <a class="down"></a>
+
       <div class="album bg-light">
         <div class="container">
-         <a class="down"></a>
-          <h2 class="pt-4 pb-2">Sostituzioni</h2>
+          <div class="row">
+            <div class="col-md">
+              <div class="cover">
+                <div class="caption">
+                  <div class="caption-head ">
+                    <h2 class="pt-4 pb-2">Alcune precisazioni:</h2>
+                  </div>
+                  <div class="caption-body">
+                    <div class="row description">
+                      <div class="col-2 ">
+                        <div class=" description-child">
+                          Testo in chiaro:
+                        </div>
+                        <div class=" description-child">
+                          Testo cifrato:
+                        </div>
+                        <div class=" description-child">
+                          La chiave:
+                        </div>
+                      </div>
+                      <div class="col-10">
+                        <div class=" description-child text-success">
+                          il messaggio da trasmettere.
+                        </div>
+                        <div class=" description-child text-danger">
+                          il crittogramma.
+                        </div>
+                        <div class=" description-child text-warning">
+                          lo strumento che permette di crittare e decrittare il testo in chiaro.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="album bg-light">
+        <div class="container">
+          <h1 class="pt-4 pb-2">Sostituzioni</h1>
            <div class="row">
             <div class="col-md-4">
              <div class="card mb-4 box-shadow">
-              <img class="card-img-top" alt="Immagine non trovata" src="./images/img1.png" data-holder-rendered="true" style="display: block;">
-              <div class="centered lead ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                <div class="card-body">
-                 <h3 class="">Monografica Monoalfabetica</h3>
-                  <div class="d-flex justify-content-between align-items-center">
+               <div class="">
+                <img class="card-img-top" alt="Immagine non trovata" src="./images/img1.png" data-holder-rendered="true">
+               </div>
+                <div class="card-body popup" >
+                 <h3> Monografica</h3>
+                 <H3> Monoalfabetica</h3>
+
+                  <div class="" onclick="myFunction()">
+
+                    <div class="btn-group">
+                     <button type="button" class="btn btn-md btn-orange">Info</button>
+                     </div>
+
                    <div class="btn-group">
                      <a href="./Monoalf_monograf.html">
                        <button type="button" class="btn btn-md btn-orange">Vai</button>
                      </a>
                     </div>
-                   <small class="text-muted">Easy</small>
+
                   </div>
+                    <span class="popuptext lead " id="myPopup">Ogni elemento del testo in chiaro viene dallo stesso elemento del crittogramma secondo una tabella di sostituzione unica</span>
                 </div>
+
               </div>
             </div>
             <div class="col-md-4">
              <div class="card mb-4 box-shadow">
-              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/img2.png" data-holder-rendered="true" style="display: block;">
-              <div class="centered lead ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+              <img class="card-img-top " data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/img2.png" data-holder-rendered="true" style="display: block;">
                <div class="card-body">
-                <h3 class="">Monografica Polialfabetica</h3>
+                 <h3> Monografica</h3>
+                 <H3> Polialfabetica</h3>
+                   <div class="centered lead ">Un elemento del testo in chiaro viene sostituito da un elemento del crittogramma che cambia sempre, e che si determina per mezzo di una chiave segreta da concordarsi</div>
                  <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                    <button type="button" class="btn btn-md btn-orange">Vai</button>
@@ -111,9 +166,10 @@
             <div class="col-md-4">
              <div class="card mb-4 box-shadow">
               <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/img2.png" data-holder-rendered="true" style="display: block;">
-              <div class="centered lead ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
                <div class="card-body">
-                <h3 class="">Poligrafica Monoalfabetica</h3>
+                 <h3> Poligrafica</h3>
+                 <H3> Monoalfabetica</h3>
+                  <div class="centered lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
                  <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                    <button type="button" class="btn btn-md btn-orange">Vai</button>
@@ -218,7 +274,13 @@
       }
     </script>
 
-
+    <script type="text/javascript">
+      // When the user mouse over on div, open the popup whit descriptions of cards
+      function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+    </script>
 
   </body>
 </html>

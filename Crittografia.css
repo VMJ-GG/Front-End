@@ -11,6 +11,17 @@ html, body {
   height: 100%;
 }
 
+                        /*=== Header - Nav Bar ===*/
+
+header{
+  height: 56px;
+  top: 0;
+  position: fixed;
+  z-index: 2;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+}
+
 .scroll-down{
   text-decoration: none;
   color: #fff;
@@ -25,14 +36,6 @@ html, body {
   transform: translateY(10px);
 }
 
-header{
-  height: 56px;
-  top: 0;
-  position: fixed;
-  z-index: 2;
-  transition: top 0.2s ease-in-out;
-  width: 100%;
-}
 
 .navbar-collapse{
   z-index: 100;
@@ -42,21 +45,40 @@ header{
     top: -56px;
 }
 
-.lead{
+                                /*== Body ==*/
+
+.lead{                  /*  <--- Paragrafi centrati */
   margin-left: 10%;
   margin-right: 10%;
+  padding: 0 0 0 2px;
 }
 
 .jumbotron {
   border-radius: 0;
   margin-bottom: 0;
   padding-top: 120px;
-  }
+}
+
+.jumbotron-heading{
+  font-size: 3rem;
 }
 
 .jumbotron-fluid {
   padding-right: 0;
   padding-left: 0;
+}
+
+.container{
+  padding: 15px 0 5px 0;
+}
+
+.description{              /*  <--- Alcune precisazioni */
+  font-size: 1.2rem;
+}
+
+.description-child{
+  margin: 3px 0 0 0;
+  padding: 0 4px 0 4px;
 }
 
 .card {
@@ -69,24 +91,70 @@ header{
   box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.5);
 }
 
-.card:hover .centered{
-  opacity: 1;
+.card-body{
+  cursor:auto !important;
 }
 
-.card-img-top{
-  transition: all .4s ease;
+              /* -==-==-==-==- Pop up -==-==-==-==-==- */
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.card:hover .card-img-top{
-  filter: blur(7px);
-}
-
-.centered {
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 3px;
     position: absolute;
-    top: 20%;
-    transition: all .5s ease;
-    opacity: 0;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
 }
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+            /*== Button ==*/
 
 .btn{
   background-color: #fff;
@@ -103,7 +171,8 @@ header{
   color: white;
 }
 
-/*=== ShowMore Component ===*/
+              /*=== ShowMore Component ===*/
+
 i.material-icons {
     position: relative;
     bottom: -6px;
