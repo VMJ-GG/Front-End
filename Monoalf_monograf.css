@@ -11,18 +11,8 @@ html, body {
   height: 100%;
 }
 
-.scroll-down{
-  text-decoration: none;
-  color: #fff;
-}
-
-.scroll-down:hover{
-  text-decoration: none;
-  color: #fff;
-}
-
-.scroll-down:hover .material-icons{
-  transform: translateY(10px);
+main{
+  margin-top: 56px;
 }
 
 header{
@@ -33,48 +23,30 @@ header{
   transition: top 0.2s ease-in-out;
   width: 100%;
 }
+
+.caption-head{
+  font-size: 2rem;
+}
+
 .nav-up {
     top: -56px;
 }
 
-.lead{
-  margin-left: 10%;
-  margin-right: 10%;
+/*== table form ==*/
+
+.tab-pane{
+  padding: 10px 0;
 }
 
-.jumbotron {
+label + .form-control{
+  border-top: none;
+  border-left: none;
+  border-right: none;
   border-radius: 0;
-  margin-bottom: 0;
-  padding-top: 120px;
-  }
+
+  cursor: text;
 }
 
-.jumbotron-fluid {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.menu{
-  padding-top: 71px;
-  z-index: 2;
-}
-.form{
-  overflow-y: scroll;
-  margin-top: 56px;
-  padding: 60px;
-  background: linear-gradient(90deg, #de1452, #e67300);
-  z-index: 1;
-}
-
-pre.prettyprint {
-    border: 1px solid #ccc;
-    margin-bottom: 0;
-    padding: 9.5px;
-  }
-  
-/*=== ShowMore Component ===*/
-i.material-icons {
-    position: relative;
-    bottom: -6px;
-    transition: all .5s;
+label + .form-control:hover, .form-control:focus{
+  box-shadow: none;
 }
