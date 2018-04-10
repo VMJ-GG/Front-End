@@ -10,15 +10,17 @@ task :watch do
   sh "sass --watch scss/main.scss:css/main.css"
 end
 
-task :publish, [:message] do |t, args|
-  files = args.extras
-  unless files.empty?
+desc "Pushing changes to remote"
+namespace :push do
+  task :all, [:message] do |t, args|
+    sh "git add -A && git commit -am \'#{args.message}\' && git push"
+  end
+
+  task :files, [:message] do |t, args|
+    files = args.extras
     files.each do |fn|
       sh "git add #{fn}"
     end
-  else
-    sh "git add -A"
+    sh "git commit -am \'#{args.message}\' && git push"
   end
-  sh "git commit -am '#{args.message}'"
-  sh "git push"
 end
