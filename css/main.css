@@ -1,0 +1,19 @@
+.btn-card-orange {
+  padding: 0 20px;
+  background-color: #fff;
+  color: #e67300;
+  border-color: #e67300; }
+  .btn-card-orange:hover {
+    color: #fff;
+    background-color: #e67300; }
+
+.btn-card-blue {
+  padding: 0 20px;
+  background-color: #fff;
+  color: #005cb3;
+  border-color: #005cb3; }
+  .btn-card-blue:hover {
+    color: #fff;
+    background-color: #005cb3; }
+
+/*# sourceMappingURL=main.css.map */

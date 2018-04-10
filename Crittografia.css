@@ -11,8 +11,7 @@ html, body {
   height: 100%;
 }
 
-                        /*=== Header - Nav Bar ===*/
-
+/*=== Header - Nav Bar ===*/
 header{
   height: 56px;
   top: 0;
@@ -32,7 +31,7 @@ header{
   color: #fff;
 }
 
-.scroll-down:hover .material-icons{
+.scroll-down:hover .material-icons {
   transform: translateY(10px);
 }
 
@@ -58,6 +57,7 @@ header{
   border-radius: 0;
   margin-bottom: 0;
   padding-top: 120px;
+  padding-bottom: 30px;
 }
 
 .jumbotron-heading{
@@ -161,8 +161,7 @@ header{
     to {opacity:1 ;}
 }
 
-            /*== Button ==*/
-
+/*== Button ==*/
 .btn{
   background-color: #fff;
 }
@@ -178,11 +177,13 @@ header{
   color: white;
 }
 
-              /*=== ShowMore Component ===*/
-
+/*=== ShowMore Component ===*/
 i.material-icons {
     position: relative;
     bottom: -6px;
-
     transition: all .5s;
+}
+
+.material-icons.md-48 {
+  font-size: 3rem;
 }
