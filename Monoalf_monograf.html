@@ -51,178 +51,59 @@
       </nav>
     </header>
 
-    <main class="h-100" role="main">
-      <div class="row h-100">
-        <div class="menu col-3">
-          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Cesare</a>
-            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Cesare Parametrico</a>
-            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Atbash</a>
-          </div>
-        </div>
+    <main class="h-100 px-4" role="main">
 
-        <div class="col-9 form">
-          <div class="tab-content" id="v-pills-tabContent">
-
-            <!--Cesare-->
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-
-              <div class="jumbotron-heading text-light">
-                <h1>Cifrario di Cesare<h1>
-              </div>
-
-              <form name='f'>
-                <div class="form-group row">
-              		<label class="col-sm-3 col-form-label"for="[object Object]">Testo in chiaro</label>
-                  <div class="col-sm-7">
-                    <input class="form-control form-control" type='text' name='t' placeholder="Attacchiamo alle ottobdhcjbshdj">
-                  </div>
-                  <div class="col-sm-2">
-                    <button type="submit" class="btn">Cripta
-                    </button>
-                  </div>
-              	</div>
-                <div class="form-group row">
-                  <label class="col-sm-3 col-form-label"for="[object Object]">Testo criptato</label>
-                  <div class="col-sm-7">
-                    <input class="form-control" type='text' name='t' placeholder="...">
-                  </div>
-                  <div class="col-sm-2">
-                    <button type="submit" class="btn">Decripta
-                    </button>
-                  </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg">
+            <div class="cover">
+              <div class="caption">
+                <div class="caption-head text-dark">
+                  Metodi di criptazione
                 </div>
-              </form>
+                <div class="caption-body">
 
-              <div class="jumbotron-fluid">
-                <h1 class="text-light" style="padding-top:20px">Descrizione:</h1>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
               </div>
             </div>
-
-            <!--Cesare parametrico-->
-            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-              <div class="jumbotron-heading text-light">
-                <h1>Cifrario di Cesare parametrico<h1>
-              </div>
-
-              <form name='f'>
-                <div class="form-group row">
-              		<label class="col-sm-3 col-form-label"for="[object Object]">Testo in chiaro</label>
-                  <div class="col-sm-9">
-                    <input class="form-control form-control-lg" type='text' name='t' placeholder="Attacchiamo alle ottobdhcjbshdj">
-                  </div>
-              	</div>
-                <div class="form-group row">
-                  <label class="col-sm-3 col-form-label" for="[object Object]">Chiave</label>
-                  <div class="col-sm-7">
-                    <select class="form-control "name='k'>
-                			<script>
-                				for(j=-26;j<=26;j++)
-                					document.write('<option>'+j);
-                			</script>
-                		</select>
-                  </div>
-                  <div class="col-sm-2">
-                    <button type="submit" class="btn">Cripta
-                    </button>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-sm-3 col-form-label"for="[object Object]">Testo criptato</label>
-                  <div class="col-sm-7">
-                    <input class="form-control" type='text' name='t' placeholder="...">
-                  </div>
-                  <div class="col-sm-2">
-                    <button type="submit" class="btn">Decripta
-                    </button>
-                  </div>
-                </div>
-              </form>
-
-              <div class="jumbotron-fluid">
-                <h1 class="text-light" style="padding-top:20px">Descrizione:</h1>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </div>
-            </div>
-
-            <!--Atbash-->
-            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-              <div class="jumbotron-heading text-light">
-                <h1>Atbash<h1>
-              </div>
-
-              <form name='f'>
-                <div class="form-group row">
-              		<label class="col-sm-3 col-form-label"for="[object Object]">Testo in chiaro</label>
-                  <div class="col-sm-7">
-                    <input class="form-control form-control-lg" type='text' name='t' placeholder="Attacchiamo alle ottobdhcjbshdj">
-                  </div>
-                  <div class="col-sm-2">
-                    <button type="submit" class="btn">Cripta
-                    </button>
-                  </div>
-              	</div>
-                <div class="form-group row">
-                  <label class="col-sm-3 col-form-label"for="[object Object]">Testo criptato</label>
-                  <div class="col-sm-7">
-                    <input class="form-control" type='text' name='t' placeholder="...">
-                  </div>
-                  <div class="col-sm-2">
-                    <button type="submit" class="btn">Decripta
-                    </button>
-                  </div>
-                </div>
-              </form>
-
-              <div class="jumbotron-fluid">
-                <h1 class="text-light" style="padding-top:20px">Descrizione:</h1>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                <pre class="prettyprint">
-                  function Atbash(){
-
-                    testo = document.f.t.value.toLowerCase()
-                    crittogramma = '';
-
-                      for(i=0;i<=testo.length;i++)
-                        {
-                          carattere = testo.charAt(i)
-                          posizione = alfabeto.indexOf(carattere)
-
-                          posizione=26-posizione
-
-                          crittogramma+=alfabeto.charAt(posizione)
-
-                        }
-                      document.f.tc.value=crittogramma
-
-                		}
-
-
-
-                </pre>
-              </div>
-            </div>
-
-
-          </div>
-
-
-
           </div>
         </div>
       </div>
 
+      <nav class="container-fluid">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Cesare</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Atbash</a>
+        </div>
+      </nav>
+      <div class="tab-content container-fluid" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Testo in chiaro</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserisci un testo">
+            </div>
 
-
-
-
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Chiave</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+          			<script>
+          				for(j=0;j<=26;j++)
+          					document.write('<option>'+j);
+          			</script>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Testo in chiaro</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserisci un testo">
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer class="text-muted">
@@ -243,7 +124,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
     <!-- JQuery -->
     <script type="text/javascript">

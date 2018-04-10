@@ -1,0 +1,9 @@
+.btn-card-orange {
+  padding: 0 20px;
+  @include button-card-color("orange");
+}
+
+.btn-card-blue {
+  padding: 0 20px;
+  @include button-card-color("blue");
+}

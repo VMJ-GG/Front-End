@@ -1,0 +1,8 @@
+.header-fixed {
+  width: 100%;
+  height: 56px;
+  top: 0;
+  z-index: 2;
+  position: fixed;
+  transition: top 0.2s ease-in-out;
+}
