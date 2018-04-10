@@ -45,6 +45,7 @@ header{
     top: -56px;
 }
 
+
                                 /*== Body ==*/
 
 .lead{                  /*  <--- Paragrafi centrati */
@@ -79,6 +80,12 @@ header{
 .description-child{
   margin: 3px 0 0 0;
   padding: 0 4px 0 4px;
+}
+
+.precisions{
+  background: linear-gradient( 145deg, #3b3c3e, #5b5757, #4a4747, #3b3c3e);
+
+  padding: 0 100px 0 100px;
 }
 
 .card {
