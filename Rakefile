@@ -20,4 +20,5 @@ task :publish, [:message] do |t, args|
     sh "git add -A"
   end
   sh "git commit -am '#{args.message}'"
+  sh "git push"
 end
