@@ -12,15 +12,6 @@ html, body {
 }
 
 /*=== Header - Nav Bar ===*/
-header{
-  height: 56px;
-  top: 0;
-  position: fixed;
-  z-index: 2;
-  transition: top 0.2s ease-in-out;
-  width: 100%;
-}
-
 .scroll-down{
   text-decoration: none;
   color: #fff;
@@ -42,6 +33,9 @@ header{
 
 .nav-up {
     top: -56px;
+}
+.nav-down {
+    top: 0;
 }
 
 
