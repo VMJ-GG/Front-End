@@ -5,11 +5,13 @@ $black: #000;
 $orange: #e67300;
 $blue:   #005cb3;
 $violet: #555cb3;
+$light-grey: #f8f9fa;
 
 $colors: (
-  "orange": $orange,
-  "violet": $violet,
-  "blue":   $blue
+  "orange":      $orange,
+  "violet":      $violet,
+  "blue":        $blue,
+  "light-grey":  $light-grey
 );
 
 //sfumature
