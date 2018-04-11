@@ -1,25 +1,26 @@
-//colori
-
+// Colors
 $white: #fff;
 $black: #000;
 $orange: #e67300;
 $blue:   #005cb3;
 $violet: #555cb3;
 
+// Colors' Map
 $colors: (
   "orange": $orange,
   "violet": $violet,
   "blue":   $blue
 );
 
-//sfumature
 
+// Gradients
 $legend: linear-gradient(145deg, #3b3c3e, #5b5757, #4a4747, #3b3c3e);
 $crypto: linear-gradient(50deg, #e67300, #de1452);
 $calc:   linear-gradient(60deg, #005cb3, #1ed775);
 
+// Gradients' Map
 $gradients: (
   "legend": $legend,
   "crypto": $crypto,
   "calc":   $calc
-  );
+);

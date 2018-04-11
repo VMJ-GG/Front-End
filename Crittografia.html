@@ -8,7 +8,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" rel="stylesheet">
-    <link rel="stylesheet" href="./Crittografia.css">
     <link rel="stylesheet" href="./css/main.css">
 
     <!-- Material Design Icons -->
@@ -51,121 +50,128 @@
       </nav>
     </header>
 
-    <main role="main">
-      <section class="jumbotron jumbotron-crypto text-light" >
-        <div class="container-fluid">
-          <h1 class="jumbotron-heading">Crittografia</h1>
-          <h5 class=" text-light mb-3">
-            Una raccolta di metodi crittografici, descritti nel
-            funzionamento e utili per nascondere a tua moglie i messaggi che
-            mandi alle amanti.
-          </h5>
-          <a class="scroll-down" href="#"><i class="material-icons">keyboard_arrow_down</i></a>
-        </div>
+    <main class="container-fluid px-0" role="main">
+      <section class="jumbotron jumbotron-crypto">
+        <h1 class="jumbotron-head">Crittografia</h1>
+        <p class="jumbotron-body">
+          Una raccolta di metodi crittografici, descritti nel
+          funzionamento e utili per nascondere a tua moglie i messaggi che mandi alle amanti.
+        </p>
+        <a class="arrow" href="#"><i class="material-icons">keyboard_arrow_down</i></a>
       </section>
 
-      <a class="down"></a>
-
-        <div class="container-fluid bg-light">
-          <h1 class="pt-4 pb-2">Sostituzioni</h1>
-           <div class="row">
-            <div class="col-md-4">
-             <div class="card mb-4 box-shadow">
-               <div class="">
-                <img class="card-img-top" alt="Immagine non trovata" src="./images/img1.png" data-holder-rendered="true">
-               </div>
-                <div class="card-body">
-                 <h3> Monografica</h3>
-                 <H3> Monoalfabetica</h3>
-                   <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div><a href="Monoalf_monograf.html"> <button type="button" class="btn btn-md btn-card-orange">Vai</button></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-             <div class="card mb-4 box-shadow">
-              <img class="card-img-top" alt="Immagine non trovata" src="./images/img2.png">
-               <div class="card-body">
-                 <h3> Monografica</h3>
-                 <H3> Polialfabetica</h3>
-                 <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                 <button type="button" class="btn btn-md btn-card-orange">Vai</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-             <div class="card mb-4 box-shadow">
-              <img class="card-img-top" alt="Immagine non trovata" src="./images/img2.png">
-               <div class="card-body">
-                 <h3> Poligrafica</h3>
-                 <H3> Monoalfabetica</h3>
-                 <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                 <button type="button" class="btn btn-md btn-card-orange">Vai</button>
-               </div>
-              </div>
-            </div>
-          </div>
-
-          <h2 class="border-top pt-4 pb-2">Composte</h2>
+      <!-- Subsitution Container  -->
+      <section id="subsitution"> <!-- Container Start  -->
+        <div class="container-fluid px-4">
+          <h1 class="pt-4 pb-2">Cifrari per Sostituzione</h1>
           <div class="row">
-           <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-             <img class="card-img-top" src="./images/img3.png">
-             <div class="card-body">
-              <div class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</div>
-              <button type="button" class="btn btn-md btn-card-orange">Vai</button>
-             </div>
-            </div>
-           </div>
-          </div>
-        </div>
-
-      <div class="container-fluid" id="legend">
-        <div class="row">
-          <div class="col-md">
-            <div class="cover">
-              <div class="caption">
-                <div class="caption-head ">
-                  <h2 class="text-light pt-4 pb-2">Alcune precisazioni:</h2>
-                  <hr class="bg-light">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <div class="">
+                  <img class="card-img-top" alt="Immagine non trovata" src="./images/img1.png" data-holder-rendered="true">
                 </div>
-                <div class="caption-body text-light pb-5">
-                  <div class="row">
-                    <div class="col-2 ">
-                      <div class="">
-                        Testo in chiaro:
-                      </div>
-                      <div class="">
-                        Testo cifrato:
-                      </div>
-                      <div class="">
-                        La chiave:
-                      </div>
-                    </div>
-                    <div class="col-10">
-                      <div class="">
-                        il messaggio da trasmettere.
-                      </div>
-                      <div class="">
-                        il crittogramma.
-                      </div>
-                      <div class="">
-                        lo strumento che permette di  crittare decrittare il testo in chiaro.
-                      </div>
-                    </div>
+                <div class="card-body">
+                  <h3> Monografica</h3>
+                  <h3> Monoalfabetica</h3>
+                  <div class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
                   </div>
+                  <button type="button" class="btn btn-md btn-card-orange">
+                    <a href="Monoalf_monograf.html">Vai</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" alt="Immagine non trovata" src="./images/img2.png">
+                  <div class="card-body">
+                    <h3> Monografica</h3>
+                    <h3> Polialfabetica</h3>
+                    <div class="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                    </div>
+                    <button type="button" class="btn btn-md btn-card-orange">
+                      <a href="#">Vai</a>
+                    </button>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" alt="Immagine non trovata" src="./images/img2.png">
+                <div class="card-body">
+                  <h3> Poligrafica</h3>
+                  <h3> Monoalfabetica</h3>
+                  <div class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                  </div>
+                  <button type="button" class="btn btn-md btn-card-orange">
+                    <a href="#">vai</a>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section> <!-- Container End  -->
+
+      <!-- Composed Section  -->
+      <section id="composed"> <!-- Container Start  -->
+        <div class="container-fluid px-4">
+          <h2 class="border-top pt-4 pb-2">Cifrari Composti</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="./images/img3.png">
+                <div class="card-body">
+                  <div class="card-text">
+                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                  </div>
+                  <button type="button" class="btn btn-md btn-card-orange">
+                    <a href="#">Vai</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> <!-- Container End  -->
+
+      <!-- Legend Section  -->
+      <section id="legend"> <!-- Container Start  -->
+        <div class="container-fluid px-4">
+          <div class="cover">
+            <div class="caption">
+              <div class="caption-head ">
+                <h2 class="text-light pt-4 pb-2">Alcune precisazioni:</h2>
+                <hr class="bg-light">
+              </div>
+              <div class="caption-body text-light pb-5">
+                <div class="row">
+                  <div class="col-2">Testo in chiaro:</div>
+                  <div class="col">il messaggio da trasmettere.</div>
+                </div>
+                <div class="row">
+                  <div class="col-2">Testo cifrato:</div>
+                  <div class="col">il crittogramma.</div>
+                </div>
+                <div class="row">
+                  <div class="col-2">La chiave:</div>
+                  <div class="col">lo strumento che permette di  crittare decrittare il testo in chiaro.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> <!-- Container End  -->
     </main>
 
     <footer class="text-muted">
-     <div class="container-fluid">
-      <p class="float-right py-3">
-       <a href="#">Back to top</a>
-      </p>
+      <div class="container-fluid px-4">
+        <p class="float-right py-3">
+          <a href="#">Back to top</a>
+        </p>
       </div>
     </footer>
 
@@ -179,60 +185,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <!-- JQuery -->
-    <script type="text/javascript">
-
-      //==== Scroll down when click keyboard_arrow ====
-
-      $(document).ready(function() {
-        $(".scroll-down").click(function() {
-          $('html, body').animate({
-            scrollTop: $(".down").offset().top
-          }, 1200);
-        });
-      });
-
-
-      //==== Hide Header on on scroll down ====
-
-      var didScroll;
-      var lastScrollTop = 0;
-      var delta = 5;
-      var navbarHeight = $('header').outerHeight();
-
-      $(window).scroll(function(event){
-        didScroll = true;
-      });
-
-      setInterval(function() {
-        if (didScroll) {
-            hasScrolled();
-            didScroll = false;
-        }
-      }, 250);
-
-      function hasScrolled() {
-        var st = $(this).scrollTop();
-
-        // Make sure they scroll more than delta
-        if(Math.abs(lastScrollTop - st) <= delta)
-            return;
-
-        // If they scrolled down and are past the navbar, add class .nav-up.
-        // This is necessary so you never see what is "behind" the navbar.
-        if (st > lastScrollTop && st > navbarHeight){
-            // Scroll Down
-            $('header').removeClass('nav-down').addClass('nav-up');
-        } else {
-            // Scroll Up
-            if(st + $(window).height() < $(document).height()) {
-                $('header').removeClass('nav-up').addClass('nav-down');
-            }
-        }
-
-        lastScrollTop = st;
-      }
-    </script>
+    <script src="./js/main.js"></script>
+    <script src="./js/arrowPulse.js"></script>
   </body>
 </html>
