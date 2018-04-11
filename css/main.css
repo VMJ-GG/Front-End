@@ -65,8 +65,7 @@
   border-radius: 0;
   margin-bottom: 0;
   padding-top: 120px;
-  padding-bottom: 30px;
-  text-align: center; }
+  padding-bottom: 30px; }
 
 .jumbotron-calc {
   background: linear-gradient(60deg, #005cb3, #1ed775); }
@@ -76,6 +75,12 @@
 
 .jumbotron-heading {
   font-size: 3.5rem; }
+
+.caption-head {
+  font-size: 2rem; }
+
+.padding-to-top {
+  padding-top: 76px; }
 
 /* Font Rules */
 @font-face {

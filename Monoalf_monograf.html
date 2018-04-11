@@ -8,7 +8,9 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" rel="stylesheet">
-    <link rel="stylesheet" href="./Monoalf_monograf.css">
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="./css/main.css">
 
     <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,14 +18,13 @@
     <title>Crittografia</title>
   </head>
   <body>
-    <header class="nav-down">
+    <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Papaya</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
@@ -37,11 +38,10 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="CalcoloNumerico.html">Calcolo Numerico</a>
-                <div class="dropdown-divider"></div>
+                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Crittografia.html">Crittografia</a>
               </div>
             </li>
-
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Cerca qualcosa" aria-label="Search">
@@ -51,7 +51,7 @@
       </nav>
     </header>
 
-    <main class="h-100 px-4" role="main">
+    <main class="h-100 padding-to-top" role="main">
 
       <div class="container-fluid">
         <div class="row">
@@ -62,13 +62,21 @@
                   Metodi di criptazione
                 </div>
                 <div class="caption-body">
-
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+        <div class="container-fluid">
+          <form class="">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Testo in chiaro</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserisci un testo">
+            </div>
+          </form>
+        </div>
 
       <nav class="container-fluid">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -79,10 +87,6 @@
       <div class="tab-content container-fluid" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
           <form>
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Testo in chiaro</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserisci un testo">
-            </div>
 
             <div class="form-group">
               <label for="exampleFormControlSelect1">Chiave</label>
@@ -92,22 +96,30 @@
           					document.write('<option>'+j);
           			</script>
               </select>
+              <div class="pt-3 pb-3">
+                <button class="btn btn-lg btn-card-orange" type="submit" name="button-cesare">Cripta</button>
+              </div>
+              <div class="">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
             </div>
           </form>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          <form>
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Testo in chiaro</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserisci un testo">
-            </div>
-          </form>
+          <div class="pt-3 pb-3">
+            <button class="btn btn-lg btn-card-orange" type="submit" name="button-atbash">Cripta</button>
+          </div>
+          <div class="">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
         </div>
       </div>
     </main>
 
     <footer class="text-muted">
-     <div class="container">
+     <div class="container-fluid">
       <p class="float-right py-3">
        <a href="#">Back to top</a>
       </p>
@@ -127,16 +139,20 @@
 
     <!-- JQuery -->
     <script type="text/javascript">
-        $(document).ready(function() {
-          $("a.scroll-down").click(function() {
-            $('html, body').animate({
-              scrollTop: $(".down").offset().top
-            }, 1200);
-          });
+
+      //==== Scroll down when click keyboard_arrow ====
+
+      $(document).ready(function() {
+        $(".scroll-down").click(function() {
+          $('html, body').animate({
+            scrollTop: $(".down").offset().top
+          }, 1200);
         });
-    </script>
-    <script type="text/javascript">
-          // Hide Header on on scroll down
+      });
+
+
+      //==== Hide Header on on scroll down ====
+
       var didScroll;
       var lastScrollTop = 0;
       var delta = 5;
@@ -175,8 +191,5 @@
         lastScrollTop = st;
       }
     </script>
-
-
-
   </body>
 </html>
