@@ -1,0 +1,13 @@
+/* Font Rules */
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto-Light.ttf') format('truetype');
+}
+
+*, *::before, *::after {
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}

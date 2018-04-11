@@ -1,0 +1,19 @@
+.jumbotron {
+  border-radius: 0;
+  margin-bottom: 0;
+  padding-top: 120px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.jumbotron-calc {
+  @include jumbotron-color($gradient: "calc");
+}
+
+.jumbotron-crypto {
+  @include jumbotron-color($gradient: "crypto");
+}
+
+.jumbotron-heading{
+  font-size: 3.5rem;
+}

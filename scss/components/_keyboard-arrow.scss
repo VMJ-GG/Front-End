@@ -1,0 +1,15 @@
+.scroll-down{
+  text-decoration: none;
+  color: $white;
+}
+
+.scroll-down > i {
+    position: relative;
+    bottom: -6px;
+    transition: all .5s;
+    font-size: 3rem;
+    &:hover{
+        color: $white;
+        transform: translateY(10px);
+    }
+}

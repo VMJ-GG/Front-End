@@ -23,4 +23,68 @@
   position: fixed;
   transition: top 0.2s ease-in-out; }
 
+.nav-up {
+  top: -56px; }
+
+.nav-down {
+  top: 0; }
+
+.scroll-down {
+  text-decoration: none;
+  color: #fff; }
+
+.scroll-down > i {
+  position: relative;
+  bottom: -6px;
+  transition: all .5s;
+  font-size: 3rem; }
+  .scroll-down > i:hover {
+    color: #fff;
+    transform: translateY(10px); }
+
+.card {
+  border: 0;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
+  transition: all .2s ease; }
+  .card:hover {
+    box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.5); }
+
+.card-body {
+  cursor: auto; }
+
+.card-img-top {
+  display: block; }
+
+#legend {
+  background: linear-gradient(145deg, #3b3c3e, #5b5757, #4a4747, #3b3c3e); }
+
+.container-fluid {
+  padding: 0 40px; }
+
+.jumbotron {
+  border-radius: 0;
+  margin-bottom: 0;
+  padding-top: 120px;
+  padding-bottom: 30px;
+  text-align: center; }
+
+.jumbotron-calc {
+  background: linear-gradient(60deg, #005cb3, #1ed775); }
+
+.jumbotron-crypto {
+  background: linear-gradient(50deg, #e67300, #de1452); }
+
+.jumbotron-heading {
+  font-size: 3.5rem; }
+
+/* Font Rules */
+@font-face {
+  font-family: 'Roboto';
+  src: url("./fonts/Roboto-Light.ttf") format("truetype"); }
+*, *::before, *::after {
+  font-family: 'Roboto', Helvetica, sans-serif; }
+
+html, body {
+  height: 100%; }
+
 /*# sourceMappingURL=main.css.map */

@@ -17,14 +17,14 @@
     <title>Calcolo Numerico</title>
   </head>
   <body>
-    <header class="nav-down">
+
+    <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Papaya</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
@@ -38,7 +38,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="CalcoloNumerico.html">Calcolo Numerico</a>
-                <div class="dropdown-divider"></div>
+                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Crittografia.html">Crittografia</a>
               </div>
             </li>
@@ -52,22 +52,16 @@
     </header>
 
     <main role="main">
-      <section class="jumbotron text-center text-light" style="background: linear-gradient(60deg, #005cb3, #1ed775);">
-       <a class="scroll-down" href="#">
+      <section class="jumbotron jumbotron-calc text-light">
         <div class="container">
           <h1 class="jumbotron-heading ">Calcolo Numerico</h1>
             <div class="lead text-light">
               Una raccolta di metodi per il calcolo numerico completi di
               descrizione, nel caso tu abbia dimenticato la calcolatrice.
             </div>
-            <div class="show-more">
-              Scopri
-             <i class="material-icons md-48">keyboard_arrow_down</i>
-           </div>
+             <a class="scroll-down" href="#"><i class="material-icons md-48">keyboard_arrow_down</i></a>
         </div>
-      </a>
       </section>
-
       <div class="album bg-light">
         <div class="container-fluid px-5">
          <a class="down"></a>
@@ -75,72 +69,94 @@
            <div class="row">
             <div class="col-md-6 col-lg-3">
              <div class="card mb-4 box-shadow">
-              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/pi.png" data-holder-rendered="true" style="display: block;">
-              <div class="centered lead ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-                <div class="card-body">
-                 <h3 class="">Pi Greco</h3>
-                  <div class="d-flex justify-content-between align-items-center">
-                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-card-blue">Vai</button>
-                    </div>
-                   <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
+              <img class="card-img-top" src="./images/pi.png">
+              <div class="card-body">
+               <h3 class="">Pi Greco</h3>
+               <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+               <button type="button" class="btn btn-sm btn-card-blue">Vai</button>
+              </div>
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
              <div class="card mb-4 box-shadow">
-              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/rad.png" data-holder-rendered="true" style="display: block;">
-              <div class="centered lead ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-               <div class="card-body">
-                <h3 class="">Radice Quadrata</h3>
-                 <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                   <button type="button" class="btn btn-sm btn-card-blue">Vai</button>
-                   </div>
-                   <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
+              <img class="card-img-top" src="./images/rad.png">
+              <div class="card-body">
+               <h3 class="">Radice quadrata</h3>
+               <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+               <button type="button" class="btn btn-sm btn-card-blue">Vai</button>
+              </div>
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
              <div class="card mb-4 box-shadow">
-              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/funz.png" data-holder-rendered="true" style="display: block;">
-              <div class="centered lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+              <img class="card-img-top" src="./images/funz.png">
                <div class="card-body">
                 <h3 class="">Funzioni</h3>
-                 <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                   <button type="button" class="btn btn-sm btn-card-blue">Vai</button>
-                  </div>
-                 <small class="text-muted">9 mins</small>
-                </div>
+                <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+                <button type="button" class="btn btn-sm btn-card-blue">Vai</button>
                </div>
               </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
              <div class="card mb-4 box-shadow">
-              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/nep.png" data-holder-rendered="true" style="display: block;">
-              <div class="centered lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+              <img class="card-img-top" src="./images/nep.png">
                <div class="card-body">
                 <h3 class="">Numero di Nepero</h3>
-                 <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                   <button type="button" class="btn btn-sm btn-card-blue">Vai</button>
-                  </div>
-                 <small class="text-muted">9 mins</small>
-                </div>
+                <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+                <button type="button" class="btn btn-sm btn-card-blue">Vai</button>
                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="container-fluid" id="legend">
+        <div class="row">
+          <div class="col-md">
+            <div class="cover">
+              <div class="caption">
+                <div class="caption-head ">
+                  <h2 class="text-light pt-4 pb-2">Alcune precisazioni:</h2>
+                  <hr class="bg-light">
+                </div>
+                <div class="caption-body text-light pb-5">
+                  <div class="row">
+                    <div class="col-2 ">
+                      <div class="">
+                        Testo in chiaro:
+                      </div>
+                      <div class="">
+                        Testo cifrato:
+                      </div>
+                      <div class="">
+                        La chiave:
+                      </div>
+                    </div>
+                    <div class="col-10">
+                      <div class="">
+                        il messaggio da trasmettere.
+                      </div>
+                      <div class="">
+                        il crittogramma.
+                      </div>
+                      <div class="">
+                        lo strumento che permette di  crittare decrittare il testo in chiaro.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
 
     <footer class="text-muted">
-     <div class="container ">
+     <div class="container-fluid">
       <p class="float-right py-3">
        <a href="#">Back to top</a>
       </p>
@@ -162,16 +178,20 @@
 
     <!-- JQuery -->
     <script type="text/javascript">
-        $(document).ready(function() {
-          $("a.scroll-down").click(function() {
-            $('html, body').animate({
-              scrollTop: $(".down").offset().top
-            }, 1200);
-          });
+
+      //==== Scroll down when click keyboard_arrow ====
+
+      $(document).ready(function() {
+        $(".scroll-down").click(function() {
+          $('html, body').animate({
+            scrollTop: $(".down").offset().top
+          }, 1200);
         });
-    </script>
-    <script type="text/javascript">
-          // Hide Header on on scroll down
+      });
+
+
+      //==== Hide Header on on scroll down ====
+
       var didScroll;
       var lastScrollTop = 0;
       var delta = 5;
@@ -210,8 +230,5 @@
         lastScrollTop = st;
       }
     </script>
-
-
-
   </body>
 </html>

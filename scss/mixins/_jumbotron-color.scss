@@ -1,0 +1,3 @@
+@mixin jumbotron-color($gradient: "black") {
+  background: map-get($gradients, $gradient);
+}

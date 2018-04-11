@@ -1,0 +1,16 @@
+.card {
+  border: 0;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
+  transition: all .2s ease;
+  &:hover {
+    box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+.card-body {
+  cursor:auto;
+}
+
+.card-img-top {
+  display: block;
+}
