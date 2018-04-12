@@ -15,6 +15,10 @@
     @include jumbotron-color("crypto");
   }
 
+  &.jumbotron-mongMonal {
+    @include jumbotron-color("mongMonal");
+  }
+
   > .jumbotron-head {
     font-size: 3.5rem;
   }

@@ -6,6 +6,8 @@ $(document).ready(function() {
     }, 1200);
   });
 
+  // Focus directly input in section
+  $('.input-wrapper > input').focus();
 
   //==== Hide Header on on scroll down ====
   var didScroll;

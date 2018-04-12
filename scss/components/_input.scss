@@ -5,11 +5,33 @@
   justify-content: center;
 
   > input {
+    flex: 1;
     padding: 0 10rem;
     line-height: 1.5;
     font-size: 3.5rem;
     background: transparent;
     border: none;
-  }
+    color: $white;
 
+    &::-webkit-input-placeholder {
+      color: rgba($white, .7);
+    }
+  }
+}
+
+.input-method {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  > input {
+    flex: 1;
+    padding: 0 3rem;
+    line-height: 1.5;
+    font-size: 2.5rem;
+    background: transparent;
+    border: none;
+    color: $black;
+  }
 }
