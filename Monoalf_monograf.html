@@ -56,7 +56,10 @@
       <section class="jumbotron jumbotron-crypto">
         <div class="jumbotron-body h-100">
           <div class="input-wrapper">
-            <input class="" type="text" placeholder="Inserisci il testo">
+            <input class="input-placeholder" type="text">
+            <a class="input-writer" data-phrases='["Vincenzo é...", "...molto cretino...", "...super coglione...", "...ma gli vogliamo bene comunque!"]' data-duration="2000">
+              <span class="output"></span>
+            </a>
           </div>
         </div>
       </section>
@@ -140,60 +143,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./js/arrowPulse.js"></script>
+    <script src="./js/inputTextWriter.js"></script>
+    <script src="./js/main.js"></script>
 
-    <!-- JQuery -->
-    <script type="text/javascript">
-
-      //==== Scroll down when click keyboard_arrow ====
-
-      $(document).ready(function() {
-        $(".scroll-down").click(function() {
-          $('html, body').animate({
-            scrollTop: $(".down").offset().top
-          }, 1200);
-        });
-      });
-
-
-      //==== Hide Header on on scroll down ====
-
-      var didScroll;
-      var lastScrollTop = 0;
-      var delta = 5;
-      var navbarHeight = $('header').outerHeight();
-
-      $(window).scroll(function(event){
-        didScroll = true;
-      });
-
-      setInterval(function() {
-        if (didScroll) {
-            hasScrolled();
-            didScroll = false;
-        }
-      }, 250);
-
-      function hasScrolled() {
-        var st = $(this).scrollTop();
-
-        // Make sure they scroll more than delta
-        if(Math.abs(lastScrollTop - st) <= delta)
-            return;
-
-        // If they scrolled down and are past the navbar, add class .nav-up.
-        // This is necessary so you never see what is "behind" the navbar.
-        if (st > lastScrollTop && st > navbarHeight){
-            // Scroll Down
-            $('header').removeClass('nav-down').addClass('nav-up');
-        } else {
-            // Scroll Up
-            if(st + $(window).height() < $(document).height()) {
-                $('header').removeClass('nav-up').addClass('nav-down');
-            }
-        }
-
-        lastScrollTop = st;
-      }
-    </script>
   </body>
 </html>

@@ -98,7 +98,9 @@ html, body {
   display: flex;
   flex-flow: column;
   justify-content: center; }
-  .input-wrapper > input {
+  .input-wrapper .input-placeholder {
+    display: none; }
+  .input-wrapper > .input-writer > .output {
     padding: 0 10rem;
     line-height: 1.5;
     font-size: 3.5rem;
