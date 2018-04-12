@@ -83,6 +83,8 @@ html, body {
     background: linear-gradient(60deg, #005cb3, #1ed775); }
   .jumbotron.jumbotron-crypto {
     background: linear-gradient(50deg, #e67300, #de1452); }
+  .jumbotron.jumbotron-mongMonal {
+    background: linear-gradient(40deg, #f51258, #f5c812); }
   .jumbotron > .jumbotron-head {
     font-size: 3.5rem; }
   .jumbotron > .jumbotron-body {
@@ -105,6 +107,34 @@ html, body {
     line-height: 1.5;
     font-size: 3.5rem;
     background: transparent;
-    border: none; }
+    border: none;
+    color: #fff; }
+    .input-wrapper > .input-writer > .output::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.7); }
+
+.input-method {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center; }
+  .input-method > input {
+    flex: 1;
+    padding: 0 3rem;
+    line-height: 1.5;
+    font-size: 2.5rem;
+    background: transparent;
+    border: none;
+    color: #000; }
+
+.select-key {
+  background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+  overflow: hidden; }
+  .select-key > select {
+    background: transparent;
+    background: linear-gradient(50deg, #ef14c8, #14efd3);
+    border: none;
+    overflow: hidden;
+    font-size: 1.3rem;
+    padding: 0 3rem; }
 
 /*# sourceMappingURL=main.css.map */
