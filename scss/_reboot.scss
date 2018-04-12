@@ -1,7 +1,6 @@
-/* Font Rules */
 @font-face {
   font-family: 'Roboto';
-  src: url('./fonts/Roboto-Light.ttf') format('truetype');
+  src: url('../fonts/Roboto-Light.ttf') format('truetype');
 }
 
 *, *::before, *::after {
@@ -10,4 +9,8 @@
 
 html, body {
   height: 100%;
+}
+
+*:focus, *:active {
+  outline: none !important;
 }

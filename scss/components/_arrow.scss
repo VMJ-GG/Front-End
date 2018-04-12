@@ -1,0 +1,18 @@
+.arrow {
+  text-decoration: none;
+  color: $white;
+  > i {
+      position: relative;
+      bottom: -6px;
+      font-size: 3rem;
+      transition: all .5s ease-in-out;
+      transform: translateY(0);
+      &:hover {
+        color: $white;
+      }
+  }
+  &.animate > i {
+      color: $white;
+      transform: translateY(10px);
+  }
+}

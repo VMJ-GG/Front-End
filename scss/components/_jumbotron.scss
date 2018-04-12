@@ -1,18 +1,27 @@
 .jumbotron {
+  height: 320px;
   border-radius: 0;
-  margin-bottom: 0;
-  padding-top: 120px;
-  padding-bottom: 30px;
-}
+  margin-top: 56px;
+  margin-bottom: 30px;
+  color: #f8f9fa;
+  text-align: center;
+  cursor: pointer;
 
-.jumbotron-calc {
-  @include jumbotron-color($gradient: "calc");
-}
+  &.jumbotron-calc {
+    @include jumbotron-color("calc");
+  }
 
-.jumbotron-crypto {
-  @include jumbotron-color($gradient: "crypto");
-}
+  &.jumbotron-crypto {
+    @include jumbotron-color("crypto");
+  }
 
-.jumbotron-heading{
-  font-size: 3.5rem;
+  > .jumbotron-head {
+    font-size: 3.5rem;
+  }
+
+  > .jumbotron-body {
+    margin-bottom: .7rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
 }
