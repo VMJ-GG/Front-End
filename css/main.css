@@ -70,7 +70,7 @@ html, body {
   .card .card-body {
     cursor: auto; }
   .card .card-img-top {
-    display: block; }
+    height: 300px; }
 
 #legend {
   background: linear-gradient(145deg, #3b3c3e, #5b5757, #4a4747, #3b3c3e); }
