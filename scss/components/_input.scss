@@ -1,24 +1,32 @@
+@mixin input-writer() {
+  line-height: 1.5;
+  font-size: 3.5rem;
+  background: transparent;
+  color: $white;
+}
+
 .input-wrapper {
   height: 100%;
+  position: relative;
   display: flex;
   flex-flow: column;
   justify-content: center;
 
-  .input-placeholder {
-    display: none;
-  }
-
   > .input-writer > .output {
-    padding: 0 10rem;
-    line-height: 1.5;
-    font-size: 3.5rem;
-    background: transparent;
-    border: none;
-    color: $white;
+    border-right: .2rem solid $white;
+    @include input-writer();
 
+    /* In realtà questo qui é inutile
     &::-webkit-input-placeholder {
       color: rgba($white, .7);
     }
+    */
+  }
+
+  > input[type="text"] {
+    border: 0;
+    text-align: center;
+    @include input-writer();
   }
 }
 

@@ -5,7 +5,7 @@
     var elem = $(this);
     var phrases = elem.attr('data-phrases');
     var duration = elem.attr('data-duration');
-    new TextWriter(elem, phrases, duration);
+    return new TextWriter(elem, phrases, duration);
   };
 
   function TextWriter(elem, phrases, duration) {
@@ -14,11 +14,23 @@
     this.duration = parseInt(duration, 10) || 2000;
     this.loopIndex = 0;
     this.text = '';
-    this.write();
     this.isDeleting = false;
+    this.fn = null;
+
+    // Immediately start typing
+    this.play();
   };
 
-  TextWriter.prototype.write = function() {
+  TextWriter.prototype.play = function () {
+    this._clear();
+    this._type();
+  };
+
+  TextWriter.prototype.stop = function () {
+    clearTimeout(this.fn);
+  };
+
+  TextWriter.prototype._type = function() {
     var i = this.loopIndex % this.phrases.length;
     var current = this.phrases[i];
     var interval = 200 - Math.random() * 100;
@@ -42,8 +54,18 @@
       interval = 500;
     }
 
-    setTimeout(function() {
-      self.write();
+
+    this.fn = setTimeout(function() {
+      self._type();
     }, interval);
+  };
+
+  TextWriter.prototype._clear = function () {
+    clearTimeout(this.fn)
+
+    this.loopIndex = 0;
+    this.text = '';
+    this.isDeleting = false;
+    this.fn = null;
   };
 }(jQuery));
