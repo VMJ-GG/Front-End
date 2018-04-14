@@ -100,15 +100,16 @@ html, body {
   display: flex;
   flex-flow: column;
   justify-content: center; }
-  .input-wrapper > input {
-    flex: 1;
+  .input-wrapper .input-placeholder {
+    display: none; }
+  .input-wrapper > .input-writer > .output {
     padding: 0 10rem;
     line-height: 1.5;
     font-size: 3.5rem;
     background: transparent;
     border: none;
     color: #fff; }
-    .input-wrapper > input::-webkit-input-placeholder {
+    .input-wrapper > .input-writer > .output::-webkit-input-placeholder {
       color: rgba(255, 255, 255, 0.7); }
 
 .input-method {

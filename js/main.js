@@ -6,8 +6,22 @@ $(document).ready(function() {
     }, 1200);
   });
 
-  // Focus directly input in section
-  $('.input-wrapper > input').focus();
+  var INPUT_TEXT_WRITER = '.input-wrapper > .input-writer';
+  $(INPUT_TEXT_WRITER).on('click', function(e) {
+    e.stopPropagation();
+    var placeHolder = $(this).prev();
+
+    placeHolder.focus();  // Focus the hidden element
+    setTimeout(function() {}, 0); // Stop typing
+    $(INPUT_TEXT_WRITER + '> .output').empty(); // Clear ouput content
+  });
+  $(window).on('click', function() {
+    $(INPUT_TEXT_WRITER).textWriter(); // Start typing again
+  });
+
+  // Start typing text on the banner
+  $(INPUT_TEXT_WRITER).textWriter();
+
 
   //==== Hide Header on on scroll down ====
   var didScroll;

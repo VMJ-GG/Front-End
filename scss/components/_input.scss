@@ -4,8 +4,11 @@
   flex-flow: column;
   justify-content: center;
 
-  > input {
-    flex: 1;
+  .input-placeholder {
+    display: none;
+  }
+
+  > .input-writer > .output {
     padding: 0 10rem;
     line-height: 1.5;
     font-size: 3.5rem;
