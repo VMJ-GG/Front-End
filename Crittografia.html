@@ -66,49 +66,43 @@
           <h1 class="pt-4 pb-2">Cifrari per Sostituzione</h1>
           <div class="row">
             <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <div class="">
-                  <img class="card-img-top" alt="Immagine non trovata" src="./images/img1.png" data-holder-rendered="true">
-                </div>
+             <div class="card mb-4 box-shadow">
+               <div class="">
+                <img class="card-img-top" alt="Immagine non trovata" src="./images/img3.svg" data-holder-rendered="true">
+               </div>
                 <div class="card-body">
                   <h3> Monografica</h3>
                   <h3> Monoalfabetica</h3>
                   <div class="card-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
                   </div>
-                  <button type="button" class="btn btn-md btn-card-orange">
-                    <a href="Monoalf_monograf.html">Vai</a>
-                  </button>
+                  <a class="btn btn-md btn-card-orange" href="Monoalf_monograf.html">Vai</a>
                 </div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" alt="Immagine non trovata" src="./images/img2.png">
+                <img class="card-img-top" alt="Immagine non trovata" src="./images/img3.svg">
                   <div class="card-body">
                     <h3> Monografica</h3>
                     <h3> Polialfabetica</h3>
                     <div class="card-text">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
                     </div>
-                    <button type="button" class="btn btn-md btn-card-orange">
-                      <a href="#">Vai</a>
-                    </button>
+                    <a class="btn btn-md btn-card-orange" href="#">Vai</a>
                   </div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" alt="Immagine non trovata" src="./images/img3.png">
+                <img class="card-img-top" alt="Immagine non trovata" src="./images/img3.svg">
                 <div class="card-body">
                   <h3> Poligrafica</h3>
                   <h3> Monoalfabetica</h3>
                   <div class="card-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
                   </div>
-                  <button type="button" class="btn btn-md btn-card-orange">
-                    <a href="#">vai</a>
-                  </button>
+                  <a class="btn btn-md btn-card-orange" href="#">Vai</a>
                 </div>
               </div>
             </div>
@@ -123,14 +117,12 @@
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="./images/img3.png">
+                <img class="card-img-top" src="./images/img3.svg">
                 <div class="card-body">
                   <div class="card-text">
                     This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                   </div>
-                  <button type="button" class="btn btn-md btn-card-orange">
-                    <a href="#">Vai</a>
-                  </button>
+                  <a class="btn btn-md btn-card-orange" href="#">Vai</a>
                 </div>
               </div>
             </div>
@@ -185,7 +177,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/arrowPulse.js"></script>
+    <script src="./arrowPulse.js" charset="utf-8"></script>
+    <script src="./js/navbarScrolling.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('.jumbotron').click(function() {
+        $('html, body').animate({
+          scrollTop: $('#subsitution').offset().top
+        }, 1200);
+      });
+    </script>
   </body>
 </html>

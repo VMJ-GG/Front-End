@@ -1,14 +1,10 @@
 @mixin button-card-color($color: "white") {
   border-color:     map-get($colors, $color);
   background-color: $white;
-  > a {
-    color: map-get($colors, $color);
-    text-decoration: none;
-  }
+  color: map-get($colors, $color);
+  text-decoration: none;
   &:hover {
     background-color: map-get($colors, $color);
-    > a {
-      color: $white;
-    }
+    color: $white;
   }
 }
