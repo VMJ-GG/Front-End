@@ -30,3 +30,26 @@ $gradients: (
   "calc":      $calc,
   "mongMonal": $mongMonal
 );
+
+// Animations Defaults
+$animation-defaults: (
+  "duration":        0s,
+  "timing-function": ease,
+  "delay":           0s,
+  "iteration-count": 1,
+  "direction":       normal,
+  "fill-mode":       none,
+  "play-state":      running
+);
+
+$slide-up-down: map-merge($animation-defaults, (
+  "duration":        .75s,
+  "timing-function": ease-in-out,
+  "iteration-count": infinite,
+  "direction":       alternate
+));
+
+// Animations Map
+$animations: (
+  "slideUpDown": $slide-up-down
+);

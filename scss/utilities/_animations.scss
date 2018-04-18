@@ -1,0 +1,16 @@
+@keyframes slideUpDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+
+@mixin slide-up-down() {
+  animation: animation("slideUpDown") slideUpDown !important;
+}
+
+.slide-up-down {
+  @include slide-up-down();
+}
