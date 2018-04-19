@@ -10,7 +10,7 @@ namespace :compile do
     sh "sass --style=compressed scss/main.scss:css/main.min.css"
   end
 
-  task :compact do
+  task :singleline do
     sh "sass --style=compact scss/main.scss:css/main.compact.css"
   end
 end
