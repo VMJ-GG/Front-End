@@ -4,18 +4,21 @@
   <g id="Livello_2"/>
   <g id="Livello_2">
     <path d="M93.12,465.5 L230.806,465.5 C234.207,465.5 236.963,467.892 236.963,470.843 L236.963,610.157 C236.963,613.108 234.207,615.5 230.806,615.5 L93.12,615.5 C89.72,615.5 86.963,613.108 86.963,610.157 L86.963,470.843 C86.963,467.892 89.72,465.5 93.12,465.5 z" fill-opacity="0" stroke="#454545" stroke-width="8"/>
-    <path d="M807.34,465.5 L1036.816,465.5 C1042.483,465.5 1047.078,467.892 1047.078,470.843 L1047.078,610.157 C1047.078,613.108 1042.483,615.5 1036.816,615.5 L807.34,615.5 C801.672,615.5 797.078,613.108 797.078,610.157 L797.078,470.843 C797.078,467.892 801.672,465.5 807.34,465.5 z" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M847.392,366.468 L985.078,366.468 C988.479,366.468 991.235,368.859 991.235,371.81 L991.235,511.125 C991.235,514.076 988.479,516.468 985.078,516.468 L847.392,516.468 C843.992,516.468 841.235,514.076 841.235,511.125 L841.235,371.81 C841.235,368.859 843.992,366.468 847.392,366.468 z" fill-opacity="0" stroke="#454545" stroke-width="8"/>
     <path d="M236.964,540.5 L407.717,540.5" fill-opacity="0" stroke="#454545" stroke-width="8" stroke-linecap="round"/>
-    <path d="M673.283,540.5 L797.078,540.5" fill-opacity="0" stroke="#454545" stroke-width="8" stroke-linecap="round"/>
+    <path d="M673.283,564.471 L732.551,564.471" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M762.413,594.376 L762.413,610.095" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M673.283,564.042 L673.283,564.042" fill-opacity="0" stroke="#454545" stroke-width="8"/>
     <path d="M673.283,617.162 L540.5,693.824 L407.717,617.162 L407.717,463.838 L540.5,387.176 L673.283,463.838 z" fill-opacity="0" stroke="#454545" stroke-width="8" stroke-linejoin="round" stroke-miterlimit="1"/>
-    <text transform="matrix(1, 0, 0, 1, 158.936, 540)">
+    <text transform="matrix(1, 0, 0, 1, 158.937, 540)">
       <tspan x="-36.006" y="42" font-family="SFProDisplay-Medium" font-size="120" fill="#454545">A</tspan>
     </text>
-    <text transform="matrix(1, 0, 0, 1, 868.578, 541)">
-      <tspan x="-36.006" y="41" font-family="SFProDisplay-Medium" font-size="120" fill="#454545">X</tspan>
+    <text transform="matrix(1, 0, 0, 1, 915.735, 440.968)">
+      <tspan x="-38.881" y="41" font-family="SFProDisplay-Medium" font-size="120" fill="#454545">X</tspan>
     </text>
-    <text transform="matrix(1, 0, 0, 1, 975.23, 541)">
-      <tspan x="-36.006" y="41" font-family="SFProDisplay-Medium" font-size="120" fill="#454545">Y</tspan>
+    <path d="M847.392,565.096 L985.078,565.096 C988.479,565.096 991.235,567.488 991.235,570.439 L991.235,709.754 C991.235,712.704 988.479,715.096 985.078,715.096 L847.392,715.096 C843.992,715.096 841.235,712.704 841.235,709.754 L841.235,570.439 C841.235,567.488 843.992,565.096 847.392,565.096 z" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <text transform="matrix(1, 0, 0, 1, 915.735, 639.596)">
+      <tspan x="-37.756" y="41" font-family="SFProDisplay-Medium" font-size="120" fill="#454545">Y</tspan>
     </text>
     <g id="gears">
       <g>
@@ -46,5 +49,13 @@
     <path d="M407.717,463.838 L455.537,491.655" fill-opacity="0" stroke="#454545" stroke-width="5" stroke-linecap="round"/>
     <path d="M600.773,501.155 L673.283,463.838" fill-opacity="0" stroke="#454545" stroke-width="5" stroke-linecap="round"/>
     <path d="M540.5,693.824 L540.982,609.472" fill-opacity="0" stroke="#454545" stroke-width="5" stroke-linecap="round"/>
+    <path d="M792.413,640 C775.845,640 762.413,626.568 762.413,610" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M732.413,564.471 C748.982,564.471 762.413,577.903 762.413,594.471" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M792.339,640 L843.901,640" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M673.283,516.467 L732.551,516.468" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M762.413,486.562 L762.413,470.844" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M792.413,440.939 C775.845,440.939 762.413,454.37 762.413,470.939" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M732.413,516.468 C748.982,516.468 762.413,503.036 762.413,486.467" fill-opacity="0" stroke="#454545" stroke-width="8"/>
+    <path d="M792.339,440.939 L843.901,440.939" fill-opacity="0" stroke="#454545" stroke-width="8"/>
   </g>
 </svg>
