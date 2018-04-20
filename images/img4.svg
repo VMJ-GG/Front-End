@@ -8,12 +8,8 @@
     <path d="M236.963,540.5 L321.939,540.5" fill-opacity="0" stroke="#454545" stroke-width="8" stroke-linecap="round"/>
     <path d="M755.867,540.5 L843.66,540.5" fill-opacity="0" stroke="#454545" stroke-width="8" stroke-linecap="round"/>
     <path d="M518.514,540.5 L564.492,540.5" fill-opacity="0" stroke="#454545" stroke-width="8" stroke-linecap="round"/>
-    <text transform="matrix(1, 0, 0, 1, 158.936, 540)">
-      <tspan x="-36.006" y="42" font-family="SFProDisplay-Medium" font-size="120" fill="#454545">A</tspan>
-    </text>
-    <text transform="matrix(1, 0, 0, 1, 918.16, 540)">
-      <tspan x="-36.006" y="41" font-family="SFProDisplay-Medium" font-size="120" fill="#454545">Z</tspan>
-    </text>
+    <path d="M185.802,582 L199.688,582 L169.161,497.449 L154.981,497.449 L124.454,582 L138.106,582 L145.841,559.148 L178.067,559.148 z M161.778,511.512 L162.13,511.512 L174.728,548.602 L149.181,548.602 z" fill="#454545"/>
+    <path d="M887.72,581 L951.236,581 L951.236,569.633 L904.009,569.633 L904.009,569.223 L950.123,505.414 L950.123,496.449 L889.127,496.449 L889.127,507.758 L934.009,507.758 L934.009,508.227 L887.72,572.035 z" fill="#454545"/>
     <g>
       <path d="M515.542,596.466 L420.338,651.432 L325.133,596.466 L325.133,486.534 L420.338,431.568 L515.542,486.534 z" fill-opacity="0" stroke="#454545" stroke-width="8" stroke-linejoin="round" stroke-miterlimit="1"/>
       <g id="gears">
