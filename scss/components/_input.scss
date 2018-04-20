@@ -13,14 +13,8 @@
   justify-content: center;
 
   > .input-writer > .output {
-    border-right: .2rem solid $white;
+    border-right: 1px solid $white;
     @include input-writer();
-
-    /* In realtà questo qui é inutile
-    &::-webkit-input-placeholder {
-      color: rgba($white, .7);
-    }
-    */
   }
 
   > input[type="text"] {
