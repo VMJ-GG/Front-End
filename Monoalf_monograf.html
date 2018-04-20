@@ -56,9 +56,8 @@
         <div class="jumbotron-body">
           <div class="input-wrapper">
             <input id="clear-text" type="text" class="d-none">
-            <a class="input-writer" data-phrases='["Vincenzo é...", "...molto intelligente...", "...super coglione...", "...ma gli vogliamo bene comunque!"]' data-duration="2000">
-              <span class="output"></span>
-            </a>
+            <a class="input-writer" data-phrases='["il testo", "il messaggio", "quello che vuoi"]' data-duration="2000"></a>
+          </div>
           </div>
           <div class="">
             <button type="button" id="buttonCriptDecript" class="btn btn-light arrow-right" onclick="ChangeText()">Criptazione
@@ -103,14 +102,14 @@
         <!-- Select -->
         <div class="row">
           <div class="col-lg-6 border-right">
-            <div class="output"></div>
+            <div class="output" style="white-space: pre"></div>
             <select class="select"></select>
           </div>
           <div class="col-lg-6 border-left">
             <div class="">
               404 chiave not found
             </div>
-            <div class="output"></div>
+            <div class="output" style="white-space: pre"></div>
           </div>
         </div>
 
@@ -153,11 +152,6 @@
       </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text  style="font-weight:bold;font-size:17pt; font-family:Arial, Helvetica, sans-serif">Thumbnail</text></svg>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -172,7 +166,6 @@
       $(document).ready(function() {
         // Selectors
         var INPUT_WRITER = '.input-wrapper > .input-writer';
-        var INPUT_PLACEHOLDER = '.input-wrapper > .input-placeholder';
 
         // Writer object -> It starts typing by default
         var writer = $(INPUT_WRITER).textWriter();
@@ -207,26 +200,51 @@
           dropupAuto: false,
         }).selectpicker('val', '3');
 
-        $('#clear-text').on('keydown', function(e) {
+        var next = 0;
+        $('#clear-text').on('keyup', function(e) {
           var text = $('.output').first().text();
           var key = e.key;
+          console.log(next);
 
           switch (key) {
             case 'Backspace':
-              $('.output').text( text.slice(0, -1) );
+              next > 0 && next--;
+              $('.output').text(text.slice(0, next) + text.slice(next + 1));
               break;
             case 'ArrowLeft':
-              index !== 0 && index++;
+              next !== 0 && next--;
               break;
             case 'ArrowRight':
-              index < (text.length) && index--;
+              next < (text.length) && next++;
               break;
             case 'Shift':
+            case 'Alt':
+            case 'AltGraph':
+            case 'CapsLock':
+            case 'Control':
+            case 'Fn':
+            case 'FnLock':
+            case 'Alt':
+            case 'Hyper':
+            case 'Meta':
+            case 'NumLock':
+            case 'ScrollLock':
+            case 'Super':
+            case 'OS':
+            case 'Symbol':
+            case 'SymbolLock':
+            case 'Tab':
             case 'ArrowUp':
             case 'ArrowDown':
+            case 'PageUp':
+            case 'PageDown':
+            case 'End':
+            case 'Home':
               break;
             default:
-                $('.output').text(text.slice(0, index) + key + text.slice(index));
+                console.log(key);
+                $('.output').text(text.slice(0, next) + key + text.slice(next));
+                next++;
           }
         });
       });
