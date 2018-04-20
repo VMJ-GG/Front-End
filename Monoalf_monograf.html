@@ -8,8 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" rel="stylesheet">
-
-    <!-- Local CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="./css/main.css">
 
     <!-- Material Design Icons -->
@@ -56,7 +55,7 @@
       <section class="jumbotron jumbotron-mongMonal">
         <div class="jumbotron-body h-100">
           <div class="input-wrapper">
-            <input type="text" class="d-none">
+            <input id="clear-text" type="text" class="d-none">
             <a class="input-writer" data-phrases='["Vincenzo é...", "...molto cretino...", "...super coglione...", "...ma gli vogliamo bene comunque!"]' data-duration="2000">
               <span class="output"></span>
             </a>
@@ -101,18 +100,14 @@
         <!-- Select -->
         <div class="row">
           <div class="col-lg-6 border-right">
-            <div class="select-key">
-              <select class="" name="">
-                <option>Here is the unstyled select box</option>
-                <option>The second option</option>
-                <option>The third option</option>
-              </select>
-            </div>
+            <div class="output"></div>
+            <select class="select"></select>
           </div>
           <div class="col-lg-6 border-left">
             <div class="">
               404 chiave not found
             </div>
+            <div class="output"></div>
           </div>
         </div>
 
@@ -155,7 +150,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="./js/arrowPulse.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/js/bootstrap-select.min.js"></script>
+    <script src="./js/helpers.js" charset="utf-8"></script>
     <script src="./js/inputTextWriter.js" charset="utf-8"></script>
     <script src="./js/navbarScrolling.js" charset="utf-8"></script>
     <script type="text/javascript">
@@ -188,6 +184,36 @@
             .addClass('d-none')
             .blur()
             .val('');
+        });
+
+        $('.select').range({ from: 1, to: 26, step: 1 });
+        $('.select').selectpicker({
+          size: 5,
+          style: 'btn-outline-danger',
+          dropupAuto: false,
+        }).selectpicker('val', '3');
+
+        $('#clear-text').on('keydown', function(e) {
+          var text = $('.output').first().text();
+          var key = e.key;
+
+          switch (key) {
+            case 'Backspace':
+              $('.output').text( text.slice(0, -1) );
+              break;
+            case 'ArrowLeft':
+              index !== 0 && index++;
+              break;
+            case 'ArrowRight':
+              index < (text.length) && index--;
+              break;
+            case 'Shift':
+            case 'ArrowUp':
+            case 'ArrowDown':
+              break;
+            default:
+                $('.output').text(text.slice(0, index) + key + text.slice(index));
+          }
         });
       });
     </script>
