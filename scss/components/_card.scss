@@ -1,17 +1,18 @@
 .card {
   border: 0;
+  margin: 0 20px;
   /*box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);*/
   background-color: $white;
   transition: all .2s ease;
-  &:hover {
-    box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.5);
-  }
-
-  .card-body {
+}
+.card-body {
     cursor: auto;
   }
 
-  .card-image {
-    clip: rect(200px, 0px, 200px, 0px);
+.card-image {
+    height: 100px;
   }
+
+.card-text{
+  margin-bottom: 13px;
 }
