@@ -3,6 +3,11 @@
   src: url('../fonts/Roboto-Light.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Lobster Two';
+  src: url('../fonts/LobsterTwo-Italic.ttf') format('truetype');
+}
+
 *, *::before, *::after {
   font-family: 'Roboto', Helvetica, sans-serif;
 }
