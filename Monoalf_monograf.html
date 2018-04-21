@@ -54,10 +54,12 @@
 
       <section class="jumbotron jumbotron-mongMonal">
         <div class="jumbotron-body">
-          <div class="input-wrapper">
-            <input id="clear-text" type="text" class="d-none">
-            <a class="input-writer" data-phrases='["il testo", "il messaggio", "quello che vuoi"]' data-duration="2000"></a>
-          </div>
+          <div class="gw-container">
+            <div class="gw-static">Inserisci qui</div>
+            <div class="gw-wrapper">
+              <input type="text" class="gw-placeholder">
+              <a class="gw-text" data-phrases='["il testo", "il messaggio", "quello che vuoi"]' data-duration="2000"></a>
+            </div>
           </div>
           <div class="img-container">
             <img src="./images/img1.svg" class="section-image" alt="">
@@ -81,7 +83,7 @@
           </div>
         </div>
 
-        <!-- input -->
+        <!-- input
         <div class="row">
           <div class="col-lg-6 border-right">
               <div class="input-method">
@@ -93,7 +95,7 @@
               <input class="" type="text" placeholder="..." disabled>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Select -->
         <div class="row">
@@ -155,15 +157,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/js/bootstrap-select.min.js"></script>
     <script src="./js/helpers.js" charset="utf-8"></script>
-    <script src="./js/inputTextWriter.js" charset="utf-8"></script>
+    <script src="./js/ghostWriter.js" charset="utf-8"></script>
     <script src="./js/navbarScrolling.js" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         // Selectors
-        var INPUT_WRITER = '.input-wrapper > .input-writer';
+        var INPUT_WRITER = '.gw-wrapper > .gw-text';
 
         // Writer object -> It starts typing by default
-        var writer = $(INPUT_WRITER).textWriter();
+        var writer = $(INPUT_WRITER).ghostWriter();
 
         // === Event Listeners ===
         // Writer's event
@@ -171,19 +173,19 @@
           e.stopPropagation();
 
           writer.stop();  // Stop typing
-          $(INPUT_WRITER).addClass('d-none');
+          $(INPUT_WRITER).addClass('gw-placeholder');
           $(INPUT_WRITER + '> .output').empty();  // Clear ouput content
           $(INPUT_WRITER).prev()
-            .removeClass('d-none')
+            .removeClass('gw-placeholder')
             .focus();
         });
 
         // Window event for stopping writing
         $(window).on('click', function() {
           writer.play(); // Start typing again
-          $(INPUT_WRITER).removeClass('d-none');
+          $(INPUT_WRITER).removeClass('gw-placeholder');
           $(INPUT_WRITER).prev()
-            .addClass('d-none')
+            .addClass('gw-placeholder')
             .blur()
             .val('');
         });
@@ -199,7 +201,6 @@
         $('#clear-text').on('keyup', function(e) {
           var text = $('.output').first().text();
           var key = e.key;
-          console.log(next);
 
           switch (key) {
             case 'Backspace':
@@ -237,9 +238,8 @@
             case 'Home':
               break;
             default:
-                console.log(key);
-                $('.output').text(text.slice(0, next) + key + text.slice(next));
-                next++;
+              $('.output').text(text.slice(0, next) + key + text.slice(next));
+              next++;
           }
         });
       });

@@ -1,14 +1,14 @@
 (function($) {
   'use strict';
 
-  $.fn.textWriter = function() {
+  $.fn.ghostWriter = function() {
     var elem = $(this);
     var phrases = elem.attr('data-phrases');
     var duration = elem.attr('data-duration');
-    return new TextWriter(elem, phrases, duration);
+    return new GhostWriter(elem, phrases, duration);
   };
 
-  function TextWriter(elem, phrases, duration) {
+  function GhostWriter(elem, phrases, duration) {
     this.elem = elem;
     this.phrases = JSON.parse(phrases) || [];
     this.duration = parseInt(duration, 10) || 2000;
@@ -21,16 +21,16 @@
     this.play();
   };
 
-  TextWriter.prototype.play = function () {
+  GhostWriter.prototype.play = function () {
     this._clear();
     this._type();
   };
 
-  TextWriter.prototype.stop = function () {
+  GhostWriter.prototype.stop = function () {
     clearTimeout(this.fn);
   };
 
-  TextWriter.prototype._type = function() {
+  GhostWriter.prototype._type = function() {
     var i = this.loopIndex % this.phrases.length;
     var current = this.phrases[i];
     var interval = 200 - Math.random() * 100;
@@ -41,7 +41,7 @@
     else
       this.text = current.slice(0, this.text.length + 1);
 
-    this.elem.html('<span class="output">' + this.text + '</span>');
+    this.elem.html('<span>' + this.text + '</span>');
 
     if (this.isDeleting) interval /= 2;
 
@@ -60,7 +60,7 @@
     }, interval);
   };
 
-  TextWriter.prototype._clear = function () {
+  GhostWriter.prototype._clear = function () {
     clearTimeout(this.fn)
 
     this.loopIndex = 0;

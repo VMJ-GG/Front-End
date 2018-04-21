@@ -1,0 +1,27 @@
+.gw-container {
+  width: 100%;
+  position: relative;
+
+  > .gw-static {
+    float: left;
+    color: $white;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    background: transparent;
+  }
+
+  > .gw-wrapper {
+    float: left;
+
+    > .gw-placeholder {
+      display: none;
+    }
+
+    > .gw-text > span {
+      color: $white;
+      font-size: 3.5rem;
+      line-height: 1.5;
+      background: transparent;
+    }
+  }
+}
