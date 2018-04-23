@@ -2,6 +2,7 @@
 <html lang="en">
 
   <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +17,7 @@
 
     <title>Crittografia</title>
   </head>
-  <body>
+  <body onload="PR.prettyPrint()">
     <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Papaya</a>
@@ -66,7 +67,7 @@
           </div>
           <div class="">
             <button type="button" id="buttonCriptDecript" class="btn btn-light arrow-right" onclick="ChangeText()">Criptazione
-              <i class="material-icons" >keyboard_arrow_right</i>
+              <i class="material-icons">keyboard_arrow_right</i>
             </button>
           </div>
         </div>
@@ -104,13 +105,32 @@
         <div class="row">
           <div class="col-lg-6 border-right">
             <div class="output" style="white-space: pre"></div>
-            <select class="select"></select>
+            <div class="text-select">La chiave </div><select class="select"></select>
             <div class="caption">
-              <div class="caption-head">
-                Descizione
-              </div>
-              <div class="caption-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <div class="caption-body pt-5 pr-3">
+                <div class=""><h4>Il metodo</h4></div>
+                <div class="px-3">
+                  Il cifrario di Cesare utilizza un metodo a sostituzione monografica monoalfabetica: ogni lettera del testo in chiaro è sostituita nel testo cifrato dalla lettera che si trova un certo numero di posizioni, determinate dalla chiave (che nella sua versione <i>standard</i> è 3), traslata nell'alfabeto. Questi tipi di cifrari sono detti anche cifrari a scorrimento, a causa del loro modo di operare.
+                </div>
+                  <hr>
+                <div class=""><h4>Il codice</h4></div>
+                  <pre class="prettyprint">
+
+  function Cesare(){
+    porca la merda;
+    return(vaffanculo);
+  }
+                  </pre>
+                  <hr>
+                <div class=""><h4>La storia</h4></div>
+                <div class="px-3">
+                  In crittografia il cifrario di Cesare è uno dei più antichi algoritmi crittografici di cui si abbia traccia storica.
+                  Il cifrario di Cesare prende il nome da Giulio Cesare, che lo utilizzava per proteggere i suoi messaggi segreti. Grazie allo storico Svetonio sappiamo che Cesare utilizzava in genere una chiave di 3 per il cifrario, come nel caso della corrispondenza militare inviata alle truppe comandate da Quinto Tullio Cicerone. Al tempo era sicuro perché gli avversari spesso non erano neanche in grado di leggere un testo in chiaro, men che mai uno cifrato; inoltre non esistevano metodi di crittanalisi in grado di rompere tale codice, per quanto banale.
+
+                  Conosciamo anche altri che usarono questo cifrario al tempo di Cesare: Augusto, suo nipote, lo utilizzava con chiave 1, ma senza ripartire da sinistra in caso di fine dell'alfabeto. Quindi, scriveva B per A, C per B ma usava AA per Z.
+
+                  Dalla scoperta dell'analisi delle frequenze da parte del matematico arabo Al-Kindi nell'XI secolo circa, tutti i cifrari di questo tipo sono divenuti molto semplici da rompere; nessuno è adatto per comunicazioni sicure allo stato tecnologico attuale, né lo è stato negli ultimi 1000 anni. Tuttavia, una forma di questo cifrario, chiamata ROT13, è ancora usata oggi per offuscare parti di un messaggio in modo da non renderle immediatamente comprensibili.
+                </div>
               </div>
             </div>
           </div>
@@ -121,11 +141,29 @@
             </div>
             <div class="output" style="white-space: pre"></div>
             <div class="caption">
-              <div class="caption-head">
-                Descizione
-              </div>
-              <div class="caption-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <div class="caption-body pt-5 pl-3">
+                <div class=""><h4>Il metodo</h4></div>
+                  <div class="px-3">
+                  L'atbash è un semplice cifrario a sostituzione monografica monoalfabetica in cui la prima lettera dell'alfabeto è sostituita con l'ultima, la seconda con la penultima, e così via, "invertendo" l'ordine alfabetico delle lettere.
+                  In sostanza consiste nello scrivere metà alfabeto su un rigo e l'altra metà al contrario sul rigo a capo, così che alla A corrisponda la Z alla B la Y ecc.; in questo modo la lettura del cifrario risulta più semplice.
+                  </div>
+                  <hr>
+                <div class=""><h4>Il codice</h4></div>
+                  <pre class="prettyprint">
+
+  function Atbash(){
+    porca la merda;
+    return(vaffanculo);
+  }
+                  </pre>
+                  <hr>
+                <div class=""><h4>La storia</h4></div>
+                  <div class="px-3">
+                  L'origine di questo cifrario si può trovare nella Bibbia, nel libro di Geremia, dove è stato usato per codificare le parole Kasdim (Caldei) in Leb Kamai e Babel (Babele) in Sheshakh. La prima parola decifrata fu Sheshach che veniva ripetuta varie volte nel libro di Geremia (Il re di Sheshach, il popolo di Sheshach, la città di Sheshach) ma dopo varie ricerche non si riusciva a trovare la città nelle cartine. Infine uno studioso applicò il cifrario atbash e venne fuori la parola Babel. Il metodo in cui l'atbash fu usato è molto semplice. In ebraico Sheshach si scrive SH-SH-K, che corrisponde a B-B-L, la cui pronuncia è Babel, cioè Babele.
+
+                  Il nome stesso del cifrario viene dalla lingua ebraica: la prima lettera dell'alfabeto ebraico è aleph, l'ultima taw, la seconda beth, e la penultima shin; messe assieme, formano la parola atbash.
+                    <div class="source pt-4">Source: Wikipedia.</div>
+                  </div>
               </div>
             </div>
           </div>
@@ -133,14 +171,6 @@
       </div>
     </main>
 
-
-    <footer class="text-muted">
-     <div class="container-fluid">
-      <p class="float-right py-3">
-       <a href="#">Back to top</a>
-      </p>
-      </div>
-    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -152,7 +182,9 @@
     <script src="./js/ghostWriter.js" charset="utf-8"></script>
     <script src="./js/navbarScrolling.js" charset="utf-8"></script>
     <script src="./js/fromCriptToDecript.js" charset="utf-8"></script>
+
     <script type="text/javascript">
+
       $(document).ready(function() {
         // Selectors
         var PLACEHOLDER = '.gw-placeholder';
