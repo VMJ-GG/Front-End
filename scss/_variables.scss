@@ -1,6 +1,7 @@
 // Colors
 $white: #fff;
 $black: #000;
+$light-black: #282C34;
 $orange: #e67300;
 $blue:   #005cb3;
 $violet: #555cb3;
@@ -10,11 +11,13 @@ $mP: #f23d20;
 $pM: #de1452;
 
 
+
 // Colors' Map
 $colors: (
   "orange":      $orange,
   "violet":      $violet,
   "blue":        $blue,
+  "light-black": $light-black,
   "light-grey":  $light-grey,
   "mM":          $mM,
   "mP":          $mP,
