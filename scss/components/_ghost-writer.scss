@@ -34,7 +34,7 @@
       > .gw-text > span {
         border-right: 1px solid $white;
         white-space: pre;
-        text-align: left;
+        text-align: center;
         font-family: 'Lobster Two', cursive, serif;
         font-style: italic;
         @include ghost-writer-text-styles($line-height: 1.43);

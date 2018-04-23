@@ -1,23 +1,25 @@
 <!doctype html>
 <html lang="en">
-
   <head>
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" rel="stylesheet">
+    <!-- CSSs -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./vendor/css/snappy-light-prettify.css">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="./vendor/js/prettify.js"></script>
 
     <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Crittografia</title>
   </head>
-  <body onload="PR.prettyPrint()">
+  <body>
     <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Papaya</a>
@@ -113,15 +115,12 @@
                   Il cifrario di Cesare utilizza un metodo a sostituzione monografica monoalfabetica: ogni lettera del testo in chiaro è sostituita nel testo cifrato dalla lettera che si trova un certo numero di posizioni, determinate dalla chiave (che nella sua versione <i>standard</i> è 3), traslata nell'alfabeto. Questi tipi di cifrari sono detti anche cifrari a scorrimento, a causa del loro modo di operare.
                 </div>
                   <hr>
-                <div class=""><h4>Il codice</h4></div>
-                  <pre class="prettyprint">
-
-  function Cesare(){
-    porca la merda;
-    return(vaffanculo);
-  }
-                  </pre>
-                  <hr>
+                <div class=""><h4>Il codice</h4></div><pre class="prettyprint linenums">
+function Cesare() {
+&nbsp;&nbsp;porca la merda;
+&nbsp;&nbsp;return(vaffanculo);
+}</pre>
+                <hr>
                 <div class=""><h4>La storia</h4></div>
                 <div class="px-3">
                   In crittografia il cifrario di Cesare è uno dei più antichi algoritmi crittografici di cui si abbia traccia storica.
@@ -148,14 +147,11 @@
                   In sostanza consiste nello scrivere metà alfabeto su un rigo e l'altra metà al contrario sul rigo a capo, così che alla A corrisponda la Z alla B la Y ecc.; in questo modo la lettura del cifrario risulta più semplice.
                   </div>
                   <hr>
-                <div class=""><h4>Il codice</h4></div>
-                  <pre class="prettyprint">
-
-  function Atbash(){
-    porca la merda;
-    return(vaffanculo);
-  }
-                  </pre>
+                <div class=""><h4>Il codice</h4></div><pre class="prettyprint linenums">
+function Atbash() {
+&nbsp;&nbsp;porca la merda;
+&nbsp;&nbsp;return(vaffanculo);
+}</pre>
                   <hr>
                 <div class=""><h4>La storia</h4></div>
                   <div class="px-3">
@@ -178,10 +174,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/js/bootstrap-select.min.js"></script>
-    <script src="./js/helpers.js" charset="utf-8"></script>
-    <script src="./js/ghostWriter.js" charset="utf-8"></script>
-    <script src="./js/navbarScrolling.js" charset="utf-8"></script>
-    <script src="./js/fromCriptToDecript.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/helpers.js"></script>
+    <script type="text/javascript" src="./js/ghostWriter.js"></script>
+    <script type="text/javascript" src="./js/navbarScrolling.js"></script>
+    <script type="text/javascript" src="./js/fromCriptToDecript.js"></script>
 
     <script type="text/javascript">
 
@@ -272,6 +268,9 @@
               $('.output').text(text);
           }
         });
+
+        // Run prettify.js
+        PR.prettyPrint();
       });
     </script>
   </body>
