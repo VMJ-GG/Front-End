@@ -5,13 +5,20 @@ $orange: #e67300;
 $blue:   #005cb3;
 $violet: #555cb3;
 $light-grey: #f8f9fa;
+$mM: #e67300;
+$mP: #f23d20;
+$pM: #de1452;
+
 
 // Colors' Map
 $colors: (
   "orange":      $orange,
   "violet":      $violet,
   "blue":        $blue,
-  "light-grey":  $light-grey
+  "light-grey":  $light-grey,
+  "mM":          $mM,
+  "mP":          $mP,
+  "pM":          $pM
 );
 
 // Gradients

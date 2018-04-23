@@ -7,3 +7,18 @@
   padding: 0 20px;
   @include button-card-color("blue");
 }
+
+.btn-card-mM {
+  padding: 0 20px;
+  @include button-card-color("mM");
+}
+
+.btn-card-mP {
+  padding: 0 20px;
+  @include button-card-color("mP");
+}
+
+.btn-card-pM {
+  padding: 0 20px;
+  @include button-card-color("pM");
+}
