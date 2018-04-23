@@ -14,8 +14,6 @@
     <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
-
     <title>Crittografia</title>
   </head>
   <body>
@@ -53,16 +51,17 @@
     </header>
 
     <main class="container-fluid px-0" role="main">
-
       <section class="jumbotron jumbotron-mongMonal">
         <div class="jumbotron-body">
           <div class="gw-container">
-            <div class="gw-static">
-              <span>Inserisci qui</span>
-            </div>
-            <div class="gw-wrapper">
-              <input type="text" class="gw-placeholder">
-              <a class="gw-text" data-phrases='[" il testo...", " il messaggio...", " quello che vuoi..."]' data-duration="2000"></a>
+            <input type="text" class="d-none">
+            <div class="gw-placeholder">
+              <div class="gw-static">
+                <span>Inserisci qui</span>
+              </div>
+              <div class="gw-wrapper">
+                <a class="gw-text" data-phrases='[" il testo...", " il messaggio...", " quello che vuoi..."]' data-duration="2000"></a>
+              </div>
             </div>
           </div>
           <div class="">
@@ -93,14 +92,10 @@
 
         <!-- input
         <div class="row">
-          <div class="col-lg-6 border-right">
-              <div class="input-method">
-                <input class="" type="text" placeholder="..." disabled>
-              </div>
-          </div>
-          <div class="col-lg-6 border-left">
-            <div class="input-method">
-              <input class="" type="text" placeholder="..." disabled>
+          <div class="col-lg-6">
+            <div class="title">
+              <h1>Cesare</h1>
+              <div class="hr"></div>
             </div>
           </div>
         </div> -->
@@ -110,28 +105,21 @@
           <div class="col-lg-6 border-right">
             <div class="output" style="white-space: pre"></div>
             <select class="select"></select>
+            <div class="caption">
+              <div class="caption-head">
+                Descizione
+              </div>
+              <div class="caption-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+            </div>
           </div>
-          <div class="col-lg-6 border-left">
-            <div class="">
-              404 chiave not found
+          <div class="col-lg-6">
+            <div class="title">
+              <h1>Atbash</h1>
+              <div class="hr"></div>
             </div>
             <div class="output" style="white-space: pre"></div>
-          </div>
-        </div>
-
-        <!-- description -->
-        <div class="row">
-          <div class="col-lg-6 border-right">
-            <div class="caption">
-              <div class="caption-head">
-                Descizione
-              </div>
-              <div class="caption-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 border-left">
             <div class="caption">
               <div class="caption-head">
                 Descizione
@@ -142,11 +130,7 @@
             </div>
           </div>
         </div>
-
       </div>
-
-
-
     </main>
 
 
@@ -171,57 +155,58 @@
     <script type="text/javascript">
       $(document).ready(function() {
         // Selectors
-        var INPUT_WRITER = '.gw-wrapper > .gw-text';
+        var PLACEHOLDER = '.gw-placeholder';
 
         // Writer object -> It starts typing by default
-        var writer = $(INPUT_WRITER).ghostWriter();
+        var writer = $('.gw-text').ghostWriter();
 
         // === Event Listeners ===
         // Writer's event
-        $(INPUT_WRITER).on('click', function(e) {
+        $(PLACEHOLDER).on('click', function(e) {
           e.stopPropagation();
 
+          var placeholder = $(this);
+          var input       = placeholder.prev();
+          var inputText   = input.val();
+          var outputText  = $('.output').text();
+
           writer.stop();  // Stop typing
-          $(INPUT_WRITER).addClass('gw-placeholder');
-          $(INPUT_WRITER + '> .output').empty();  // Clear ouput content
-          $(INPUT_WRITER).prev()
-            .removeClass('gw-placeholder')
+          placeholder
+            .addClass('d-none');
+
+          input
+            .removeClass('d-none')
+            .val(outputText ? inputText : '')
             .focus();
         });
 
         // Window event for stopping writing
-        $(window).on('click', function() {
+        $(window).on('click', function(e) {
+          if(e.target.nodeName === 'INPUT') {
+            e.stopPropagation();
+            return;
+          }
+
           writer.play(); // Start typing again
-          $(INPUT_WRITER).removeClass('gw-placeholder');
-          $(INPUT_WRITER).prev()
-            .addClass('gw-placeholder')
-            .blur()
-            .val('');
+          $(PLACEHOLDER).removeClass('d-none');
+          $(PLACEHOLDER)
+            .prev()
+            .addClass('d-none')
+            .blur();
         });
 
         $('.select').range({ from: 1, to: 26, step: 1 });
         $('.select').selectpicker({
-          size: 5,
-          style: 'btn-outline-danger',
+                size: 5,
+               style: 'btn-outline-danger',
           dropupAuto: false,
         }).selectpicker('val', '3');
 
-        var next = 0;
-        $('#clear-text').on('keyup', function(e) {
-          var text = $('.output').first().text();
-          var key = e.key;
+        $(PLACEHOLDER).prev().on('keyup', function(e) {
+          var text = $(this).val();
+          var key  = e.key;
 
           switch (key) {
-            case 'Backspace':
-              next > 0 && next--;
-              $('.output').text(text.slice(0, next) + text.slice(next + 1));
-              break;
-            case 'ArrowLeft':
-              next !== 0 && next--;
-              break;
-            case 'ArrowRight':
-              next < (text.length) && next++;
-              break;
             case 'Shift':
             case 'Alt':
             case 'AltGraph':
@@ -240,15 +225,19 @@
             case 'SymbolLock':
             case 'Tab':
             case 'ArrowUp':
+            case 'ArrowLeft':
             case 'ArrowDown':
+            case 'ArrowRight':
             case 'PageUp':
             case 'PageDown':
             case 'End':
             case 'Home':
-              break;
+            break;
+            case 'Backspace':
+              $('.output').text(text);
+            break;
             default:
-              $('.output').text(text.slice(0, next) + key + text.slice(next));
-              next++;
+              $('.output').text(text);
           }
         });
       });

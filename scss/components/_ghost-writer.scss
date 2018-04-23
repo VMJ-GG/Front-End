@@ -1,35 +1,44 @@
+@mixin ghost-writer-text-styles($line-height: 1.5) {
+  color: $white;
+  font-size: 3.5rem;
+  line-height: $line-height;
+}
+
 .gw-container {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 
-  > .gw-static {
-    flex-basis: 50%;
-    text-align: right;
-
-    > span {
-      color: $white;
-      font-size: 3.5rem;
-      line-height: 1.5;
-    }
+  > input[type="text"] {
+    border: 0;
+    background: transparent;
+    text-align: center;
+    @include ghost-writer-text-styles();
   }
 
-  > .gw-wrapper {
-    flex-basis: 50%;
-    text-align: left;
+  > .gw-placeholder {
+      display: flex;
+      justify-content: space-between;
 
-    > .gw-placeholder {
-      display: none;
+    > .gw-static {
+      flex-basis: 50%;
+      text-align: right;
+
+      > span {
+        @include ghost-writer-text-styles();
+      }
     }
 
-    > .gw-text > span {
-      border-right: 1px solid $white;
-      color: $white;
-      font-size: 3.5rem;
-      font-style: italic;
-      font-family: 'Lobster Two', cursive, serif;
-      line-height: 1.43;
-      white-space: pre;
+    > .gw-wrapper {
+      flex-basis: 50%;
+      text-align: left;
+
+      > .gw-text > span {
+        border-right: 1px solid $white;
+        white-space: pre;
+        text-align: left;
+        font-family: 'Lobster Two', cursive, serif;
+        font-style: italic;
+        @include ghost-writer-text-styles($line-height: 1.43);
+      }
     }
   }
 }
