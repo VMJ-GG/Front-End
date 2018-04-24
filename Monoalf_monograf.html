@@ -75,38 +75,17 @@
         </div>
       </section>
 
-      <div class="container-fluid">
-
-        <!-- Title -->
-        <div class="row title">
-          <div class="col-lg-6 border-right">
-            <div class="title">
-                Cesare
-            </div>
-            <hr>
-          </div>
-          <div class="col-lg-6 border-left">
-            <div class="title">
-                Atbash
-            </div>
-            <hr>
-          </div>
-        </div>
-
-        <!-- input
+      <div class="container">
         <div class="row">
-          <div class="col-lg-6">
+          <!-- Cesare -->
+          <div class="col-lg-6 border-right">
             <div class="title">
               <h1>Cesare</h1>
               <div class="hr"></div>
             </div>
-          </div>
-        </div> -->
-
-        <!-- Select -->
-        <div class="row">
-          <div class="col-lg-6 border-right">
-            <div class="output" style="white-space: pre"></div>
+              <div class="" style="height: 70px;">
+                <div class="output" style="white-space: pre"></div>
+              </div>
             <div class="text-select">La chiave </div><select class="select"></select>
             <div class="caption">
               <div class="caption-body pt-5 pr-3">
@@ -115,43 +94,46 @@
                   Il cifrario di Cesare utilizza un metodo a sostituzione monografica monoalfabetica: ogni lettera del testo in chiaro è sostituita nel testo cifrato dalla lettera che si trova un certo numero di posizioni, determinate dalla chiave (che nella sua versione <i>standard</i> è 3), traslata nell'alfabeto. Questi tipi di cifrari sono detti anche cifrari a scorrimento, a causa del loro modo di operare.
                 </div>
                   <hr>
-                <div class="">
-                  <div class="inline-block text-h4">
-                    Il codice
+                  <div class="" style="display:flex; justify-content:space-between;">
+                    <div class="text-h4">
+                      Il codice
+                    </div>
+                      <button onclick="copyText(cesare)" type="button" class="btn btn-light btn-sm" >
+                        Copy
+                      </button>
                   </div>
-                  <div class="inline-block" align="right">
-                    <button onclick="copyText(myInput)" type="button" class="btn btn-light btn-sm" >
-                      Copy
-                    </button>
-                  </div>
-                </div>
 
+                <!-- ***===***=== ALERT INDENTATION FOR MATTIA: We're sorry but it is not possible to indent this specific part of code. For problems or F.A.Q. please ask to your dog.===***===*** -->
 
-                <pre id="myInput" class="prettyprint linenums">
-function Cesare() {
-&nbsp;&nbsp;porca la merda;
-&nbsp;&nbsp;return(vaffanculo);
-}</pre>
-
+                <!-- Il codice -->
+                <pre id="cesare" class="prettyprint linenums">
+ function Cesare() {
+ &nbsp;&nbsp;porca la merda;
+ &nbsp;&nbsp;return(vaffanculo);
+ }
+                </pre>
                 <hr>
-                <div class="text-h4">La storia</div>
-                <div class="px-3">
+                  <div class="text-h4">La storia</div>
+                    <div class="px-3">
                   In crittografia il cifrario di Cesare è uno dei più antichi algoritmi crittografici di cui si abbia traccia storica.
                   Il cifrario di Cesare prende il nome da Giulio Cesare, che lo utilizzava per proteggere i suoi messaggi segreti. Grazie allo storico Svetonio sappiamo che Cesare utilizzava in genere una chiave di 3 per il cifrario, come nel caso della corrispondenza militare inviata alle truppe comandate da Quinto Tullio Cicerone. Al tempo era sicuro perché gli avversari spesso non erano neanche in grado di leggere un testo in chiaro, men che mai uno cifrato; inoltre non esistevano metodi di crittanalisi in grado di rompere tale codice, per quanto banale.
 
                   Conosciamo anche altri che usarono questo cifrario al tempo di Cesare: Augusto, suo nipote, lo utilizzava con chiave 1, ma senza ripartire da sinistra in caso di fine dell'alfabeto. Quindi, scriveva B per A, C per B ma usava AA per Z.
 
                   Dalla scoperta dell'analisi delle frequenze da parte del matematico arabo Al-Kindi nell'XI secolo circa, tutti i cifrari di questo tipo sono divenuti molto semplici da rompere; nessuno è adatto per comunicazioni sicure allo stato tecnologico attuale, né lo è stato negli ultimi 1000 anni. Tuttavia, una forma di questo cifrario, chiamata ROT13, è ancora usata oggi per offuscare parti di un messaggio in modo da non renderle immediatamente comprensibili.
-                </div>
+                    </div>
               </div>
             </div>
           </div>
+          <!-- Atbash -->
           <div class="col-lg-6">
             <div class="title">
               <h1>Atbash</h1>
               <div class="hr"></div>
             </div>
-            <div class="output" style="white-space: pre"></div>
+            <div class="" style="height: 70px;">
+              <div class="output" style="white-space: pre"></div>
+            </div>
             <div class="caption">
               <div class="caption-body pt-5 pl-3">
                 <div class="text-h4">Il metodo</div>
@@ -160,7 +142,16 @@ function Cesare() {
                   In sostanza consiste nello scrivere metà alfabeto su un rigo e l'altra metà al contrario sul rigo a capo, così che alla A corrisponda la Z alla B la Y ecc.; in questo modo la lettura del cifrario risulta più semplice.
                   </div>
                   <hr>
-                <div class="text-h4">Il codice</div><pre class="prettyprint linenums">
+                  <div class="" style="display:flex; justify-content:space-between;">
+                    <div class="text-h4">
+                      Il codice
+                    </div>
+                      <button onclick="copyText(atbash)" type="button" class="btn btn-light btn-sm" >
+                        Copy
+                      </button>
+                  </div>
+                <!-- Il codice -->
+                <pre id="atbash" class="prettyprint linenums">
 function Atbash() {
 &nbsp;&nbsp;porca la merda;
 &nbsp;&nbsp;return(vaffanculo);
