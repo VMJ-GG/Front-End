@@ -1,15 +1,13 @@
-function copyText(element) {
-  var range, selection, worked;
+function copyTextCesare(element) {
+  var copyText = document.getElementById("cesare");
+  copyText.select();
+  document.execCommand("Copy");
+  alert("Copied the text: " + copyText.value);
+}
 
-  if (document.body.createTextRange) {
-    range = document.body.createTextRange();
-    range.moveToElementText(element);
-    range.select();
-  } else if (window.getSelection) {
-    selection = window.getSelection();
-    range = document.createRange();
-    range.selectNodeContents(element);
-    selection.removeAllRanges();
-    selection.addRange(range);
-  }
+function copyTextAtbash(element) {
+  var copyText = document.getElementById("atbash");
+  copyText.select();
+  document.execCommand("Copy");
+  alert("Copied the text: " + copyText.value);
 }
