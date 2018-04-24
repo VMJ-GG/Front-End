@@ -94,8 +94,11 @@
                   Il cifrario di Cesare utilizza un metodo a sostituzione monografica monoalfabetica: ogni lettera del testo in chiaro è sostituita nel testo cifrato dalla lettera che si trova un certo numero di posizioni, determinate dalla chiave (che nella sua versione <i>standard</i> è 3), traslata nell'alfabeto. Questi tipi di cifrari sono detti anche cifrari a scorrimento, a causa del loro modo di operare.
                 </div>
                   <hr>
+
+                  <!-- Il codice -->
+
                   <div class="" style="display:flex; justify-content:space-between;">
-                    <div class="text-h4">
+                    <div class="text-h4" onclick="hideShow()">
                       Il codice
                     </div>
                       <button onclick="copyTextCesare(cesare)" type="button" class="btn btn-light btn-sm" >
@@ -103,16 +106,60 @@
                       </button>
                   </div>
 
-                <!-- ***===***=== ALERT INDENTATION FOR MATTIA: We're sorry but it is not possible to indent this specific part of code. For problems or F.A.Q. please ask to your dog.===***===*** -->
+                  <!-- ***===***=== ALERT INDENTATION FOR MATTIA: We're sorry but it is not possible to indent this specific part of code. For problems or F.A.Q. please ask to your dog.===***===*** -->
 
-                <!-- Il codice -->
-                <pre id="cesare" class="prettyprint linenums">
- function Cesare() {
- &nbsp;&nbsp;porca la merda;
- &nbsp;&nbsp;return(vaffanculo);
- }
-                </pre>
-                <hr>
+                  <!-- Il codice pretty-->
+                  <pre id="cesare" class="prettyprint linenums">&lt;html&gt;
+                    &nbsp;&nbsp;&lt;head&gt;
+                		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Cesare&lt;/title&gt;
+                		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
+
+                		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Cesare(){
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave = parseInt(document.f.k.value);
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;testo.length;i++)
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//per gestire spazi, etc. etc.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(pos == -1)
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += carattere;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos += key;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(pos &lt; 0){
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = posizione + alfabeto.length;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = posizione % alfabeto.length;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += alfabeto.charAt(posizione);
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.tc.value = crittogramma;
+              		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
+                    &nbsp;&nbsp;&lt;/head&gt;
+
+                  	&nbsp;&nbsp;&lt;body&gt;
+                	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Cesare&lt;/h2&gt;
+          		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+              			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
+            				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
+                		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo in chiaro&lt;input type="text" name="t"&gt;&lt;br&gt;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chiave&lt;select name='k'&gt;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j =- alfabeto.length;j&lt; = alfabeto.length;j++)
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('&lt;option&gt;'+j);
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;
+            				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Cripta" onclick="Atbash()"&gt;&lt;br&gt;
+            				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo crittato&lt;input type="text" name="tc"&gt;
+            			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                    &nbsp;&nbsp;&lt;/body&gt;
+  &lt;/html&gt;</pre>
+
+                  <hr>
+
                   <div class="text-h4">La storia</div>
                     <div class="px-3">
                   In crittografia il cifrario di Cesare è uno dei più antichi algoritmi crittografici di cui si abbia traccia storica.
@@ -151,11 +198,42 @@
                       </button>
                   </div>
                 <!-- Il codice -->
-                <pre id="atbash" class="prettyprint linenums">
-function Atbash() {
-&nbsp;&nbsp;porca la merda;
-&nbsp;&nbsp;return(vaffanculo);
-}</pre>
+                <pre id="atbash" lang="html" class="prettyprint linenums">&lt;html&gt;
+                  &nbsp;&nbsp;&lt;head&gt;
+              		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Atbash&lt;/title&gt;
+              		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
+
+              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Atbash(){
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
+
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;testo.length;i++)
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carattere = testo.charAt(i);
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = alfabeto.indexOf(carattere);
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione=26-posizione;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma+=alfabeto.charAt(posizione);
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.tc.value=crittogramma;
+            		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
+                  &nbsp;&nbsp;&lt;/head&gt;
+
+                	&nbsp;&nbsp;&lt;body&gt;
+              	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Atbash&lt;/h2&gt;
+        		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+            			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
+          				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
+              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo in chiaro&lt;input type="text" name="t"&gt;
+          				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button"  value="Cripta" onclick="Atbash()"&gt;&lt;br&gt;
+          				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo crittato&lt;input type="text" name="tc"&gt;
+          			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                  &nbsp;&nbsp;&lt;/body&gt;
+&lt;/html&gt;</pre>
+
                   <hr>
                 <div class="text-h4">La storia</div>
                   <div class="px-3">
@@ -183,6 +261,7 @@ function Atbash() {
     <script type="text/javascript" src="./js/navbarScrolling.js"></script>
     <script type="text/javascript" src="./js/fromCriptToDecript.js"></script>
     <script type="text/javascript" src="./js/copy.js"></script>
+    <script type="text/javascript" src="./js/hideShow.js"></script>
 
     <script type="text/javascript">
 
