@@ -12,5 +12,4 @@ function copyText(element) {
     selection.removeAllRanges();
     selection.addRange(range);
   }
-
 }
