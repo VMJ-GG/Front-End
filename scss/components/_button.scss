@@ -22,3 +22,8 @@
   padding: 0 20px;
   @include button-card-color("pM");
 }
+
+.btn-card-cmpt {
+  padding: 0 20px;
+  @include button-card-color("cmpt");
+}
