@@ -18,6 +18,18 @@
     @include jumbotron-color("mongMonal");
   }
 
+  &.jumbotron-mongPoli {
+    @include jumbotron-color("mongPoli");
+  }
+
+  &.jumbotron-poliMonal {
+    @include jumbotron-color("poliMonal");
+  }
+
+  &.jumbotron-composti {
+    @include jumbotron-color("composti");
+  }
+
   > .jumbotron-head {
     font-size: 3.5rem;
   }
