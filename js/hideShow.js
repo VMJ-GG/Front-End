@@ -1,5 +1,5 @@
-function hideShow() {
-    var x = document.getElementById("cesare");
+function hideShow(i) {
+    var x = document.getElementById("hide-"+i);
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
@@ -9,9 +9,9 @@ function hideShow() {
 
 
 $(document).ready(function(){
-	$('.text_container').addClass("visible");
+	$('.arrow-hide').addClass("visible");
 
-	$('.text_container').click(function() {
+	$('.arrow-hide').click(function() {
 		var $this = $(this);
 
 		if ($this.hasClass("visible")) {

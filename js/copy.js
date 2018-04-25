@@ -1,13 +1,10 @@
-function copyTextCesare(element) {
-  var copyText = document.getElementById("cesare");
-  copyText.select();
-  document.execCommand("Copy");
-  alert("Copied the text: " + copyText.value);
-}
+/*  Instantiate clipboard by passing a HTML element */
 
-function copyTextAtbash(element) {
-  var copyText = document.getElementById("atbash");
-  copyText.select();
-  document.execCommand("Copy");
-  alert("Copied the text: " + copyText.value);
-}
+    var btn = document.getElementById('btn-cesare');
+    var clipboard = new ClipboardJS(btn);
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
