@@ -24,6 +24,7 @@
 
       > span {
         @include ghost-writer-text-styles();
+        cursor: pointer;
       }
     }
 
@@ -38,6 +39,7 @@
         font-family: 'Lobster Two', cursive, serif;
         font-style: italic;
         @include ghost-writer-text-styles($line-height: 1.43);
+        cursor: pointer;
       }
     }
   }
