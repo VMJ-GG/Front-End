@@ -11,17 +11,6 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./vendor/css/snappy-light-prettify.css">
 
-    <!-- Temporanee classi per la scomparsa dei div -->
-    <style media="screen">
-    .hidden + div{
-      display:none;
-    }
-
-    .visible + div{
-      display:block;
-    }
-    </style>
-
     <!-- Scripts -->
     <script type="text/javascript" src="./vendor/js/prettify.js"></script>
 
@@ -79,9 +68,7 @@
             </div>
           </div>
           <div class="">
-            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()">Criptazione
-              <i class="material-icons">keyboard_arrow_right</i>
-            </button>
+            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()">Criptazione<i class="material-icons">keyboard_arrow_right</i></button>
           </div>
         </div>
       </section>
@@ -100,7 +87,7 @@
                   <div id="output" class="output" style="white-space: pre"></div>
                 </div>
               </div>
-              <div class="caption-body mt-4 mb-4">
+              <div class="caption-body mt-4 mb-4" onclick="hideShow(1);">
                 Clicca i metodi nell'ordine che preferisci, creando catene crittografiche composte a tuo piacimento. <div class="arrow-down" style="display: inline">
                   <i class="material-icons">keyboard_arrow_down</i>
                 </div>
@@ -108,47 +95,50 @@
              </div>
             </div>
 
-            <div class="row">
-              <div class="col-md-4">
-                <div class="caption-head text-primary">
-                  I metodi
-                </div>
-                <div class="badge-container border border-primary rounded">
-                  <div class="btn btn-outline-primary ml-2 mb-2">Cesare</div>
-                  <div class="btn btn-outline-primary ml-2 mb-2">Atbash</div>
-                  <div class="btn btn-outline-primary ml-2 mb-2">Vigenère</div>
-                  <div class="btn btn-outline-primary ml-2 mb-2">Pizzini</div>
-                  <div class="btn btn-outline-primary ml-2 mb-2">Polibio</div>
-                  <div class="btn btn-outline-primary ml-2 mb-2">Cesare</div>
-                </div>
-              </div>
+            <div id="hide-1" class="">
+              <div class="row">
 
-              <div class="col-md-8">
-                <div class="text-danger caption-head">
-                  La tua catena
+                <div class="col-md-4">
+                  <div class="caption-head text-primary">
+                    I metodi
+                  </div>
+                  <div class="badge-container border border-primary rounded">
+                    <div class="btn btn-outline-primary ml-2 mb-2">Cesare</div>
+                    <div class="btn btn-outline-primary ml-2 mb-2">Atbash</div>
+                    <div class="btn btn-outline-primary ml-2 mb-2">Vigenère</div>
+                    <div class="btn btn-outline-primary ml-2 mb-2">Pizzini</div>
+                    <div class="btn btn-outline-primary ml-2 mb-2">Polibio</div>
+                    <div class="btn btn-outline-primary ml-2 mb-2">Cesare</div>
+                  </div>
                 </div>
-                <div id="chain" class="badge-container border border-danger rounded"></div>
+
+                <div class="col-md-8">
+                  <div class="text-danger caption-head">
+                    La tua catena
+                  </div>
+                  <div id="chain" class="badge-container border border-danger rounded"></div>
 
 
-              </div>
+                </div>
 
             </div>
 
-              <hr>
-              <div class="row mt-3 mb-5">
-                <div class="col-lg-4">
-                  <div class="">
-                    Seleziona in ordine i <div class="text-primary" style="display:inline">metodi</div> che vuoi implementare nel tuo processo di crittografia. I metodi posso ripetersi e non ci sono limiti nel creare combinazioni di cifratura!
-                  </div>
-                </div>
-                <div class="col-lg-8">
-                  <div class="">
-                    I metodi verranno visualizzati nella sezione rossa in ordine di esecuzione. Cliccando sopra i metodi che lo consentono, potrai selezionare la chiave di cifratura. <br> Puoi cancellare i metodi che non vuoi più dentro <div class="text-danger" style="display:inline">la tua catena</div>.
-                  </div>
+            <hr>
+            <div class="row mt-3 mb-5">
+              <div class="col-lg-4">
+                <div class="">
+                  Seleziona in ordine i <div class="text-primary" style="display:inline">metodi</div> che vuoi implementare nel tuo processo di crittografia. I metodi posso ripetersi e non ci sono limiti nel creare combinazioni di cifratura!
                 </div>
               </div>
-
+              <div class="col-lg-8">
+                <div class="">
+                  I metodi verranno visualizzati nella sezione rossa in ordine di esecuzione. Cliccando sopra i metodi che lo consentono, potrai selezionare la chiave di cifratura. <br> Puoi cancellare i metodi che non vuoi più dentro <div class="text-danger" style="display:inline">la tua catena</div>.
+                </div>
+              </div>
+            </div>
           </div>
+
+        </div>
     </main>
 
 
