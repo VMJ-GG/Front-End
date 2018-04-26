@@ -33,7 +33,7 @@
   <body>
     <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Papaya</a>
+        <a class="navbar-brand" href="#">WebTips</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
          </button>
@@ -93,15 +93,15 @@
                 Funzioni composte
               </div>
               <div class="caption-body">
-                <div class="text-h5 arrow-down">
+                <div class="text-h5 text-primary arrow-down">
                   Il crittogramma
                 </div>
-                <div class="border" style=" font-size:1.7rem; height:40px;">
+                <div class="border rounded" style=" font-size:1.7rem; height:40px;">
                   <div id="output" class="output" style="white-space: pre"></div>
                 </div>
               </div>
               <div class="caption-body mt-4 mb-4">
-                Clicca i metodi nell'ordine che preferisci, creando catene crittografiche composte a tuo piacimento <div class="arrow-down" style="display: inline">
+                Clicca i metodi nell'ordine che preferisci, creando catene crittografiche composte a tuo piacimento. <div class="arrow-down" style="display: inline">
                   <i class="material-icons">keyboard_arrow_down</i>
                 </div>
               </div>
@@ -122,18 +122,29 @@
                   <div class="btn btn-outline-primary ml-2 mb-2">Cesare</div>
                 </div>
               </div>
+
               <div class="col-md-8">
-                <div class="caption-head">
+                <div class="text-danger caption-head">
                   La tua catena
                 </div>
-                <div id="chain" class="badge-container border rounded">
-                </div>
+                <div id="chain" class="badge-container border border-danger rounded"></div>
+
+
               </div>
+
             </div>
 
-              <div class="row">
-                <div class="col-12" style="height:500px;">
-
+              <hr>
+              <div class="row mt-3 mb-5">
+                <div class="col-lg-4">
+                  <div class="">
+                    Seleziona in ordine i <div class="text-primary" style="display:inline">metodi</div> che vuoi implementare nel tuo processo di crittografia. I metodi posso ripetersi e non ci sono limiti nel creare combinazioni di cifratura!
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="">
+                    I metodi verranno visualizzati nella sezione rossa in ordine di esecuzione. Cliccando sopra i metodi che lo consentono, potrai selezionare la chiave di cifratura. <br> Puoi cancellare i metodi che non vuoi più dentro <div class="text-danger" style="display:inline">la tua catena</div>.
+                  </div>
                 </div>
               </div>
 
@@ -200,7 +211,7 @@
         $('.badge-container').find('.btn').on('click', function() {
           var value = $(this).text();
           var chain = $('#chain').append(
-            '<div class="btn btn-secondary composed-badge" data-toggle="tooltip" data-placement="bottom" title="Tooltip Bottom">' + value +
+            '<div class="btn btn-danger composed-badge" data-toggle="tooltip" data-placement="bottom" title="Tooltip Bottom">' + value +
               '<i class="material-icons icon-small ml-1 clear">clear</i>' +
             '</div>'
           )

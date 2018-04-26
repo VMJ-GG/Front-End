@@ -33,7 +33,7 @@
   <body>
     <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Papaya</a>
+        <a class="navbar-brand" href="#">WebTips</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
          </button>
@@ -92,17 +92,18 @@
           <div class="col-lg-6 border-right">
             <div class="text-title">
               <h1>Cesare</h1>
+              <div class="hr hr-mM"></div>
               <!-- <div class="hr"></div> -->
             </div>
             <div class="caption">
-              <div class="caption-body">
-                <div class="text-h5 arrow-down">
+              <div class="caption-body mb-5">
+                <div class="text-h5 text-select-mM arrow-down">
                   Il crittogramma
                 </div>
-                <div class="border" style=" font-size:1.7rem; height:40px;">
+                <div class="border rounded" style=" font-size:1.7rem; height:40px;">
                   <div id="output" class="output" style="white-space: pre"></div>
                 </div>
-              <div class="text-select">La chiave</div>
+              <div class="text-select text-select-mM mt-4">La chiave</div>
               <div class="" style="text-align: center;">
                  <select class="select"></select>
               </div>
@@ -213,19 +214,20 @@
           <div class="col-lg-6">
             <div class="text-title">
               <h1>Atbash</h1>
+              <div class="hr hr-mM"></div>
               <!-- <div class="hr"></div> -->
             </div>
             <div class="caption">
-              <div class="caption-body">
-                <div class="text-h5 arrow-down">
+              <div class="caption-body mb-5">
+                <div class="text-h5 text-select-mM arrow-down">
                   Il crittogramma
                 </div>
-                <div class="border" style="font-size: 1.7rem; height:40px;">
+                <div class="border rounded" style="font-size: 1.7rem; height:40px;">
                   <div id="output" class="output" style="white-space: pre"></div>
                 </div>
-                  <div class="text-select">La chiave</div>
+                  <div class="text-select text-select-mM mt-4">La chiave</div>
                     <div class="" style="text-align:center">
-                      <button class="btn btn-outline-danger" style="width:220px">non è necessaria</button>
+                      <button class="btn btn-card-mM" style="width:220px">non è necessaria</button>
                     </div>
               </div>
             </div>
@@ -374,7 +376,7 @@
         $('.select').range({ from: 1, to: 26, step: 1 });
         $('.select').selectpicker({
                 size: 5,
-               style: 'btn-outline-danger',
+               style: 'btn-card-mM',
           dropupAuto: false,
         }).selectpicker('val', '3');
 

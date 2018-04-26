@@ -33,7 +33,7 @@
   <body>
     <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Papaya</a>
+        <a class="navbar-brand" href="#">WebTips</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
          </button>
@@ -88,41 +88,58 @@
 
       <div class="container">
         <div class="row">
-          <!-- Cesare -->
-          <div class="col-lg-6 border-right">
+          <!-- Vigenere -->
+          <div class="col-lg-12">
             <div class="text-title">
-              <h1>Cesare</h1>
+              <h1>Vigenere</h1>
+              <div class="hr hr-pM"></div>
               <!-- <div class="hr"></div> -->
             </div>
             <div class="caption">
-              <div class="caption-body">
-                <div class="text-h5 arrow-down">
+              <div class="caption-body mb-5">
+                <div class="text-h5 text-select-pM arrow-down">
                   Il crittogramma
                 </div>
-                <div class="bg-light" style=" font-size:1.7rem; height:40px;">
+                <div class="border rounded" style=" font-size:1.7rem; height:40px;">
                   <div id="output" class="output" style="white-space: pre"></div>
                 </div>
-              <div class="text-select">La chiave</div>
+              <div class="text-select text-select-pM mt-4">La chiave</div>
               <div class="" style="text-align: center;">
                  <select class="select"></select>
               </div>
               </div>
             </div>
+              <hr>
+          </div>
 
-            <hr>
-            <div class="caption">
-              <div class="caption-body pt-5 pr-3">
-                <!-- Il metodo -->
-                  <div class="text-h4 arrow-down" onclick="hideShow(1)">
-                    Il metodo
-                    <i class="material-icons text-muted">keyboard_arrow_down</i>
-                  </div>
-                  <div id="hide-1" class="overflow-box pl-3">
-                    <img src="./images/cesare_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
-                    Il cifrario di Cesare utilizza un metodo a sostituzione monografica monoalfabetica: ogni lettera del testo in chiaro è sostituita nel testo cifrato dalla lettera che si trova un certo numero di posizioni, determinate dalla chiave (che nella sua versione <i>standard</i> è 3), traslata nell'alfabeto. Questi tipi di cifrari sono detti anche cifrari a scorrimento, a causa del loro modo di operare.
-                  </div>
 
-                  <hr>
+            <div class="col-lg-6">
+              <div class="caption">
+                <div class="caption-body pt-4 pr-3">
+                  <!-- Il metodo -->
+                    <div class="text-h4 arrow-down" onclick="hideShow(1)">
+                      Il metodo
+                      <i class="material-icons text-muted">keyboard_arrow_down</i>
+                    </div>
+                    <div id="hide-1" class="overflow-box pl-3">
+                      <img src="./images/cesare_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
+                      Il metodo si può considerare una generalizzazione del cifrario di Cesare: invece di spostare sempre dello stesso numero di posti la lettera da cifrare oppure mediante l'uso di una chiave numerica, questa viene spostata di un numero di posti variabile ma ripetuto, determinato in base ad una parola chiave da scrivere ripetutamente sotto il messaggio, carattere per carattere; la chiave era detta anche verme, per il motivo che, essendo in genere molto più corta del messaggio, deve essere ripetuta molte volte sotto questo, come nel seguente esempio: <br><br>
+                      <div class="text-h5">
+                      <i>Testo chiaro</i>&nbsp - &nbsp&nbspRAPPORTOIMMEDIATO <br>
+                      <i>Verme</i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- &nbsp&nbspVERMEVERMEVERMEVE <br>
+                      <i>Testo cifrato</i>&nbsp - &nbsp&nbspMEGBSMXFUQHIUUEOS <br>
+                    </div> <br>
+                      Il testo cifrato si ottiene spostando la lettera chiara di un numero fisso di caratteri, pari al numero ordinale della lettera corrispondente del verme. <br>Di fatto si esegue una somma aritmetica tra l'ordinale del chiaro (A = 0, B = 1, C = 2...) e quello del verme; se si supera l'ultima lettera, la Z, si ricomincia dalla A, secondo la logica delle aritmetiche finite.<br><br>
+
+                      Il vantaggio rispetto ai cifrari monoalfabetici (come il cifrario di Cesare) è evidente: il testo è cifrato con <i>n</i> alfabeti cifranti. In questo modo, la stessa lettera viene cifrata (se ripetuta consecutivamente) <i>n</i> volte; ciò rende quindi più complessa la crittoanalisi del testo cifrato.
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="caption">
+                <div class="caption-body pt-4 pl-3">
 
                   <!-- Il codice -->
                   <div class="" style="display:flex; justify-content:space-between;">
@@ -134,17 +151,17 @@
                         Copy
                       </button>
                   </div>
-                  <!-- ***===***=== ALERT INDENTATION FOR MATTIA: We're sorry but it is not possible to indent this specific part of code. For problems or F.A.Q. please ask to your dog.===***===*** -->
 
+                  <!-- ***===***=== ALERT INDENTATION FOR MATTIA: We're sorry but it is not possible to indent this specific part of code. For problems or F.A.Q. please ask to your dog.===***===*** -->
                   <!-- Il codice pretty-->
                   <div class="overflow-box" id="hide-2">
                     <pre  class="prettyprint linenums">&lt;html&gt;
                       &nbsp;&nbsp;&lt;head&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Cesare&lt;/title&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Cesare&lt;/title&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
 
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Cesare(){
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Cesare(){
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave = parseInt(document.f.k.value);
@@ -163,150 +180,54 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += alfabeto.charAt(posizione);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.tc.value = crittogramma;
-                		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                       &nbsp;&nbsp;&lt;/head&gt;
 
-                    	&nbsp;&nbsp;&lt;body&gt;
-                  	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Cesare&lt;/h2&gt;
-            		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
-                			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
-              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo in chiaro&lt;input type="text" name="t"&gt;&lt;br&gt;
+                      &nbsp;&nbsp;&lt;body&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Cesare&lt;/h2&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo in chiaro&lt;input type="text" name="t"&gt;&lt;br&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chiave&lt;select name='k'&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j =- alfabeto.length;j&lt; = alfabeto.length;j++)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('&lt;option&gt;'+j);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;
-              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Cripta" onclick="Atbash()"&gt;&lt;br&gt;
-              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo crittato&lt;input type="text" name="tc"&gt;
-              			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Cripta" onclick="Atbash()"&gt;&lt;br&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo crittato&lt;input type="text" name="tc"&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
                       &nbsp;&nbsp;&lt;/body&gt;
     &lt;/html&gt;</pre>
                   </div>
 
-                  <hr>
-                  <!-- La storia -->
-                  <div class="text_container text-h4 arrow-down" onclick="hideShow(3)">
-                    La storia
-                    <i class="material-icons text-muted">keyboard_arrow_down</i>
-                  </div>
-                  <div id="hide-3" class="overflow-box pl-3">
-                    In crittografia il cifrario di Cesare è uno dei più antichi algoritmi crittografici di cui si abbia traccia storica.
-                    Il cifrario di Cesare prende il nome da Giulio Cesare, che lo utilizzava per proteggere i suoi messaggi segreti. Grazie allo storico Svetonio sappiamo che Cesare utilizzava in genere una chiave di 3 per il cifrario, come nel caso della corrispondenza militare inviata alle truppe comandate da Quinto Tullio Cicerone. Al tempo era sicuro perché gli avversari spesso non erano neanche in grado di leggere un testo in chiaro, men che mai uno cifrato; inoltre non esistevano metodi di crittanalisi in grado di rompere tale codice, per quanto banale.
-
-                    Conosciamo anche altri che usarono questo cifrario al tempo di Cesare: Augusto, suo nipote, lo utilizzava con chiave 1, ma senza ripartire da sinistra in caso di fine dell'alfabeto. Quindi, scriveva B per A, C per B ma usava AA per Z.
-
-                    Dalla scoperta dell'analisi delle frequenze da parte del matematico arabo Al-Kindi nell'XI secolo circa, tutti i cifrari di questo tipo sono divenuti molto semplici da rompere; nessuno è adatto per comunicazioni sicure allo stato tecnologico attuale, né lo è stato negli ultimi 1000 anni. Tuttavia, una forma di questo cifrario, chiamata ROT13, è ancora usata oggi per offuscare parti di un messaggio in modo da non renderle immediatamente comprensibili.
-                    <div class="text-source pt-4">Source: Wikipedia.</div>
-                  </div>
-                  <hr>
-              </div>
-            </div>
-          </div>
-          <!-- Atbash -->
-          <div class="col-lg-6">
-            <div class="text-title">
-              <h1>Atbash</h1>
-              <!-- <div class="hr"></div> -->
-            </div>
-            <div class="caption">
-              <div class="caption-body">
-                <div class="text-h5 arrow-down">
-                  Il crittogramma
                 </div>
-                <div class="bg-light" style="font-size: 1.7rem; height:40px;">
-                  <div id="output" class="output" style="white-space: pre"></div>
-                </div>
-                  <div class="text-select">La chiave</div>
-                    <div class="" style="text-align:center">
-                      <button class="btn btn-outline-danger" style="width:220px">non è necessaria</button>
-                    </div>
               </div>
             </div>
 
-                  <hr>
-                <div class="caption">
-                  <div class="caption-body pt-5 pl-3">
-
-                    <!-- Metodo -->
-                    <div class="text_container text-h4 arrow-down" onclick="hideShow(4)">
-                      Il metodo
-                      <i class="material-icons text-muted">keyboard_arrow_down</i>
-                    </div>
-                    <div id="hide-4" class="overflow-box pr-3">
-                      <img src="./images/atbash_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
-                    L'atbash è un semplice cifrario a sostituzione monografica monoalfabetica in cui la prima lettera dell'alfabeto è sostituita con l'ultima, la seconda con la penultima, e così via, "invertendo" l'ordine alfabetico delle lettere.
-                    In sostanza consiste nello scrivere metà alfabeto su un rigo e l'altra metà al contrario sul rigo a capo, così che alla A corrisponda la Z alla B la Y ecc.; in questo modo la lettura del cifrario risulta più semplice.
-                    </div>
-                    <hr>
-
-                    <!-- Il codice -->
-                    <div class="text_container" style="display:flex; justify-content:space-between;">
-                      <div class="text-h4 arrow-down" onclick="hideShow(5)">
-                        Il codice
-                        <i class="material-icons text-muted">keyboard_arrow_down</i>
-                      </div>
-                        <button type="button" class="btn btn-light btn-sm" >
-                          Copy
-                        </button>
-                    </div>
-                    <div class="overflow-box" id="hide-5">
-                      <pre lang="html" class="prettyprint linenums">&lt;html&gt;
-                      &nbsp;&nbsp;&lt;head&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Atbash&lt;/title&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
-
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Atbash(){
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
-
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;testo.length;i++)
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carattere = testo.charAt(i);
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = alfabeto.indexOf(carattere);
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione=26-posizione;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma+=alfabeto.charAt(posizione);
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.tc.value=crittogramma;
-                		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-
-                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
-                      &nbsp;&nbsp;&lt;/head&gt;
-
-                    	&nbsp;&nbsp;&lt;body&gt;
-                  	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Atbash&lt;/h2&gt;
-            		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
-                			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
-              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo in chiaro&lt;input type="text" name="t"&gt;
-              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button"  value="Cripta" onclick="Atbash()"&gt;&lt;br&gt;
-              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo crittato&lt;input type="text" name="tc"&gt;
-              			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-                      &nbsp;&nbsp;&lt;/body&gt;
-    &lt;/html&gt;</pre>
-                    </div>
-                    <hr>
-                    <!-- La storia -->
-                    <div class="text_container text-h4 arrow-down" onclick="hideShow(6)">
-                      La storia
-                      <i class="material-icons text-muted">keyboard_arrow_down</i>
-                    </div>
-                    <div id="hide-6" class="overflow-box pr-3">
-                      L'origine di questo cifrario si può trovare nella Bibbia, nel libro di Geremia, dove è stato usato per codificare le parole Kasdim (Caldei) in Leb Kamai e Babel (Babele) in Sheshakh. La prima parola decifrata fu Sheshach che veniva ripetuta varie volte nel libro di Geremia (Il re di Sheshach, il popolo di Sheshach, la città di Sheshach) ma dopo varie ricerche non si riusciva a trovare la città nelle cartine. Infine uno studioso applicò il cifrario atbash e venne fuori la parola Babel. Il metodo in cui l'atbash fu usato è molto semplice. In ebraico Sheshach si scrive SH-SH-K, che corrisponde a B-B-L, la cui pronuncia è Babel, cioè Babele.
-
-                      Il nome stesso del cifrario viene dalla lingua ebraica: la prima lettera dell'alfabeto ebraico è aleph, l'ultima taw, la seconda beth, e la penultima shin; messe assieme, formano la parola atbash.
-                      <div class="text-source pt-4">Source: Wikipedia.</div>
-                    </div>
-                    <hr>
-                  </div>
+              <div class="col-lg-12">
+                <hr>
+                <!-- La storia -->
+                <div class="text_container text-h4 arrow-down" onclick="hideShow(3)">
+                  La storia
+                  <i class="material-icons text-muted">keyboard_arrow_down</i>
                 </div>
-          </div>
+                <div id="hide-3" class="overflow-box pl-3">
+                  In crittografia il cifrario di Cesare è uno dei più antichi algoritmi crittografici di cui si abbia traccia storica.
+                  Il cifrario di Cesare prende il nome da Giulio Cesare, che lo utilizzava per proteggere i suoi messaggi segreti. Grazie allo storico Svetonio sappiamo che Cesare utilizzava in genere una chiave di 3 per il cifrario, come nel caso della corrispondenza militare inviata alle truppe comandate da Quinto Tullio Cicerone.<br> Al tempo era sicuro perché gli avversari spesso non erano neanche in grado di leggere un testo in chiaro, men che mai uno cifrato; inoltre non esistevano metodi di crittanalisi in grado di rompere tale codice, per quanto banale.<br>
+                  Conosciamo anche altri che usarono questo cifrario al tempo di Cesare: Augusto, suo nipote, lo utilizzava con chiave 1, ma senza ripartire da sinistra in caso di fine dell'alfabeto. Quindi, scriveva B per A, C per B ma usava AA per Z.<br>
+                  Dalla scoperta dell'analisi delle frequenze da parte del matematico arabo Al-Kindi nell'XI secolo circa, tutti i cifrari di questo tipo sono divenuti molto semplici da rompere; nessuno è adatto per comunicazioni sicure allo stato tecnologico attuale, né lo è stato negli ultimi 1000 anni. <br>Tuttavia, una forma di questo cifrario, chiamata ROT13, è ancora usata oggi per offuscare parti di un messaggio in modo da non renderle immediatamente comprensibili.
+                  <div class="text-source pt-4">Source: Wikipedia.</div>
+                </div>
+              </div>
+
+          <hr>
+
+
         </div>
       </div>
     </main>
@@ -372,7 +293,7 @@
         $('.select').range({ from: 1, to: 26, step: 1 });
         $('.select').selectpicker({
                 size: 5,
-               style: 'btn-outline-danger',
+               style: 'btn-card-pM',
           dropupAuto: false,
         }).selectpicker('val', '3');
 

@@ -1,3 +1,7 @@
-@mixin hr-color($gradient: "black") {
+@mixin hr-gradient($gradient: "black") {
   background: map-get($gradients, $gradient);
+}
+
+@mixin hr-color($color: "black") {
+  background: map-get($colors, $color);
 }
