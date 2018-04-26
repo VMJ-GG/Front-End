@@ -155,108 +155,61 @@
                   <!-- ***===***=== ALERT INDENTATION FOR MATTIA: We're sorry but it is not possible to indent this specific part of code. For problems or F.A.Q. please ask to your dog.===***===*** -->
                   <!-- Il codice pretty-->
                   <div class="overflow-box" id="hide-2">
-                    function Vigenere ()
-    {
-      chiave=prompt('Chiave:');
-      chiaro=document.f.t.value;
-      chiave=chiave.toUpperCase();
-      chiaro=chiaro.toUpperCase();
-      car="";
-      j=0;
-
-      for(i=chiave.length;i<chiaro.length;i++)
-      {
-        chiave+=chiave.charAt(j);
-        j++;
-      }
-
-      document.f.ch.value=chiave;
-
-
-      for(k=0;k<chiaro.length;k++)
-        {
-          r=alfabeto.indexOf(chiave.charAt(k));
-          c=alfabeto.indexOf(chiaro.charAt(k));
-
-          car+=vigenere[r][c];
-
-        }
-      document.f.c.value=car;
-    }
-
-
-
-  </script>
-</head>
-<body onload='Tabella()'>
-  <h1 align='center'>CIFRARIO DI VIGENERE</h1>
-  <form name="f">
-  <table border="0" align='center'>
-    <tr>
-      <th>Messaggio in chiaro
-      <td><INPUT type='text' name="t">
-    <tr>
-      <td>Chiave</td>
-      <td><INPUT type='text' name="ch" disabled></td>
-    <tr>
-      <td>Messaggio cifrato</td>
-      <td><INPUT type='text' name="c"></td>
-    <tr>
-      <td colspan="2" align='center'>
-        <input type="button" name="b1" value="cripta" onclick="Vigenere()">
-        <input type="button" name="b2" value="decripta" onclick="Decripta()">
-    <tr>
-      <td id='output' colspan="2">tabella cifrante
-    </td>
-      </table>
-  </form>
-</body>
                     <pre  class="prettyprint linenums">&lt;html&gt;
                       &nbsp;&nbsp;&lt;head&gt;
                   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Vigenere&lt;/title&gt;
                   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
 
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Tabella(){
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vigenere = new Array();
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb = "&lt;table&gt;";
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0;i &lt; alfabeto.length;i++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vigenere[i] = alfabeto.substring(i,alfabeto.length)+alfabeto.substring(0,i);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb += "&lt;tr&gt;&lt;td&gt;"+vigenere[i];
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb += "&lt;/table&gt;";
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("output").innerHTML=tb;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
                   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Vigenere(){
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave = prompt('Chiave:').toLowerCase();
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = "";
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave = prompt("Chiave:").toLowerCase();
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j = 0;
 
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = chiave.length;i &lt; testo.length;i++)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave += chiave.charAt(j);
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(pos == -1)
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += carattere;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos += key;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(pos &lt; 0){
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = posizione + alfabeto.length;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = posizione % alfabeto.length;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += alfabeto.charAt(posizione);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.ch.value = chiave;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(k = 0;k &lt; testo.length;k++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;riga = alfabeto.indexOf(chiave.charAt(k));
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colonna = alfabeto.indexOf(testo.charAt(k));
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += vigenere[riga][colonna];
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.tc.value = crittogramma;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                       &nbsp;&nbsp;&lt;/head&gt;
 
-                      &nbsp;&nbsp;&lt;body&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Cesare&lt;/h2&gt;
+                      &nbsp;&nbsp;&lt;body onload="Tabella()"&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Vigenere&lt;/h2&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo in chiaro&lt;input type="text" name="t"&gt;&lt;br&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chiave&lt;select name='k'&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j =- alfabeto.length;j&lt; = alfabeto.length;j++)
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('&lt;option&gt;'+j);
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Cripta" onclick="Atbash()"&gt;&lt;br&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo crittato&lt;input type="text" name="tc"&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chiave&lt;input type="text" name="ch"&gt;&lt;br&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo crittato&lt;input type="text" name="tc"&gt;&lt;br&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Cripta" onclick="Vigenere()"&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="output"&gt;Tabella cifrante
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
                       &nbsp;&nbsp;&lt;/body&gt;
     &lt;/html&gt;</pre>
