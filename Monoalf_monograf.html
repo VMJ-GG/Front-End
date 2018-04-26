@@ -99,7 +99,7 @@
                 <div class="text-h5 arrow-down">
                   Il crittogramma
                 </div>
-                <div class="bg-light" style=" font-size:1.7rem; height:40px;">
+                <div class="border" style=" font-size:1.7rem; height:40px;">
                   <div id="output" class="output" style="white-space: pre"></div>
                 </div>
               <div class="text-select">La chiave</div>
@@ -130,7 +130,7 @@
                       Il codice
                       <i class="material-icons text-muted">keyboard_arrow_down</i>
                     </div>
-                      <button type="button" class="btn btn-light btn-sm" >
+                      <button type="button" class="btn btn-light btn-sm copy">
                         Copy
                       </button>
                   </div>
@@ -144,12 +144,12 @@
                   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
 
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Cesare(){
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Cesare() {
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave = parseInt(document.f.k.value);
 
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;testo.length;i++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt; testo.length; i++)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carattere = testo.charAt(i);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = alfabeto.indexOf(carattere);
@@ -220,7 +220,7 @@
                 <div class="text-h5 arrow-down">
                   Il crittogramma
                 </div>
-                <div class="bg-light" style="font-size: 1.7rem; height:40px;">
+                <div class="border" style="font-size: 1.7rem; height:40px;">
                   <div id="output" class="output" style="white-space: pre"></div>
                 </div>
                   <div class="text-select">La chiave</div>
@@ -240,7 +240,7 @@
                       <i class="material-icons text-muted">keyboard_arrow_down</i>
                     </div>
                     <div id="hide-4" class="overflow-box pr-3">
-                      <img src="./images/atbash_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
+                      <img src="./images/atbash_animated.svg" class="svg-img-methods mb-3" alt="Immagine non trovata.">
                     L'atbash è un semplice cifrario a sostituzione monografica monoalfabetica in cui la prima lettera dell'alfabeto è sostituita con l'ultima, la seconda con la penultima, e così via, "invertendo" l'ordine alfabetico delle lettere. <br>
                     In sostanza consiste nello scrivere metà alfabeto su un rigo e l'altra metà al contrario sul rigo a capo, così che alla A corrisponda la Z alla B la Y ecc.; in questo modo la lettura del cifrario risulta più semplice.
                     </div>
@@ -252,7 +252,7 @@
                         Il codice
                         <i class="material-icons text-muted">keyboard_arrow_down</i>
                       </div>
-                        <button type="button" class="btn btn-light btn-sm" >
+                        <button type="button" class="btn btn-light btn-sm copy">
                           Copy
                         </button>
                     </div>

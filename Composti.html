@@ -96,7 +96,7 @@
                 <div class="text-h5 arrow-down">
                   Il crittogramma
                 </div>
-                <div class="bg-light" style=" font-size:1.7rem; height:40px;">
+                <div class="border" style=" font-size:1.7rem; height:40px;">
                   <div id="output" class="output" style="white-space: pre"></div>
                 </div>
               </div>
@@ -110,10 +110,10 @@
 
             <div class="row">
               <div class="col-md-4">
-                <div class="caption-head">
+                <div class="caption-head text-primary">
                   I metodi
                 </div>
-                <div class="d-flex flex-wrap p-3 m-2 border border-primary rounded">
+                <div class="badge-container border border-primary rounded">
                   <div class="btn btn-outline-primary ml-2 mb-2">Cesare</div>
                   <div class="btn btn-outline-primary ml-2 mb-2">Atbash</div>
                   <div class="btn btn-outline-primary ml-2 mb-2">Vigenère</div>
@@ -122,30 +122,20 @@
                   <div class="btn btn-outline-primary ml-2 mb-2">Cesare</div>
                 </div>
               </div>
-
               <div class="col-md-8">
                 <div class="caption-head">
                   La tua catena
                 </div>
-                <div class="d-flex m-2 border border-secondary rounded p-3">
-                  <div class="btn btn-outline-secondary d-flex align-items-center justify-content-around ml-2">Cesare
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
-                  <div class="btn btn-outline-secondary d-flex align-items-center justify-content-around ml-2">Pizzini
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
-                  <div class="btn btn-outline-secondary d-flex align-items-center justify-content-around ml-2">Atabsh
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
-                  <div class="btn btn-outline-secondary d-flex align-items-center justify-content-around ml-2">Vigenere
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
-                  <div class="btn btn-outline-secondary d-flex align-items-center justify-content-around ml-2">Polibio
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
+                <div id="chain" class="badge-container border rounded">
                 </div>
               </div>
             </div>
+
+              <div class="row">
+                <div class="col-12" style="height:500px;">
+
+                </div>
+              </div>
 
           </div>
     </main>
@@ -162,7 +152,6 @@
     <script type="text/javascript" src="./js/navbarScrolling.js"></script>
     <script type="text/javascript" src="./js/fromCriptToDecript.js"></script>
     <script type="text/javascript" src="./js/hideShow.js"></script>
-    <script type="text/javascript" src="./js/dotdotdot.js"></script>
 
     <script type="text/javascript">
 
@@ -206,6 +195,25 @@
             .prev()
             .addClass('d-none')
             .blur();
+        });
+
+        $('.badge-container').find('.btn').on('click', function() {
+          var value = $(this).text();
+          var chain = $('#chain').append(
+            '<div class="btn btn-secondary composed-badge" data-toggle="tooltip" data-placement="bottom" title="Tooltip Bottom">' + value +
+              '<i class="material-icons icon-small ml-1 clear">clear</i>' +
+            '</div>'
+          )
+
+          chain.find('.clear').on('click', function() {
+            var parent = $(this).closest('.composed-badge');
+            parent.tooltip('dispose');
+            parent.remove();
+          });
+
+          chain.find('.btn').tooltip({
+            trigger: 'click'
+          });
         });
 
         $('.select').range({ from: 1, to: 26, step: 1 });
