@@ -3,5 +3,23 @@
   width: 100px;
   margin-bottom: 0px;
   border-radius: 50%;
-  @include hr-color("hr-crypto");
+  &.hr-crypto{
+    @include hr-gradient("hr-crypto");
+  }
+
+  &.hr-composti{
+    @include hr-gradient("composti");
+  }
+
+  &.hr-mM{
+    @include hr-color("mM");
+  }
+
+  &.hr-mP{
+    @include hr-color("mP");
+  }
+
+  &.hr-pM{
+    @include hr-color("pM");
+  }
 }
