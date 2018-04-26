@@ -88,7 +88,7 @@
 
       <div class="container">
         <div class="row">
-          <!-- Cesare -->
+          <!-- Vigenere -->
           <div class="col-lg-6 border-right">
             <div class="text-title">
               <h1>Cesare</h1>
@@ -138,20 +138,77 @@
 
                   <!-- Il codice pretty-->
                   <div class="overflow-box" id="hide-2">
+                    function Vigenere ()
+    {
+      chiave=prompt('Chiave:');
+      chiaro=document.f.t.value;
+      chiave=chiave.toUpperCase();
+      chiaro=chiaro.toUpperCase();
+      car="";
+      j=0;
+
+      for(i=chiave.length;i<chiaro.length;i++)
+      {
+        chiave+=chiave.charAt(j);
+        j++;
+      }
+
+      document.f.ch.value=chiave;
+
+
+      for(k=0;k<chiaro.length;k++)
+        {
+          r=alfabeto.indexOf(chiave.charAt(k));
+          c=alfabeto.indexOf(chiaro.charAt(k));
+
+          car+=vigenere[r][c];
+
+        }
+      document.f.c.value=car;
+    }
+
+
+
+  </script>
+</head>
+<body onload='Tabella()'>
+  <h1 align='center'>CIFRARIO DI VIGENERE</h1>
+  <form name="f">
+  <table border="0" align='center'>
+    <tr>
+      <th>Messaggio in chiaro
+      <td><INPUT type='text' name="t">
+    <tr>
+      <td>Chiave</td>
+      <td><INPUT type='text' name="ch" disabled></td>
+    <tr>
+      <td>Messaggio cifrato</td>
+      <td><INPUT type='text' name="c"></td>
+    <tr>
+      <td colspan="2" align='center'>
+        <input type="button" name="b1" value="cripta" onclick="Vigenere()">
+        <input type="button" name="b2" value="decripta" onclick="Decripta()">
+    <tr>
+      <td id='output' colspan="2">tabella cifrante
+    </td>
+      </table>
+  </form>
+</body>
                     <pre  class="prettyprint linenums">&lt;html&gt;
                       &nbsp;&nbsp;&lt;head&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Cesare&lt;/title&gt;
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Vigenere&lt;/title&gt;
                   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
 
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Cesare(){
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Vigenere(){
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave = parseInt(document.f.k.value);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave = prompt('Chiave:').toLowerCase();
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j = 0;
 
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;testo.length;i++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = chiave.length;i &lt; testo.length;i++)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//per gestire spazi, etc. etc.
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave += chiave.charAt(j);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(pos == -1)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += carattere;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{
