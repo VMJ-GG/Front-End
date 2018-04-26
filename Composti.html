@@ -111,7 +111,7 @@
 
             <div class="row">
               <div class="col-md-4">
-                <div class="d-flex flex-wrap p-3 m-2 border border-warning rounded">
+                <div class="badge-container border border-warning rounded">
                   <div class="btn btn-outline-primary ml-2 mb-2">Cesare</div>
                   <div class="btn btn-outline-primary ml-2 mb-2">Atbash</div>
                   <div class="btn btn-outline-primary ml-2 mb-2">Vigenère</div>
@@ -122,22 +122,7 @@
               </div>
 
               <div class="col-md-8">
-                <div class="d-flex m-2 border border-danger rounded p-3">
-                  <div class="btn btn-secondary d-flex align-items-center justify-content-around ml-2">Cesare
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
-                  <div class="btn btn-secondary d-flex align-items-center justify-content-around ml-2">Pizzini
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
-                  <div class="btn btn-secondary d-flex align-items-center justify-content-around ml-2">Atabsh
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
-                  <div class="btn btn-secondary d-flex align-items-center justify-content-around ml-2">Vigenere
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
-                  <div class="btn btn-secondary d-flex align-items-center justify-content-around ml-2">Polibio
-                    <i class="material-icons icon-small ml-1">clear</i>
-                  </div>
+                <div id="chain" class="badge-container border border-danger rounded">
                 </div>
               </div>
             </div>
@@ -145,26 +130,6 @@
 
           </div>
       </section>
-
-      <section>
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="container">
-              <div class="caption">
-
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="container">
-              <div class="caption">
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </main>
 
 
@@ -180,7 +145,6 @@
     <script type="text/javascript" src="./js/fromCriptToDecript.js"></script>
     <script type="text/javascript" src="./js/copy.js"></script>
     <script type="text/javascript" src="./js/hideShow.js"></script>
-    <script type="text/javascript" src="./js/dotdotdot.js"></script>
 
     <script type="text/javascript">
 
@@ -224,6 +188,17 @@
             .prev()
             .addClass('d-none')
             .blur();
+        });
+
+        $('.badge-container').find('.btn').on('click', function() {
+          var value = $(this).text();
+          var log = $('#chain').append(
+            '<div class="btn btn-secondary composed-badge" data-toggle="tooltip" data-placement="bottom" title="Tooltip Bottom">' + value +
+              '<i class="material-icons icon-small ml-1 clear">clear</i>' +
+            '</div>'
+          ).find('.clear').on('click', function() {
+            $(this).closest('.composed-badge').remove();
+          });
         });
 
         $('.select').range({ from: 1, to: 26, step: 1 });
@@ -274,6 +249,9 @@
 
         // Run prettify.js
         PR.prettyPrint();
+
+        // Add tooltip
+        $('[data-toggle="tooltip"]').tooltip();
       });
     </script>
   </body>
