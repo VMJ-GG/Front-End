@@ -3,6 +3,6 @@ function dotdotdot(cursor, times, string) {
 }
 
 var cursor = 0;
-setInterval(function () {
+var fn = setInterval(function () {
   document.getElementById("output").innerHTML = dotdotdot(cursor++, 3, '.')
 }, 500);

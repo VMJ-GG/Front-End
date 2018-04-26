@@ -118,7 +118,7 @@
                     <i class="material-icons text-muted">keyboard_arrow_down</i>
                   </div>
                   <div id="hide-1" class="overflow-box pl-3">
-                    <img src="./images/cesare_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
+                    <img src="./images/pizzini_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
                     Il cifrario di Cesare utilizza un metodo a sostituzione monografica monoalfabetica: ogni lettera del testo in chiaro è sostituita nel testo cifrato dalla lettera che si trova un certo numero di posizioni, determinate dalla chiave (che nella sua versione <i>standard</i> è 3), traslata nell'alfabeto. Questi tipi di cifrari sono detti anche cifrari a scorrimento, a causa del loro modo di operare.
                   </div>
 
@@ -237,7 +237,7 @@
                       <i class="material-icons text-muted">keyboard_arrow_down</i>
                     </div>
                     <div id="hide-4" class="overflow-box pr-3">
-                      <img src="./images/atbash_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
+                      <img src="./images/polibio_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
                     L'atbash è un semplice cifrario a sostituzione monografica monoalfabetica in cui la prima lettera dell'alfabeto è sostituita con l'ultima, la seconda con la penultima, e così via, "invertendo" l'ordine alfabetico delle lettere.
                     In sostanza consiste nello scrivere metà alfabeto su un rigo e l'altra metà al contrario sul rigo a capo, così che alla A corrisponda la Z alla B la Y ecc.; in questo modo la lettura del cifrario risulta più semplice.
                     </div>
@@ -321,13 +321,11 @@
     <script type="text/javascript" src="./js/ghostWriter.js"></script>
     <script type="text/javascript" src="./js/navbarScrolling.js"></script>
     <script type="text/javascript" src="./js/fromCriptToDecript.js"></script>
-    <script type="text/javascript" src="./js/copy.js"></script>
     <script type="text/javascript" src="./js/hideShow.js"></script>
-    <script type="text/javascript" src="./js/dotdotdot.js"></script>
-
     <script type="text/javascript">
-
       $(document).ready(function() {
+        var fn = setInterval(dotdotdot, 500);
+
         // Selectors
         var PLACEHOLDER = '.gw-placeholder';
 
@@ -338,6 +336,8 @@
         // Writer's event
         $(PLACEHOLDER).on('click', function(e) {
           e.stopPropagation();
+
+          clearInterval(fn);
 
           var placeholder = $(this);
           var input       = placeholder.prev();
@@ -367,6 +367,8 @@
             .prev()
             .addClass('d-none')
             .blur();
+
+          fn = setInterval(dotdotdot, 500);
         });
 
         $('.select').range({ from: 1, to: 26, step: 1 });
@@ -417,6 +419,11 @@
 
         // Run prettify.js
         PR.prettyPrint();
+
+        var cursor = 0;
+        function dotdotdot() {
+           document.getElementById("output").innerHTML = Array(3 - Math.abs(++cursor % (3 * 2) - 3) + 1).join('.');
+        }
       });
     </script>
   </body>
