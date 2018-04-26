@@ -91,7 +91,7 @@
           <!-- Cesare -->
           <div class="col-lg-6 border-right">
             <div class="text-title">
-              <h1>Cesare</h1>
+              <h1>Pizzini</h1>
               <!-- <div class="hr"></div> -->
             </div>
             <div class="caption">
@@ -140,27 +140,26 @@
                   <div class="overflow-box" id="hide-2">
                     <pre  class="prettyprint linenums">&lt;html&gt;
                       &nbsp;&nbsp;&lt;head&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Cesare&lt;/title&gt;
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Pizzini&lt;/title&gt;
                   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
 
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Cesare(){
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Pizzini(){
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave = parseInt(document.f.k.value);
 
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;testo.length;i++)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//per gestire spazi, etc. etc.
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(pos == -1)
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += carattere;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos += key;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(pos &lt; 0){
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = posizione + alfabeto.length;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = posizione % alfabeto.length;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += alfabeto.charAt(posizione);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carattere = testo.charAt(i);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = alfabeto.indexOf(carattere);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione += chiave;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(posizione &lt; 0){
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = posizione + alfabeto.length;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = posizione % alfabeto.length;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += posizione + " ";
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.tc.value = crittogramma;
                 		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
@@ -169,7 +168,7 @@
                       &nbsp;&nbsp;&lt;/head&gt;
 
                     	&nbsp;&nbsp;&lt;body&gt;
-                  	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Cesare&lt;/h2&gt;
+                  	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Pizzini&lt;/h2&gt;
             		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
                 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
               				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
@@ -180,7 +179,7 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('&lt;option&gt;'+j);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;
-              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Cripta" onclick="Atbash()"&gt;&lt;br&gt;
+              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Cripta" onclick="Pizzini()"&gt;&lt;br&gt;
               				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo crittato&lt;input type="text" name="tc"&gt;
               			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
@@ -210,7 +209,7 @@
           <!-- Atbash -->
           <div class="col-lg-6">
             <div class="text-title">
-              <h1>Atbash</h1>
+              <h1>Polibio</h1>
               <!-- <div class="hr"></div> -->
             </div>
             <div class="caption">
@@ -257,34 +256,33 @@
                     <div class="overflow-box" id="hide-5">
                       <pre lang="html" class="prettyprint linenums">&lt;html&gt;
                       &nbsp;&nbsp;&lt;head&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Atbash&lt;/title&gt;
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Polibio&lt;/title&gt;
                   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
 
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Atbash(){
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Polibio(){
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
 
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;testo.length;i++)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carattere = testo.charAt(i);
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione = alfabeto.indexOf(carattere);
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posizione=26-posizione;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma+=alfabeto.charAt(posizione);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valx = alfabeto.indexOf(testo.charAt(i))%5+1;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valy = alfabeto.indexOf(testo.charAt(i))/5+1;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += parseInt(valy)+""+valx+" ";
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.tc.value=crittogramma;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.tc.value = crittogramma;
                 		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                       &nbsp;&nbsp;&lt;/head&gt;
 
                     	&nbsp;&nbsp;&lt;body&gt;
-                  	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Atbash&lt;/h2&gt;
+                  	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Polibio&lt;/h2&gt;
             		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
                 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
               				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
                   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo in chiaro&lt;input type="text" name="t"&gt;
-              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button"  value="Cripta" onclick="Atbash()"&gt;&lt;br&gt;
+              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button"  value="Cripta" onclick="Polibio()"&gt;&lt;br&gt;
               				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo crittato&lt;input type="text" name="tc"&gt;
               			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
