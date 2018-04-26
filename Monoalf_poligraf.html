@@ -118,8 +118,11 @@
                     <i class="material-icons text-muted">keyboard_arrow_down</i>
                   </div>
                   <div id="hide-1" class="overflow-box pl-3">
-                    <img src="./images/pizzini_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
-                    Il cifrario di Cesare utilizza un metodo a sostituzione monografica monoalfabetica: ogni lettera del testo in chiaro è sostituita nel testo cifrato dalla lettera che si trova un certo numero di posizioni, determinate dalla chiave (che nella sua versione <i>standard</i> è 3), traslata nell'alfabeto. Questi tipi di cifrari sono detti anche cifrari a scorrimento, a causa del loro modo di operare.
+                    <img src="./images/pizzini_animated.svg" class="svg-img-methods mb-3" alt="Immagine non trovata.">
+                    Questo metodo per la cifratura di un testo si basa sul cifrario di Cesare. <br>
+                    Il cifrario è costruito in modo che ad ogni lettera dell’alfabeto italiano venga sostituita la lettera che si trova a N posizioni avanti, dove N è la chiave definita dall’utente. <br>
+                    Ad ogni lettera del testo in chiaro viene sostituita la posizione di tale lettera nel cifrario.
+                    È quindi un metodo di sostituzione poligrafica.
                   </div>
 
                   <hr>
@@ -194,12 +197,10 @@
                     <i class="material-icons text-muted">keyboard_arrow_down</i>
                   </div>
                   <div id="hide-3" class="overflow-box pl-3">
-                    In crittografia il cifrario di Cesare è uno dei più antichi algoritmi crittografici di cui si abbia traccia storica.
-                    Il cifrario di Cesare prende il nome da Giulio Cesare, che lo utilizzava per proteggere i suoi messaggi segreti. Grazie allo storico Svetonio sappiamo che Cesare utilizzava in genere una chiave di 3 per il cifrario, come nel caso della corrispondenza militare inviata alle truppe comandate da Quinto Tullio Cicerone. Al tempo era sicuro perché gli avversari spesso non erano neanche in grado di leggere un testo in chiaro, men che mai uno cifrato; inoltre non esistevano metodi di crittanalisi in grado di rompere tale codice, per quanto banale.
+                    Questo sistema veniva utilizzato da Bernardo Provenzano per proteggere informazioni rilevanti scritte nei suoi famosi pizzini, i piccoli foglietti di carta con i quali il boss della mafia, durante la sua latitanza, riceveva informazioni e impartiva ordini.
 
-                    Conosciamo anche altri che usarono questo cifrario al tempo di Cesare: Augusto, suo nipote, lo utilizzava con chiave 1, ma senza ripartire da sinistra in caso di fine dell'alfabeto. Quindi, scriveva B per A, C per B ma usava AA per Z.
-
-                    Dalla scoperta dell'analisi delle frequenze da parte del matematico arabo Al-Kindi nell'XI secolo circa, tutti i cifrari di questo tipo sono divenuti molto semplici da rompere; nessuno è adatto per comunicazioni sicure allo stato tecnologico attuale, né lo è stato negli ultimi 1000 anni. Tuttavia, una forma di questo cifrario, chiamata ROT13, è ancora usata oggi per offuscare parti di un messaggio in modo da non renderle immediatamente comprensibili.
+                    Bernardo Provenzano, è stato un mafioso italiano, membro di Cosa Nostra e considerato il capo dell'organizzazione a partire dal 1995 fino al suo arresto, avvenuto nel 2006.
+                    Prima del suo arresto, Provenzano era ricercato dal  1963, con una latitanza record di 43 anni.  morì il 13 luglio 2016, a Milano.
                     <div class="text-source pt-4">Source: Wikipedia.</div>
                   </div>
                   <hr>
@@ -237,9 +238,16 @@
                       <i class="material-icons text-muted">keyboard_arrow_down</i>
                     </div>
                     <div id="hide-4" class="overflow-box pr-3">
-                      <img src="./images/polibio_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
-                    L'atbash è un semplice cifrario a sostituzione monografica monoalfabetica in cui la prima lettera dell'alfabeto è sostituita con l'ultima, la seconda con la penultima, e così via, "invertendo" l'ordine alfabetico delle lettere.
-                    In sostanza consiste nello scrivere metà alfabeto su un rigo e l'altra metà al contrario sul rigo a capo, così che alla A corrisponda la Z alla B la Y ecc.; in questo modo la lettura del cifrario risulta più semplice.
+                      <img src="./images/polibio_animated.svg" class="svg-img-methods mb-1" alt="Immagine non trovata.">
+                      Questo metodo a sostituzione monoalfabetica monografica si basa su un sistema senza chiave di criptazione, basato su una tabella <i>(vedi immagine sopra)</i>. <br>
+                      La tabella di sostituzione è formata da 25 caselle (5 righe e 5 colonne), dentro le quali sono inserite le lettere dell’alfabeto. Ad ogni lettera del testo in chiaro vengono sostituiti la sua posizione (prima la riga e poi la colonna) nella tabella. <br> <br>
+
+                      <div class="text-h4">
+                        Esempio:
+                      </div>
+                      &nbsp&nbsp La lettera A del testo in chiaro verrà sostituita con 11 (1,1). <br>
+                      &nbsp&nbsp La lettera C verrà sostituita inevece con 13 (1,3). <br>
+                      &nbsp&nbsp Quindi, ad esempio, il testo in chiaro CIAO verrà criptato in: 13 24 11 34.
                     </div>
                     <hr>
 
@@ -296,13 +304,11 @@
                       <i class="material-icons text-muted">keyboard_arrow_down</i>
                     </div>
                     <div id="hide-6" class="overflow-box pr-3">
-                      L'origine di questo cifrario si può trovare nella Bibbia, nel libro di Geremia, dove è stato usato per codificare le parole Kasdim (Caldei) in Leb Kamai e Babel (Babele) in Sheshakh. La prima parola decifrata fu Sheshach che veniva ripetuta varie volte nel libro di Geremia (Il re di Sheshach, il popolo di Sheshach, la città di Sheshach) ma dopo varie ricerche non si riusciva a trovare la città nelle cartine. Infine uno studioso applicò il cifrario atbash e venne fuori la parola Babel. Il metodo in cui l'atbash fu usato è molto semplice. In ebraico Sheshach si scrive SH-SH-K, che corrisponde a B-B-L, la cui pronuncia è Babel, cioè Babele.
-
-                      Il nome stesso del cifrario viene dalla lingua ebraica: la prima lettera dell'alfabeto ebraico è aleph, l'ultima taw, la seconda beth, e la penultima shin; messe assieme, formano la parola atbash.
+                        Questo metodo fu inventato dallo storico greco Polibio, intorno al 150 a.c.
+                        Inizialmente Polibio utilizzava questo metodo per la comunicazione a distanza, mentre venne usato più recentemente dai nichilisti russi sia per secretare i loro messaggi sia come forma di comunicazione durante la prigionia sotto l'epoca degli zar. In questa forma è stata adoperata anche dai prigionieri di guerra americani durante la guerra del Vietnam.
                       <div class="text-source pt-4">Source: Wikipedia.</div>
-                      <hr>
                     </div>
-
+                    <hr>
                   </div>
                 </div>
           </div>
