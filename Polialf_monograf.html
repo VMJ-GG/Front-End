@@ -23,7 +23,8 @@
   <body>
     <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">WebTips</a>
+       <img class="mr-1" href="index.html" src="./images/WebTips_logo.svg" style="width:40px; height:40px;">
+        <a class="navbar-brand" href="#">Web-tips</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
          </button>
@@ -46,10 +47,6 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Cerca qualcosa" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
-          </form>
         </div>
       </nav>
     </header>
@@ -78,12 +75,12 @@
         <div class="row">
           <!-- Vigenere -->
           <div class="col-lg-12">
-            <div class="text-title">
-              <h1>Vigenere</h1>
-              <div class="hr hr-pM"></div>
-              <!-- <div class="hr"></div> -->
-            </div>
-            <div class="caption">
+
+            <div class="caption enable">
+              <div class="text-title">
+                    Vigenere
+                <div class="hr hr-pM"></div>
+              </div>
               <div class="caption-body mb-5">
                 <div class="text-h5 text-select-pM arrow-down">
                   Il crittogramma
@@ -92,8 +89,12 @@
                   <div id="vigenere-output" class="output" style="white-space: pre"></div>
                 </div>
               <div class="text-select text-select-pM mt-4">La chiave</div>
-              <div class="" style="text-align: center;">
-                 <select class="select"></select>
+              <div class="input-select">
+                <input id="vigenere-key" type="text" class="form-control" placeholder="Inserisci una chiave">
+              </div>
+              <div class="mt-2" align="center">
+                Se la chiave che inserisci è più lunga del testo in chiaro, essa verrà automaticamente tagliata; <br>
+                se invece più corta, verrà replicata.
               </div>
               </div>
             </div>
@@ -110,7 +111,7 @@
                       <i class="material-icons text-muted">keyboard_arrow_down</i>
                     </div>
                     <div id="hide-1" class="overflow-box pl-3">
-                      <img src="./images/vigenere_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
+                      <img src="./images/vigenere.svg" class="svg-img-methods" alt="Immagine non trovata.">
                       Il metodo si può considerare una generalizzazione del cifrario di Cesare: invece di spostare sempre dello stesso numero di posti la lettera da cifrare oppure mediante l'uso di una chiave numerica, questa viene spostata di un numero di posti variabile ma ripetuto, determinato in base ad una parola chiave da scrivere ripetutamente sotto il messaggio, carattere per carattere; la chiave era detta anche verme, per il motivo che, essendo in genere molto più corta del messaggio, deve essere ripetuta molte volte sotto questo, come nel seguente esempio: <br><br>
                       <div class="text-h5">
                       <i>Testo chiaro</i>&nbsp - &nbsp&nbspRAPPORTOIMMEDIATO <br>
@@ -277,7 +278,7 @@
 
         // Window event for starting writing
         $(window).on('click', function(e) {
-          if(e.target.nodeName === 'INPUT') {
+          if(e.target.nodeName === 'INPUT' || e.target.nodeName === 'BUTTON') {
             e.stopPropagation();
             return;
           }
@@ -291,7 +292,7 @@
         });
 
         // Output Containers
-        var vigenereOutput = $('#caesar-output');
+        var vigenereOutput = $('#vigenere-output');
 
         // Methods
         var vigenere = Encrypter.vigenere;
@@ -328,24 +329,26 @@
             case 'Home':
             break;
             default:
-              var key = vigenere.utils.lengthenKey($('select').val());
+              var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
               if ($('#buttonCriptDecript > span').text() === 'Cripta')
                 encrypt(text, key);
-              else
-                decrypt(text, key);
+              else {
+                decrypt(vigenereOutput.text(), key);
+              }
           }
         });
 
-
         $('#buttonCriptDecript').on('click', function() {
           var value = $(this).find('span').text();
-          var key  = vigenere.utils.lengthenKey($('select').val());
           var text = $(PLACEHOLDER).prev().val();
+          var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
 
-          if (value === 'Cripta')
+          if (value === 'Cripta') {
             encrypt(text, key);
-          else
-            decrypt(text, key);
+          }
+          else {
+            decrypt(vigenereOutput.text(), key);
+          }
         });
 
         function encrypt(text, key) {
@@ -358,19 +361,11 @@
 
         function decrypt(text, key) {
           vigenereOutput.text(
-            [].map.call(text, function(ch) {
+            [].map.call(text, function(ch, index) {
               return vigenere.decrypt(ch, key[index]);
             }).join('')
           );
         }
-
-        // Range select
-        $('.select').range({ from: 1, to: 26, step: 1 });
-        $('.select').selectpicker({
-                size: 5,
-               style: 'btn-card-mM',
-          dropupAuto: false,
-        }).selectpicker('val', '3');
 
         // Run prettify.js
         PR.prettyPrint();

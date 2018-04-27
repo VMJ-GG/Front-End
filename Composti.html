@@ -23,7 +23,8 @@
   <body>
     <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">WebTips</a>
+       <img class="mr-1" href="index.html" src="./images/WebTips_logo.svg" style="width:40px; height:40px;">
+        <a class="navbar-brand" href="#">Web-tips</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
          </button>
@@ -46,10 +47,6 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Cerca qualcosa" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
-          </form>
         </div>
       </nav>
     </header>
@@ -88,6 +85,22 @@
                   <div id="output" class="output" style="white-space: pre"></div>
                 </div>
               </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text-select text-success mt-4">Chiave per Cesare o Pizzini</div>
+                  <div class="" style="text-align: center;">
+                     <select class="select"></select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="text-select text-select-pM mt-4">Chiave per Vigenere</div>
+                  <div class="input-select">
+                    <input id="vigenere-key" type="text" class="form-control" placeholder="Inserisci una chiave">
+                  </div>
+                </div>
+              </div>
+
               <div class="caption-body mt-4 mb-4" onclick="hideShow(1);">
                 Clicca i metodi nell'ordine che preferisci, creando catene crittografiche composte a tuo piacimento. <div class="arrow-down" style="display: inline">
                   <i class="material-icons">keyboard_arrow_down</i>
@@ -197,7 +210,7 @@
         });
 
         var output = $('#output');
-        var chain = Encrypter.EMPTY;
+        var composed = new Encrypter('Root', function(ch) { return ch; }, function(ch) { return ch; });
         $('.badge-container').find('.btn').on('click', function() {
           var value = $(this).text();
           var chain = $('#chain').append(
@@ -209,7 +222,7 @@
           chain.find('.clear').on('click', function() {
             var parent = $(this).closest('.composed-badge');
             var value = parent.text();
-            chain.remove(value);
+            composed.remove(value);
             parent.tooltip('dispose');
             parent.remove();
           });
@@ -220,19 +233,19 @@
 
           switch (value) {
             case 'Cesare':
-              chain.append(caesar);
+              composed = composed.append(caesar);
             break;
             case 'Atbash':
-              chain.append(atbash);
+              composed = composed.append(atbash);
             break;
             case 'Pizzini':
-              chain.append(pizzini);
+              composed = composed.append(pizzini);
             break;
             case 'Polibio':
-              chain.append(polibio);
+              composed = composed.append(polibio);
             break;
-            case 'Vigenere':
-              chain.append(vigenere);
+            case 'Vigenère':
+              composed = composed.append(vigenere);
             break;
           }
         });
@@ -240,7 +253,7 @@
         $('.select').range({ from: 1, to: 26, step: 1 });
         $('.select').selectpicker({
                 size: 5,
-               style: 'btn-outline-danger',
+               style: 'btn-outline-success',
           dropupAuto: false,
         }).selectpicker('val', '3');
 
@@ -278,17 +291,19 @@
             default:
               if ($('#buttonCriptDecript > span').text() === 'Cripta') {
                 outputText = text;
-                chain.each(function() {
+                composed.each(function() {
                   if (this.name === 'Vigenere') {
-                    var vigenereKey = this.utils.lengthenKey($('.input-select').val());
+                    var self = this;
+                    var vigenereKey = this.utils.lengthenKey($('#vigenere-key').val(), outputText.length);
                     outputText = [].map.call(outputText, function(ch, index) {
-                      return this.encrypter(ch, vigenereKey[index]);
-                    });
-                  } else {
-                    var caesarKey = $('select').val();
+                      return self.encrypt(ch, vigenereKey[index]);
+                    }).join('');
+                  } else if (this.name !== 'Root') {
+                    var self = this;
+                    var caesarKey = Number($('select').val());
                     outputText = [].map.call(outputText, function(ch) {
-                      return this.encrypter(ch, caesarKey);
-                    });
+                      return self.encrypt(ch, caesarKey);
+                    }).join('');
                   }
                 });
 
@@ -296,17 +311,19 @@
               }
               else {
                 outputText = text;
-                chain.each(function() {
+                composed.each(function() {
                   if (this.name === 'Vigenere') {
-                    var vigenereKey = this.utils.lengthenKey($('.input-select').val());
+                    var self = this;
+                    var vigenereKey = this.utils.lengthenKey($('#vigenere-key').val());
                     outputText = [].map.call(outputText, function(ch, index) {
-                      return this.decrypter(ch, vigenereKey[index]);
-                    });
-                  } else {
-                    var caesarKey = $('select').val();
+                      return self.decrypt(ch, vigenereKey[index]);
+                    }).join('');
+                  } else if (this.name !== 'Root') {
+                    var self = this;
+                    var caesarKey = Number($('select').val());
                     outputText = [].map.call(outputText, function(ch) {
-                      return this.decrypter(ch, polibioKey);
-                    });
+                      return self.decrypt(ch, caesarKey);
+                    }).join('');;
                   }
                 });
 
