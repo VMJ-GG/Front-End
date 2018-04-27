@@ -54,7 +54,7 @@
     </header>
 
     <main class="container-fluid px-0" role="main">
-      <section class="jumbotron jumbotron-poliMonal">
+      <section id="top" class="jumbotron jumbotron-poliMonal">
         <div class="jumbotron-body">
           <div class="gw-container">
             <input type="text" class="d-none">
@@ -219,12 +219,18 @@
                   <div class="text-source pt-4">Source: Wikipedia.</div>
                 </div>
               </div>
-
-          <hr>
-
-
         </div>
       </div>
+
+      <footer>
+        <div class="caption footer-container">
+          <div class="footer-link arrow-down">
+            Back to top
+            <i class="material-icons">keyboard_arrow_up</i>
+          </div>
+        </div>
+      </footer>
+
     </main>
 
 
@@ -333,6 +339,14 @@
 
         // Run prettify.js
         PR.prettyPrint();
+
+        //footer
+        $('.footer-link').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#top').offset().top-76
+          }, 1200);
+        });
+
       });
     </script>
   </body>
