@@ -250,13 +250,6 @@
     <script type="text/javascript">
 
       $(document).ready(function() {
-        var fn = setInterval(dotdotdot, 500);
-        var cursor = 0;
-        function dotdotdot() {
-          var text = Array(3 - Math.abs(++cursor % 6 - 3) + 1).join('.')
-           $('[id$="output"]').text(text);
-        }
-
         // Selectors
         var PLACEHOLDER = '.gw-placeholder';
 
@@ -267,8 +260,6 @@
         // Writer's event
         $(PLACEHOLDER).on('click', function(e) {
           e.stopPropagation();
-
-          clearInterval(fn);
 
           var placeholder = $(this);
           var input       = placeholder.prev();
@@ -298,9 +289,6 @@
             .prev()
             .addClass('d-none')
             .blur();
-
-          clearInterval(fn);
-          fn = setInterval(dotdotdot, 500);
         });
 
         // Output Containers

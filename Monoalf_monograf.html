@@ -341,13 +341,6 @@
     <script type="text/javascript">
 
       $(document).ready(function() {
-        var fn = setInterval(dotdotdot, 500);
-        var cursor = 0;
-        function dotdotdot() {
-          var text = Array(3 - Math.abs(++cursor % 6 - 3) + 1).join('.')
-           $('[id$="output"]').text(text);
-        }
-
         // Selectors
         var PLACEHOLDER = '.gw-placeholder';
 
@@ -358,8 +351,6 @@
         // Writer's event
         $(PLACEHOLDER).on('click', function(e) {
           e.stopPropagation();
-
-          clearInterval(fn);
 
           var placeholder = $(this);
           var input       = placeholder.prev();
@@ -378,7 +369,7 @@
 
         // Window event for starting writing
         $(window).on('click', function(e) {
-          if(e.target.nodeName === 'INPUT') {
+          if(e.target.nodeName === 'INPUT' || e.target.nodeName === 'BUTTON') {
             e.stopPropagation();
             return;
           }
@@ -389,9 +380,6 @@
             .prev()
             .addClass('d-none')
             .blur();
-
-          clearInterval(fn);
-          fn = setInterval(dotdotdot, 500);
         });
 
         // Output Containers
@@ -437,8 +425,11 @@
               var key = Number($('select').val());
               if ($('#buttonCriptDecript > span').text() === 'Cripta')
                 encrypt(text, key);
-              else
-                decrypt(text, key);
+              else {
+                var caesarText = caesarOutput.text();
+                var atbashText = atbashOutput.text();
+                decrypt(caesarText, atbashText, key);
+              }
           }
         });
 
@@ -446,12 +437,16 @@
         $('#buttonCriptDecript').on('click', function() {
           var value = $(this).find('span').text();
           var key = Number($('select').val());
-          var text = $(PLACEHOLDER).prev().val();
 
-          if (value === 'Cripta')
+          if (value === 'Cripta') {
+            var text = $(PLACEHOLDER).prev().val();
             encrypt(text, key);
-          else
-            decrypt(text, key);
+          }
+          else {
+            var caesarText = caesarOutput.text();
+            var atbashText = atbashOutput.text();
+            decrypt(caesarText, atbashText, key);
+          }
         });
 
         function encrypt(text, key) {
@@ -467,14 +462,14 @@
           );
         }
 
-        function decrypt(text, key) {
+        function decrypt(caesarText, atbashText, key) {
           caesarOutput.text(
-            [].map.call(text, function(ch) {
+            [].map.call(caesarText, function(ch) {
               return caesar.decrypt(ch, key);
             }).join('')
           );
           atbashOutput.text(
-            [].map.call(text, function(ch) {
+            [].map.call(atbashText, function(ch) {
               return atbash.decrypt(ch);
             }).join('')
           );
