@@ -6,19 +6,3 @@ function hideShow(i) {
         x.style.display = "none";
     }
 }
-
-
-$(document).ready(function(){
-	$('.arrow-hide').addClass("visible");
-
-	$('.arrow-hide').click(function() {
-		var $this = $(this);
-
-		if ($this.hasClass("visible")) {
-			$(this).removeClass("visible").addClass("hidden");
-
-		} else {
-			$(this).removeClass("hidden").addClass("visible");
-		}
-	});
-});
