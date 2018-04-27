@@ -13,6 +13,7 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="./vendor/js/prettify.js"></script>
+    <script type="text/javascript" src="./js/encrypter.js"></script>
 
     <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -68,7 +69,7 @@
             </div>
           </div>
           <div class="">
-            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()">Criptazione<i class="material-icons">keyboard_arrow_right</i></button>
+            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()"><span>Cripta</span><i class="material-icons">keyboard_arrow_right</i></button>
           </div>
         </div>
       </section>
@@ -88,7 +89,7 @@
                   Il crittogramma
                 </div>
                 <div class="border rounded" style=" font-size:1.7rem; height:40px;">
-                  <div id="output" class="output" style="white-space: pre"></div>
+                  <div id="caesar-output" style="white-space: pre"></div>
                 </div>
               <div class="text-select text-select-mM mt-4">La chiave</div>
               <div class="" style="text-align: center;">
@@ -210,7 +211,7 @@
                   Il crittogramma
                 </div>
                 <div class="border rounded" style="font-size: 1.7rem; height:40px;">
-                  <div id="output" class="output" style="white-space: pre"></div>
+                  <div id="atbash-output" style="white-space: pre"></div>
                 </div>
                   <div class="text-select text-select-mM mt-4">La chiave</div>
                     <div class="" style="text-align:center">
@@ -314,11 +315,16 @@
     <script type="text/javascript" src="./js/fromCriptToDecript.js"></script>
     <script type="text/javascript" src="./js/copy.js"></script>
     <script type="text/javascript" src="./js/hideShow.js"></script>
-    <script type="text/javascript" src="./js/dotdotdot.js"></script>
-
     <script type="text/javascript">
 
       $(document).ready(function() {
+        var fn = setInterval(dotdotdot, 500);
+        var cursor = 0;
+        function dotdotdot() {
+          var text = Array(3 - Math.abs(++cursor % 6 - 3) + 1).join('.')
+           $('[id$="output"]').text(text);
+        }
+
         // Selectors
         var PLACEHOLDER = '.gw-placeholder';
 
@@ -330,22 +336,24 @@
         $(PLACEHOLDER).on('click', function(e) {
           e.stopPropagation();
 
+          clearInterval(fn);
+
           var placeholder = $(this);
           var input       = placeholder.prev();
           var inputText   = input.val();
-          var outputText  = $('.output').text();
 
           writer.stop();  // Stop typing
           placeholder
             .addClass('d-none');
 
+          var outputTextPresent = $('[id$="output"]').text() && $('[id$="output"]').text()[0] !== '.';
           input
             .removeClass('d-none')
-            .val(outputText ? inputText : '')
+            .val(outputTextPresent ? inputText : '')
             .focus();
         });
 
-        // Window event for stopping writing
+        // Window event for starting writing
         $(window).on('click', function(e) {
           if(e.target.nodeName === 'INPUT') {
             e.stopPropagation();
@@ -358,20 +366,24 @@
             .prev()
             .addClass('d-none')
             .blur();
+
+          clearInterval(fn);
+          fn = setInterval(dotdotdot, 500);
         });
 
-        $('.select').range({ from: 1, to: 26, step: 1 });
-        $('.select').selectpicker({
-                size: 5,
-               style: 'btn-card-mM',
-          dropupAuto: false,
-        }).selectpicker('val', '3');
+        // Output Containers
+        var caesarOutput = $('#caesar-output');
+        var atbashOutput = $('#atbash-output');
+
+        // Methods
+        var caesar = Encrypter.caesar;
+        var atbash = Encrypter.atbash;
 
         $(PLACEHOLDER).prev().on('keyup', function(e) {
           var text = $(this).val();
-          var key  = e.key;
+          var keyPressed  = e.key;
 
-          switch (key) {
+          switch (keyPressed) {
             case 'Shift':
             case 'Alt':
             case 'AltGraph':
@@ -398,13 +410,60 @@
             case 'End':
             case 'Home':
             break;
-            case 'Backspace':
-              $('.output').text(text);
-            break;
             default:
-              $('.output').text(text);
+              var key = Number($('select').val());
+              if ($('#buttonCriptDecript > span').text() === 'Cripta')
+                encrypt(text, key);
+              else
+                decrypt(text, key);
           }
         });
+
+
+        $('#buttonCriptDecript').on('click', function() {
+          var value = $(this).find('span').text();
+          var key = Number($('select').val());
+          var text = $(PLACEHOLDER).prev().val();
+
+          if (value === 'Cripta')
+            encrypt(text, key);
+          else
+            decrypt(text, key);
+        });
+
+        function encrypt(text, key) {
+          caesarOutput.text(
+            [].map.call(text, function(ch) {
+              return caesar.encrypt(ch, key);
+            }).join('')
+          );
+          atbashOutput.text(
+            [].map.call(text, function(ch) {
+              return atbash.encrypt(ch);
+            }).join('')
+          );
+        }
+
+        function decrypt(text, key) {
+          caesarOutput.text(
+            [].map.call(text, function(ch) {
+              return caesar.decrypt(ch, key);
+            }).join('')
+          );
+          atbashOutput.text(
+            [].map.call(text, function(ch) {
+              return atbash.decrypt(ch);
+            }).join('')
+          );
+        }
+
+        // Range select
+        $('.select').range({ from: 1, to: 26, step: 1 });
+        $('.select').selectpicker({
+                size: 5,
+               style: 'btn-card-mM',
+          dropupAuto: false,
+        }).selectpicker('val', '3');
 
         // Run prettify.js
         PR.prettyPrint();
