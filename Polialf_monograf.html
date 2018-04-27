@@ -47,10 +47,6 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Cerca qualcosa" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
-          </form>
         </div>
       </nav>
     </header>
@@ -79,12 +75,12 @@
         <div class="row">
           <!-- Vigenere -->
           <div class="col-lg-12">
-            <div class="text-title">
-              <h1>Vigenere</h1>
-              <div class="hr hr-pM"></div>
-              <!-- <div class="hr"></div> -->
-            </div>
-            <div class="caption">
+
+            <div class="caption enable">
+              <div class="text-title">
+                    Vigenere
+                <div class="hr hr-pM"></div>
+              </div>
               <div class="caption-body mb-5">
                 <div class="text-h5 text-select-pM arrow-down">
                   Il crittogramma
@@ -95,6 +91,10 @@
               <div class="text-select text-select-pM mt-4">La chiave</div>
               <div class="input-select">
                 <input type="text" class="form-control" placeholder="Inserisci una chiave">
+              </div>
+              <div class="mt-2" align="center">
+                Se la chiave che inserisci è più lunga del testo in chiaro, essa verrà automaticamente tagliata; <br>
+                se invece più corta, verrà replicata.
               </div>
               </div>
             </div>
@@ -111,7 +111,7 @@
                       <i class="material-icons text-muted">keyboard_arrow_down</i>
                     </div>
                     <div id="hide-1" class="overflow-box pl-3">
-                      <img src="./images/vigenere_animated.svg" class="svg-img-methods" alt="Immagine non trovata.">
+                      <img src="./images/vigenere.svg" class="svg-img-methods" alt="Immagine non trovata.">
                       Il metodo si può considerare una generalizzazione del cifrario di Cesare: invece di spostare sempre dello stesso numero di posti la lettera da cifrare oppure mediante l'uso di una chiave numerica, questa viene spostata di un numero di posti variabile ma ripetuto, determinato in base ad una parola chiave da scrivere ripetutamente sotto il messaggio, carattere per carattere; la chiave era detta anche verme, per il motivo che, essendo in genere molto più corta del messaggio, deve essere ripetuta molte volte sotto questo, come nel seguente esempio: <br><br>
                       <div class="text-h5">
                       <i>Testo chiaro</i>&nbsp - &nbsp&nbspRAPPORTOIMMEDIATO <br>
