@@ -23,7 +23,8 @@
   <body>
     <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">WebTips</a>
+       <img class="mr-1" href="index.html" src="./images/WebTips_logo.svg" style="width:40px; height:40px;">
+        <a class="navbar-brand" href="#">Web-tips</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
          </button>
@@ -46,10 +47,6 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Cerca qualcosa" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
-          </form>
         </div>
       </nav>
     </header>
@@ -78,25 +75,31 @@
         <div class="row">
           <!-- Pizzini -->
           <div class="col-lg-6 border-right">
-            <div class="text-title">
-              <h1>Pizzini</h1>
-              <div class="hr hr-mP"></div>
-              <!-- <div class="hr"></div> -->
-            </div>
+
             <div class="caption">
+              <div class="text-title">
+                  Pizzini
+                <div class="hr hr-mP"></div>
+              </div>
               <div class="caption-body mb-5">
                 <div class="text-h5 text-select-mP arrow-down">
                   Il crittogramma
                 </div>
-                <div class="border rounded" style=" font-size:1.7rem; height:40px;">
-                  <div id="pizzini-output" class="output" style="white-space: pre"></div>
-                </div>
+              <div class="border rounded" style=" font-size:1.7rem; height:40px;">
+                <div id="caesar-output" style="white-space: pre"></div>
+              </div>
               <div class="text-select text-select-mP mt-4">La chiave</div>
               <div class="" style="text-align: center;">
                  <select class="select"></select>
               </div>
+              </div>
             </div>
-            </div>
+
+              <div align="center">
+                <div class="btn btn-outline-success">
+                  on
+                </div>
+              </div>
 
             <hr>
             <div class="caption">
@@ -199,26 +202,36 @@
 
           <!-- Polibio -->
           <div class="col-lg-6">
-            <div class="text-title">
-              <h1>Polibio</h1>
-              <div class="hr hr-mP"></div>
-              <!-- <div class="hr"></div> -->
-            </div>
+
+
+
             <div class="caption">
+              <div class="text-title">
+                  Polibio
+                <div class="hr hr-mP"></div>
+              </div>
               <div class="caption-body mb-5">
                 <div class="text-h5 text-select-mP arrow-down">
                   Il crittogramma
                 </div>
-                <div class="border rounded" style="font-size: 1.7rem; height:40px;">
-                  <div id="polibio-output" class="output" style="white-space: pre"></div>
-                </div>
-                  <div class="text-select text-select-mP mt-4">La chiave</div>
-                    <div class="" style="text-align:center">
-                      <button class="btn btn-card-mP" style="width:220px">non è necessaria</button>
+                    <div class="border rounded" style=" font-size:1.7rem; height:40px;">
+                      <div id="caesar-output" style="white-space: pre"></div>
                     </div>
+
+
+
+              <div class="text-select text-select-mP mt-4">La chiave</div>
+              <div class="" style="text-align:center">
+                <button class="btn btn-card-mP" style="width:220px">non è necessaria</button>
+              </div>
               </div>
             </div>
 
+            <div align="center">
+              <div class="btn btn-outline-success">
+                on
+              </div>
+            </div>
                   <hr>
                 <div class="caption">
                   <div class="caption-body pt-5 pl-3">
@@ -485,7 +498,7 @@
         $('.select').range({ from: 1, to: 26, step: 1 });
         $('.select').selectpicker({
                 size: 5,
-               style: 'btn-card-mM',
+               style: 'btn-card-mP',
           dropupAuto: false,
         }).selectpicker('val', '3');
 
