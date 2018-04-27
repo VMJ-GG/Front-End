@@ -23,7 +23,8 @@
   <body>
     <header class="header-fixed nav-down">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">WebTips</a>
+       <img class="mr-1" href="index.html" src="./images/WebTips_logo.svg" style="width:40px; height:40px;">
+        <a class="navbar-brand" href="#">Web-tips</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
          </button>
@@ -92,8 +93,8 @@
                   <div id="vigenere-output" class="output" style="white-space: pre"></div>
                 </div>
               <div class="text-select text-select-pM mt-4">La chiave</div>
-              <div class="" style="text-align: center;">
-                 <select class="select"></select>
+              <div class="input-select">
+                <input type="text" class="form-control" placeholder="Inserisci una chiave">
               </div>
               </div>
             </div>
@@ -375,14 +376,6 @@
             }).join('')
           );
         }
-
-        // Range select
-        $('.select').range({ from: 1, to: 26, step: 1 });
-        $('.select').selectpicker({
-                size: 5,
-               style: 'btn-card-mM',
-          dropupAuto: false,
-        }).selectpicker('val', '3');
 
         // Run prettify.js
         PR.prettyPrint();
