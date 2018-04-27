@@ -55,7 +55,7 @@
     </header>
 
     <main class="container-fluid px-0" role="main">
-      <section class="jumbotron jumbotron-mongPoli">
+      <section id="top" class="jumbotron jumbotron-mongPoli">
         <div class="jumbotron-body">
           <div class="gw-container">
             <input type="text" class="d-none">
@@ -167,7 +167,7 @@
                   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo in chiaro&lt;input type="text" name="t"&gt;&lt;br&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chiave&lt;select name='k'&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j =- alfabeto.length;j&lt; = alfabeto.length;j++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j =- alfabeto.length;j &lt;= alfabeto.length;j++)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('&lt;option&gt;'+j);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;
@@ -189,7 +189,7 @@
                     Questo sistema veniva utilizzato da Bernardo Provenzano per proteggere informazioni rilevanti scritte nei suoi famosi pizzini, i piccoli foglietti di carta con i quali il boss della mafia, durante la sua latitanza, riceveva informazioni e impartiva ordini.
 
                     Bernardo Provenzano, è stato un mafioso italiano, membro di Cosa Nostra e considerato il capo dell'organizzazione a partire dal 1995 fino al suo arresto, avvenuto nel 2006.
-                    Prima del suo arresto, Provenzano era ricercato dal  1963, con una latitanza record di 43 anni.  morì il 13 luglio 2016, a Milano.
+                    Prima del suo arresto, Provenzano era ricercato dal  1963, con una latitanza record di 43 anni.  Morì il 13 luglio 2016, a Milano.
                     <div class="text-source pt-4">Source: Wikipedia.</div>
                   </div>
                   <hr>
@@ -259,6 +259,26 @@
                   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
 
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Tabella(){
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;polibio = new Array();
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k = 0;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb = "&lt;table border=1&gt;";
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0;i &lt; 5;i++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb += "&lt;tr&gt;";
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;polibio[i] = [];
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j = 0;j &lt; 5;j++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;polibio[i][j]=alfabeto.charAt(k);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k++;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb += "&lt;td&gt;" + polibio[i][j];
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb += "&lt;/table&gt;";
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("output").innerHTML=tb;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
                   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Polibio(){
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = '';
@@ -275,7 +295,7 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                       &nbsp;&nbsp;&lt;/head&gt;
 
-                    	&nbsp;&nbsp;&lt;body&gt;
+                    	&nbsp;&nbsp;&lt;body onload="Tabella()"&gt;
                   	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Polibio&lt;/h2&gt;
             		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
                 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
@@ -284,6 +304,8 @@
               				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button"  value="Cripta" onclick="Polibio()"&gt;&lt;br&gt;
               				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo crittato&lt;input type="text" name="tc"&gt;
               			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="output"&gt;Tabella cifrante
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
                       &nbsp;&nbsp;&lt;/body&gt;
     &lt;/html&gt;</pre>
@@ -305,6 +327,16 @@
           </div>
         </div>
       </div>
+
+      <footer>
+        <div class="caption footer-container">
+          <div class="footer-link arrow-down">
+            Back to top
+            <i class="material-icons">keyboard_arrow_up</i>
+          </div>
+        </div>
+      </footer>
+
     </main>
 
 
@@ -471,6 +503,13 @@
 
         // Run prettify.js
         PR.prettyPrint();
+
+        //footer
+        $('.footer-link').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#top').offset().top-76
+          }, 1200);
+        });
       });
     </script>
   </body>
