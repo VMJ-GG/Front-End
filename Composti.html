@@ -69,7 +69,7 @@
             </div>
           </div>
           <div class="">
-            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()">Criptazione<i class="material-icons">keyboard_arrow_right</i></button>
+            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()"><span>Cripta</span><i class="material-icons">keyboard_arrow_right</i></button>
           </div>
         </div>
       </section>
@@ -163,6 +163,11 @@
     <script type="text/javascript" src="./js/hideShow.js"></script>
 
     <script type="text/javascript">
+      var caesar = Encrypter.caesar;
+      var atbash = Encrypter.atbash;
+      var pizzini = Encrypter.pizzini;
+      var polibio = Encrypter.polibio;
+      var vigenere = Encrypter.vigenere;
 
       $(document).ready(function() {
         // Selectors
@@ -179,33 +184,20 @@
           var placeholder = $(this);
           var input       = placeholder.prev();
           var inputText   = input.val();
-          var outputText  = $('.output').text();
 
           writer.stop();  // Stop typing
           placeholder
             .addClass('d-none');
 
+          var outputTextPresent = $('[id$="output"]').text() && $('[id$="output"]').text()[0] !== '.';
           input
             .removeClass('d-none')
-            .val(outputText ? inputText : '')
+            .val(outputTextPresent ? inputText : '')
             .focus();
         });
 
-        // Window event for stopping writing
-        $(window).on('click', function(e) {
-          if(e.target.nodeName === 'INPUT') {
-            e.stopPropagation();
-            return;
-          }
-
-          writer.play(); // Start typing again
-          $(PLACEHOLDER).removeClass('d-none');
-          $(PLACEHOLDER)
-            .prev()
-            .addClass('d-none')
-            .blur();
-        });
-
+        var output = $('#output');
+        var chain = Encrypter.EMPTY;
         $('.badge-container').find('.btn').on('click', function() {
           var value = $(this).text();
           var chain = $('#chain').append(
@@ -216,6 +208,8 @@
 
           chain.find('.clear').on('click', function() {
             var parent = $(this).closest('.composed-badge');
+            var value = parent.text();
+            chain.remove(value);
             parent.tooltip('dispose');
             parent.remove();
           });
@@ -223,6 +217,24 @@
           chain.find('.btn').tooltip({
             trigger: 'click'
           });
+
+          switch (value) {
+            case 'Cesare':
+              chain.append(caesar);
+            break;
+            case 'Atbash':
+              chain.append(atbash);
+            break;
+            case 'Pizzini':
+              chain.append(pizzini);
+            break;
+            case 'Polibio':
+              chain.append(polibio);
+            break;
+            case 'Vigenere':
+              chain.append(vigenere);
+            break;
+          }
         });
 
         $('.select').range({ from: 1, to: 26, step: 1 });
@@ -234,9 +246,9 @@
 
         $(PLACEHOLDER).prev().on('keyup', function(e) {
           var text = $(this).val();
-          var key  = e.key;
+          var keyPressed  = e.key;
 
-          switch (key) {
+          switch (keyPressed) {
             case 'Shift':
             case 'Alt':
             case 'AltGraph':
@@ -263,11 +275,43 @@
             case 'End':
             case 'Home':
             break;
-            case 'Backspace':
-              $('.output').text(text);
-            break;
             default:
-              $('.output').text(text);
+              if ($('#buttonCriptDecript > span').text() === 'Cripta') {
+                outputText = text;
+                chain.each(function() {
+                  if (this.name === 'Vigenere') {
+                    var vigenereKey = this.utils.lengthenKey($('.input-select').val());
+                    outputText = [].map.call(outputText, function(ch, index) {
+                      return this.encrypter(ch, vigenereKey[index]);
+                    });
+                  } else {
+                    var caesarKey = $('select').val();
+                    outputText = [].map.call(outputText, function(ch) {
+                      return this.encrypter(ch, caesarKey);
+                    });
+                  }
+                });
+
+                output.text(outputText);
+              }
+              else {
+                outputText = text;
+                chain.each(function() {
+                  if (this.name === 'Vigenere') {
+                    var vigenereKey = this.utils.lengthenKey($('.input-select').val());
+                    outputText = [].map.call(outputText, function(ch, index) {
+                      return this.decrypter(ch, vigenereKey[index]);
+                    });
+                  } else {
+                    var caesarKey = $('select').val();
+                    outputText = [].map.call(outputText, function(ch) {
+                      return this.decrypter(ch, polibioKey);
+                    });
+                  }
+                });
+
+                output.text(outputText);
+              }
           }
         });
 
@@ -280,7 +324,6 @@
             scrollTop: $('#top').offset().top-76
           }, 1200);
         });
-
       });
     </script>
   </body>
