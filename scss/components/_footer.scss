@@ -1,0 +1,27 @@
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100px;
+  padding: 0 50px;
+
+  > .footer-link {
+      padding: 4px 4px 8px 4px;
+      border: 2px solid $blue;
+      border-radius: 3px;
+      cursor: pointer;
+      color: $blue;
+      &:hover{
+        background:$blue;
+        color: $white;
+      }
+
+      &:hover > i{
+        transform: translateY(-7px);
+      }
+
+      & > i {
+        transition: ease .5s transform;
+      }
+    }
+}

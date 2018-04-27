@@ -13,6 +13,7 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="./vendor/js/prettify.js"></script>
+    <script type="text/javascript" src="./js/encrypter.js"></script>
 
     <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -54,7 +55,7 @@
     </header>
 
     <main class="container-fluid px-0" role="main">
-      <section class="jumbotron jumbotron-poliMonal">
+      <section id="top" class="jumbotron jumbotron-poliMonal">
         <div class="jumbotron-body">
           <div class="gw-container">
             <input type="text" class="d-none">
@@ -68,7 +69,7 @@
             </div>
           </div>
           <div class="">
-            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()">Criptazione<i class="material-icons">keyboard_arrow_right</i></button>
+            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()"><span>Cripta</span><i class="material-icons">keyboard_arrow_right</i></button>
           </div>
         </div>
       </section>
@@ -88,7 +89,7 @@
                   Il crittogramma
                 </div>
                 <div class="border rounded" style=" font-size:1.7rem; height:40px;">
-                  <div id="output" class="output" style="white-space: pre"></div>
+                  <div id="vigenere-output" class="output" style="white-space: pre"></div>
                 </div>
               <div class="text-select text-select-pM mt-4">La chiave</div>
               <div class="" style="text-align: center;">
@@ -213,18 +214,24 @@
                   La storia
                   <i class="material-icons text-muted">keyboard_arrow_down</i>
                 </div>
-                <div id="hide-3" class="overflow-box pl-3">
-                    Il cifrario di Vigenère si basa sull'uso di un versetto per controllare l'alternanza degli alfabeti di sostituzione, concetto introdotto per la prima volta da Giovan Battista Bellaso ne <i>La cifra del Sig. Giovan Battista Belaso</i>  del 1553.<br>
+                <div id="hide-3" class="overflow-box pl-3">å
+                    Il cifrario di Vigenère si basa sull'uso ådi un versetto per controllare l'alternanza degli alfabeti di sostituzione, concetto introdotto per la prima volta da Giovan Battista Bellaso ne <i>La cifra del Sig. Giovan Battista Belaso</i>  del 1553.<br>
                     Pubblicato nel 1586, il cifrario di Blaise de Vigenère fu ritenuto per secoli inattaccabile, godendo di una fama in buona parte immeritata essendo molto più debole di altri cifrari polialfabetici precedenti, quali il disco cifrante dell'Alberti, o le cifre del Bellaso. Una fama che è durata per molti anni anche dopo la scoperta del primo metodo di crittanalisi da parte di Charles Babbage, e la successiva formalizzazione da parte del maggiore Friedrich Kasiski: il Metodo Kasiski del 1863.
                   <div class="text-source pt-4">Source: Wikipedia.</div>
                 </div>
               </div>
-
-          <hr>
-
-
         </div>
       </div>
+
+      <footer>
+        <div class="caption footer-container">
+          <div class="footer-link arrow-down">
+            Back to top
+            <i class="material-icons">keyboard_arrow_up</i>
+          </div>
+        </div>
+      </footer>
+
     </main>
 
 
@@ -239,8 +246,6 @@
     <script type="text/javascript" src="./js/navbarScrolling.js"></script>
     <script type="text/javascript" src="./js/fromCriptToDecript.js"></script>
     <script type="text/javascript" src="./js/hideShow.js"></script>
-    <script type="text/javascript" src="./js/dotdotdot.js"></script>
-
     <script type="text/javascript">
 
       $(document).ready(function() {
@@ -258,19 +263,19 @@
           var placeholder = $(this);
           var input       = placeholder.prev();
           var inputText   = input.val();
-          var outputText  = $('.output').text();
 
           writer.stop();  // Stop typing
           placeholder
             .addClass('d-none');
 
+          var outputTextPresent = $('[id$="output"]').text() && $('[id$="output"]').text()[0] !== '.';
           input
             .removeClass('d-none')
-            .val(outputText ? inputText : '')
+            .val(outputTextPresent ? inputText : '')
             .focus();
         });
 
-        // Window event for stopping writing
+        // Window event for starting writing
         $(window).on('click', function(e) {
           if(e.target.nodeName === 'INPUT') {
             e.stopPropagation();
@@ -285,18 +290,17 @@
             .blur();
         });
 
-        $('.select').range({ from: 1, to: 26, step: 1 });
-        $('.select').selectpicker({
-                size: 5,
-               style: 'btn-card-pM',
-          dropupAuto: false,
-        }).selectpicker('val', '3');
+        // Output Containers
+        var vigenereOutput = $('#caesar-output');
+
+        // Methods
+        var vigenere = Encrypter.vigenere;
 
         $(PLACEHOLDER).prev().on('keyup', function(e) {
           var text = $(this).val();
-          var key  = e.key;
+          var keyPressed  = e.key;
 
-          switch (key) {
+          switch (keyPressed) {
             case 'Shift':
             case 'Alt':
             case 'AltGraph':
@@ -323,16 +327,61 @@
             case 'End':
             case 'Home':
             break;
-            case 'Backspace':
-              $('.output').text(text);
-            break;
             default:
-              $('.output').text(text);
+              var key = vigenere.utils.lengthenKey($('select').val());
+              if ($('#buttonCriptDecript > span').text() === 'Cripta')
+                encrypt(text, key);
+              else
+                decrypt(text, key);
           }
         });
 
+
+        $('#buttonCriptDecript').on('click', function() {
+          var value = $(this).find('span').text();
+          var key  = vigenere.utils.lengthenKey($('select').val());
+          var text = $(PLACEHOLDER).prev().val();
+
+          if (value === 'Cripta')
+            encrypt(text, key);
+          else
+            decrypt(text, key);
+        });
+
+        function encrypt(text, key) {
+          vigenereOutput.text(
+            [].map.call(text, function(ch, index) {
+              return vigenere.encrypt(ch, key[index]);
+            }).join('')
+          );
+        }
+
+        function decrypt(text, key) {
+          vigenereOutput.text(
+            [].map.call(text, function(ch) {
+              return vigenere.decrypt(ch, key[index]);
+            }).join('')
+          );
+        }
+
+        // Range select
+        $('.select').range({ from: 1, to: 26, step: 1 });
+        $('.select').selectpicker({
+                size: 5,
+               style: 'btn-card-mM',
+          dropupAuto: false,
+        }).selectpicker('val', '3');
+
         // Run prettify.js
         PR.prettyPrint();
+
+        //footer
+        $('.footer-link').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#top').offset().top-76
+          }, 1200);
+        });
+
       });
     </script>
   </body>
