@@ -90,7 +90,7 @@
                 </div>
               <div class="text-select text-select-pM mt-4">La chiave</div>
               <div class="input-select">
-                <input type="text" class="form-control" placeholder="Inserisci una chiave">
+                <input id="vigenere-key" type="text" class="form-control" placeholder="Inserisci una chiave">
               </div>
               <div class="mt-2" align="center">
                 Se la chiave che inserisci è più lunga del testo in chiaro, essa verrà automaticamente tagliata; <br>
@@ -278,7 +278,7 @@
 
         // Window event for starting writing
         $(window).on('click', function(e) {
-          if(e.target.nodeName === 'INPUT') {
+          if(e.target.nodeName === 'INPUT' || e.target.nodeName === 'BUTTON') {
             e.stopPropagation();
             return;
           }
@@ -292,7 +292,7 @@
         });
 
         // Output Containers
-        var vigenereOutput = $('#caesar-output');
+        var vigenereOutput = $('#vigenere-output');
 
         // Methods
         var vigenere = Encrypter.vigenere;
@@ -329,24 +329,26 @@
             case 'Home':
             break;
             default:
-              var key = vigenere.utils.lengthenKey($('select').val());
+              var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
               if ($('#buttonCriptDecript > span').text() === 'Cripta')
                 encrypt(text, key);
-              else
-                decrypt(text, key);
+              else {
+                decrypt(vigenereOutput.text(), key);
+              }
           }
         });
 
-
         $('#buttonCriptDecript').on('click', function() {
           var value = $(this).find('span').text();
-          var key  = vigenere.utils.lengthenKey($('select').val());
           var text = $(PLACEHOLDER).prev().val();
+          var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
 
-          if (value === 'Cripta')
+          if (value === 'Cripta') {
             encrypt(text, key);
-          else
-            decrypt(text, key);
+          }
+          else {
+            decrypt(vigenereOutput.text(), key);
+          }
         });
 
         function encrypt(text, key) {
@@ -359,7 +361,7 @@
 
         function decrypt(text, key) {
           vigenereOutput.text(
-            [].map.call(text, function(ch) {
+            [].map.call(text, function(ch, index) {
               return vigenere.decrypt(ch, key[index]);
             }).join('')
           );

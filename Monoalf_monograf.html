@@ -75,7 +75,7 @@
         <div class="row">
           <div class="col-lg-6 border-right">
 
-            <div class="caption enable">
+            <div class="caption" id="divOne">
               <div class="text-title">
                   Cesare
                 <div class="hr hr-mM"></div>
@@ -97,9 +97,7 @@
             </div>
 
             <div align="center">
-              <div class="btn btn-outline-success">
-                on
-              </div>
+              <input type="button" class="btn btn-outline-success" onclick="EnableDisable(value, id)" value="on" id="1">
             </div>
 
             <hr>
@@ -206,7 +204,7 @@
           <!-- Atbash -->
           <div class="col-lg-6">
 
-            <div class="caption enable">
+            <div class="caption" id="divSecond">
               <div class="text-title">
                   Atbash
                 <div class="hr hr-mM"></div>
@@ -217,7 +215,7 @@
                 </div>
 
                     <div class="border rounded" style=" font-size:1.7rem; height:40px;">
-                      <div id="caesar-output" style="white-space: pre"></div>
+                      <div id="atbash-output" style="white-space: pre"></div>
                     </div>
 
               <div class="text-select text-select-mM mt-4">La chiave</div>
@@ -228,9 +226,7 @@
             </div>
 
             <div align="center">
-              <div class="btn btn-outline-success">
-                on
-              </div>
+              <input class="btn btn-outline-success" type="button" id="2" onclick="EnableDisable(value, id)" value="on">
             </div>
 
                   <hr>
@@ -338,6 +334,7 @@
     <script type="text/javascript" src="./js/fromCriptToDecript.js"></script>
     <script type="text/javascript" src="./js/copy.js"></script>
     <script type="text/javascript" src="./js/hideShow.js"></script>
+    <script type="text/javascript" src="./js/enable-disable.js"></script>
     <script type="text/javascript">
 
       $(document).ready(function() {
@@ -433,22 +430,6 @@
           }
         });
 
-
-        $('#buttonCriptDecript').on('click', function() {
-          var value = $(this).find('span').text();
-          var key = Number($('select').val());
-
-          if (value === 'Cripta') {
-            var text = $(PLACEHOLDER).prev().val();
-            encrypt(text, key);
-          }
-          else {
-            var caesarText = caesarOutput.text();
-            var atbashText = atbashOutput.text();
-            decrypt(caesarText, atbashText, key);
-          }
-        });
-
         function encrypt(text, key) {
           caesarOutput.text(
             [].map.call(text, function(ch) {
@@ -495,8 +476,6 @@
         });
 
       });
-
-
     </script>
   </body>
 </html>

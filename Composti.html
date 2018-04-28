@@ -66,7 +66,7 @@
             </div>
           </div>
           <div class="">
-            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()">Cripta<i class="material-icons">keyboard_arrow_right</i></button>
+            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()"><span>Cripta</span><i class="material-icons">keyboard_arrow_right</i></button>
           </div>
         </div>
       </section>
@@ -96,7 +96,7 @@
                 <div class="col-md-6">
                   <div class="text-select text-select-pM mt-4">Chiave per Vigenere</div>
                   <div class="input-select">
-                    <input type="text" class="form-control" placeholder="Inserisci una chiave">
+                    <input id="vigenere-key" type="text" class="form-control" placeholder="Inserisci una chiave">
                   </div>
                 </div>
               </div>
@@ -176,6 +176,11 @@
     <script type="text/javascript" src="./js/hideShow.js"></script>
 
     <script type="text/javascript">
+      var caesar = Encrypter.caesar;
+      var atbash = Encrypter.atbash;
+      var pizzini = Encrypter.pizzini;
+      var polibio = Encrypter.polibio;
+      var vigenere = Encrypter.vigenere;
 
       $(document).ready(function() {
         // Selectors
@@ -192,33 +197,20 @@
           var placeholder = $(this);
           var input       = placeholder.prev();
           var inputText   = input.val();
-          var outputText  = $('.output').text();
 
           writer.stop();  // Stop typing
           placeholder
             .addClass('d-none');
 
+          var outputTextPresent = $('[id$="output"]').text() && $('[id$="output"]').text()[0] !== '.';
           input
             .removeClass('d-none')
-            .val(outputText ? inputText : '')
+            .val(outputTextPresent ? inputText : '')
             .focus();
         });
 
-        // Window event for stopping writing
-        $(window).on('click', function(e) {
-          if(e.target.nodeName === 'INPUT') {
-            e.stopPropagation();
-            return;
-          }
-
-          writer.play(); // Start typing again
-          $(PLACEHOLDER).removeClass('d-none');
-          $(PLACEHOLDER)
-            .prev()
-            .addClass('d-none')
-            .blur();
-        });
-
+        var output = $('#output');
+        var composed = new Encrypter('Root', function(ch) { return ch; }, function(ch) { return ch; });
         $('.badge-container').find('.btn').on('click', function() {
           var value = $(this).text();
           var chain = $('#chain').append(
@@ -229,6 +221,8 @@
 
           chain.find('.clear').on('click', function() {
             var parent = $(this).closest('.composed-badge');
+            var value = parent.text();
+            composed.remove(value);
             parent.tooltip('dispose');
             parent.remove();
           });
@@ -236,6 +230,24 @@
           chain.find('.btn').tooltip({
             trigger: 'click'
           });
+
+          switch (value) {
+            case 'Cesare':
+              composed = composed.append(caesar);
+            break;
+            case 'Atbash':
+              composed = composed.append(atbash);
+            break;
+            case 'Pizzini':
+              composed = composed.append(pizzini);
+            break;
+            case 'Polibio':
+              composed = composed.append(polibio);
+            break;
+            case 'Vigenère':
+              composed = composed.append(vigenere);
+            break;
+          }
         });
 
         $('.select').range({ from: 1, to: 26, step: 1 });
@@ -247,9 +259,9 @@
 
         $(PLACEHOLDER).prev().on('keyup', function(e) {
           var text = $(this).val();
-          var key  = e.key;
+          var keyPressed  = e.key;
 
-          switch (key) {
+          switch (keyPressed) {
             case 'Shift':
             case 'Alt':
             case 'AltGraph':
@@ -276,11 +288,47 @@
             case 'End':
             case 'Home':
             break;
-            case 'Backspace':
-              $('.output').text(text);
-            break;
             default:
-              $('.output').text(text);
+              if ($('#buttonCriptDecript > span').text() === 'Cripta') {
+                outputText = text;
+                composed.each(function() {
+                  if (this.name === 'Vigenere') {
+                    var self = this;
+                    var vigenereKey = this.utils.lengthenKey($('#vigenere-key').val(), outputText.length);
+                    outputText = [].map.call(outputText, function(ch, index) {
+                      return self.encrypt(ch, vigenereKey[index]);
+                    }).join('');
+                  } else if (this.name !== 'Root') {
+                    var self = this;
+                    var caesarKey = Number($('select').val());
+                    outputText = [].map.call(outputText, function(ch) {
+                      return self.encrypt(ch, caesarKey);
+                    }).join('');
+                  }
+                });
+
+                output.text(outputText);
+              }
+              else {
+                outputText = text;
+                composed.each(function() {
+                  if (this.name === 'Vigenere') {
+                    var self = this;
+                    var vigenereKey = this.utils.lengthenKey($('#vigenere-key').val());
+                    outputText = [].map.call(outputText, function(ch, index) {
+                      return self.decrypt(ch, vigenereKey[index]);
+                    }).join('');
+                  } else if (this.name !== 'Root') {
+                    var self = this;
+                    var caesarKey = Number($('select').val());
+                    outputText = [].map.call(outputText, function(ch) {
+                      return self.decrypt(ch, caesarKey);
+                    }).join('');;
+                  }
+                });
+
+                output.text(outputText);
+              }
           }
         });
 
@@ -293,7 +341,6 @@
             scrollTop: $('#top').offset().top-76
           }, 1200);
         });
-
       });
     </script>
   </body>
