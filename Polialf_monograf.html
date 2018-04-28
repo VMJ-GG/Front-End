@@ -330,7 +330,7 @@
             break;
             default:
               var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
-              if ($('#buttonCriptDecript > span').text() === 'Cripta')
+              if ($('#buttonCriptDecript > span').text() === 'Decripta')
                 encrypt(text, key);
               else {
                 decrypt(vigenereOutput.text(), key);
@@ -343,7 +343,7 @@
           var text = $(PLACEHOLDER).prev().val();
           var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
 
-          if (value === 'Cripta') {
+          if (value === 'Decripta') {
             encrypt(text, key);
           }
           else {

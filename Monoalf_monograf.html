@@ -423,7 +423,7 @@
             break;
             default:
               var key = Number($('select').val());
-              if ($('#buttonCriptDecript > span').text() === 'Cripta')
+              if ($('#buttonCriptDecript > span').text() === 'Decripta')
                 encrypt(text, key);
               else {
                 var caesarText = caesarOutput.text();
@@ -437,7 +437,7 @@
           var value = $(this).find('span').text();
           var key = Number($('select').val());
 
-          if (value === 'Cripta') {
+          if (value === 'Decripta') {
               var text = $(PLACEHOLDER).prev().val();
               encrypt(text, key);
           }
