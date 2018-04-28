@@ -443,7 +443,7 @@
             break;
             default:
               var key = Number($('select').val());
-              if ($('#buttonCriptDecript > span').text() === 'Cripta')
+              if ($('#buttonCriptDecript > span').text() === 'Decripta')
                 encrypt(text, key);
               else
                 decrypt(text, key);
@@ -456,7 +456,7 @@
           var key = Number($('select').val());
           var text = $(PLACEHOLDER).prev().val();
 
-          if (value === 'Cripta')
+          if (value === 'Decripta')
             encrypt(text, key);
           else
             decrypt(text, key);
