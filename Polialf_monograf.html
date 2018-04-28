@@ -66,7 +66,7 @@
             </div>
           </div>
           <div class="">
-            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()"><span>Cripta</span><i class="material-icons">keyboard_arrow_right</i></button>
+            <button type="button" id="buttonCriptDecript" class="mt-5 btn btn-outline-light arrow-right" onclick="ChangeText()"><span>Decripta</span><i class="material-icons">keyboard_arrow_left</i></button>
           </div>
         </div>
       </section>
@@ -329,8 +329,13 @@
             case 'Home':
             break;
             default:
-              var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
-              if ($('#buttonCriptDecript > span').text() === 'Cripta')
+              if ($('#vigenere-key').val()) {
+                var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
+              } else {
+                vigenereOutput.text('Non hai inserito la chiave!');
+                return;
+              }
+              if ($('#buttonCriptDecript > span').text() === 'Decripta')
                 encrypt(text, key);
               else {
                 decrypt(vigenereOutput.text(), key);
@@ -341,7 +346,13 @@
         $('#buttonCriptDecript').on('click', function() {
           var value = $(this).find('span').text();
           var text = $(PLACEHOLDER).prev().val();
-          var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
+
+          if ($('#vigenere-key').val()) {
+            var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
+          } else {
+            vigenereOutput.text('Non hai inserito la chiave!');
+            return;
+          }
 
           if (value === 'Cripta') {
             encrypt(text, key);
