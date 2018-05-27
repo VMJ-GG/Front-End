@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSSs -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./vendor/css/snappy-light-prettify.css">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="./vendor/js/prettify.js"></script>
+    <script type="text/javascript" src="./js/encrypter.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/function-plot@1/dist/function-plot.js"></script>
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>CalcoloNumerico</title>
+  </head>
+  <body>
+    <header class="header-fixed nav-down">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       <img class="mr-1" href="index.html" src="./images/WebTips_logo.svg" style="width:40px; height:40px;">
+        <a class="navbar-brand" href="#">Web-tips</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reti</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Algoritmi JS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="CalcoloNumerico.html">Calcolo Numerico</a>
+                 <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Crittografia.html">Crittografia</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-fluid px-0" role="main">
+      <section id="top" class="jumbotron jumbotron-funz">
+        <div class="jumbotron-body">
+          <div class="gw-container">
+            <input type="text" class="d-none">
+            <div class="gw-placeholder">
+              <div class="gw-static">
+                <span>Inserisci qui</span>
+              </div>
+              <div class="gw-wrapper">
+                <a class="gw-text" data-phrases='[" la tua funzione...", " x*x+3x...", " 2x/5+x*x*x..."]' data-duration="2000"></a>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <button type="button" class="mt-5 btn btn-outline-light arrow-right" name="btn"><span>Calcola</span><i class="material-icons">keyboard_arrow_right</i></button>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="row">
+          <!-- Integrazone -->
+          <div class="col-lg-12">
+
+            <div class="caption enable">
+              <div class="text-title">
+                Integrazione
+                <div class="hr hr-funz"></div>
+              </div>
+              <div class="caption-body mb-5">
+                <div class="text-h5 text-select-funz arrow-down">
+                Il risultato dell'integrale
+                </div>
+                <div class="border rounded" style=" font-size:1.7rem; height:40px;">
+                  <div id="output" class="output" style="white-space: pre"></div>
+                </div>
+              <!--<div class="text-select text-select-pM mt-4">La chiave</div>-->
+                <div class="text-select text-select-funz mt-4">La precisione</div>
+                <div class="" style="text-align: center;">
+                   <select class="precisionSelect" name="iters"></select>
+                </div>
+
+                <div class="text-select text-select-funz mt-4">L'intervallo</div>
+                <div class="" style="text-align: center;">
+                   <select class="select" name="a"></select>
+                   <select class="select" name="b"></select>
+                </div>
+              </div>
+
+            </div>
+            <hr>
+          </div>
+
+          <!-- Grafico -->
+          <div class="col-lg-12">
+
+            <div class="caption">
+              <div class="caption-body pt-4 pr-3">
+
+                  <div class="text-h4 arrow-down" onclick="hideShow(1)">
+                    Il grafico
+                    <i class="material-icons text-muted">keyboard_arrow_down</i>
+                  </div>
+                  <div id="hide-1" class="overflow-box pl-3">
+
+                    <div id="root"></div>
+                    <script type="text/javascript">
+
+                      window.d3 = require('d3')
+                      const functionPlot = require('function-plot')
+                      const root = document.querySelector("#root");
+
+                      functionPlot({
+                        target: '#closed',
+                        xAxis: {domain: [-2, 12]},
+                        data: [{
+                          fn: '3 + sin(x)',
+                          range: [2, 8],
+                          closed: true
+                        }]
+                      });
+
+                    </script>
+                  </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+
+
+            <div class="col-lg-6">
+              <div class="caption">
+                <div class="caption-body pt-4 pr-3">
+                  <!-- Il metodo -->
+                    <div class="text-h4 arrow-down" onclick="hideShow(1)">
+                      Il metodo
+                      <i class="material-icons text-muted">keyboard_arrow_down</i>
+                    </div>
+                    <div id="hide-1" class="overflow-box pl-3">
+                      <img src="./images/vigenere.svg" class="svg-img-methods" alt="Immagine non trovata.">
+                      Il metodo si può considerare una generalizzazione del cifrario di Cesare: invece di spostare sempre dello stesso numero di posti la lettera da cifrare oppure mediante l'uso di una chiave numerica, questa viene spostata di un numero di posti variabile ma ripetuto, determinato in base ad una parola chiave da scrivere ripetutamente sotto il messaggio, carattere per carattere; la chiave era detta anche verme, per il motivo che, essendo in genere molto più corta del messaggio, deve essere ripetuta molte volte sotto questo, come nel seguente esempio: <br><br>
+                      <div class="text-h5">
+                      <i>Testo chiaro</i>&nbsp - &nbsp&nbspRAPPORTOIMMEDIATO <br>
+                      <i>Verme</i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- &nbsp&nbspVERMEVERMEVERMEVE <br>
+                      <i>Testo cifrato</i>&nbsp - &nbsp&nbspMEGBSMXFUQHIUUEOS <br>
+                    </div> <br>
+                      Il testo cifrato si ottiene spostando la lettera chiara di un numero fisso di caratteri, pari al numero ordinale della lettera corrispondente del verme. <br>Di fatto si esegue una somma aritmetica tra l'ordinale del chiaro (A = 0, B = 1, C = 2...) e quello del verme; se si supera l'ultima lettera, la Z, si ricomincia dalla A, secondo la logica delle aritmetiche finite.<br><br>
+
+                      Il vantaggio rispetto ai cifrari monoalfabetici (come il cifrario di Cesare) è evidente: il testo è cifrato con <i>n</i> alfabeti cifranti. In questo modo, la stessa lettera viene cifrata (se ripetuta consecutivamente) <i>n</i> volte; ciò rende quindi più complessa la crittoanalisi del testo cifrato.
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="caption">
+                <div class="caption-body pt-4 pl-3">
+
+                  <!-- Il codice -->
+                  <div class="" style="display:flex; justify-content:space-between;">
+                    <div class="text-h4 arrow-down" onclick="hideShow(2)">
+                      Il codice
+                      <i class="material-icons text-muted">keyboard_arrow_down</i>
+                    </div>
+                      <button type="button" class="btn btn-light btn-sm" >
+                        Copy
+                      </button>
+                  </div>
+
+                  <!-- ***===***=== ALERT INDENTATION FOR MATTIA: We're sorry but it is not possible to indent this specific part of code. For problems or F.A.Q. please ask to your dog.===***===*** -->
+                  <!-- Il codice pretty-->
+                  <div class="overflow-box" id="hide-2">
+                    <pre  class="prettyprint linenums">&lt;html&gt;
+                      &nbsp;&nbsp;&lt;head&gt;
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Vigenere&lt;/title&gt;
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alfabeto = "abcdefghijklmnopqerstuvwxyz";
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Tabella(){
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vigenere = new Array();
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb = "&lt;table&gt;";
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0;i &lt; alfabeto.length;i++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vigenere[i] = alfabeto.substring(i,alfabeto.length)+alfabeto.substring(0,i);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb += "&lt;tr&gt;&lt;td&gt;"+vigenere[i];
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tb += "&lt;/table&gt;";
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("output").innerHTML=tb;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Vigenere(){
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo = document.f.t.value.toLowerCase();
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma = "";
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave = prompt("Chiave:").toLowerCase();
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j = 0;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = chiave.length;i &lt; testo.length;i++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chiave += chiave.charAt(j);
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.ch.value = chiave;
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(k = 0;k &lt; testo.length;k++)
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;riga = alfabeto.indexOf(chiave.charAt(k));
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colonna = alfabeto.indexOf(testo.charAt(k));
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crittogramma += vigenere[riga][colonna];
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.tc.value = crittogramma;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
+                      &nbsp;&nbsp;&lt;/head&gt;
+
+                      &nbsp;&nbsp;&lt;body onload="Tabella()"&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Vigenere&lt;/h2&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testo in chiaro&lt;input type="text" name="t"&gt;&lt;br&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chiave&lt;input type="text" name="ch"&gt;&lt;br&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testo crittato&lt;input type="text" name="tc"&gt;&lt;br&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Cripta" onclick="Vigenere()"&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="output"&gt;Tabella cifrante
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                      &nbsp;&nbsp;&lt;/body&gt;
+    &lt;/html&gt;</pre>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+              <div class="col-lg-12">
+                <hr>
+                <!-- La storia -->
+                <div class="text-h4 arrow-down" onclick="hideShow(3)">
+                  La storia
+                  <i class="material-icons text-muted">keyboard_arrow_down</i>
+                </div>
+                <div id="hide-3" class="overflow-box pl-3">å
+                    Il cifrario di Vigenère si basa sull'uso ådi un versetto per controllare l'alternanza degli alfabeti di sostituzione, concetto introdotto per la prima volta da Giovan Battista Bellaso ne <i>La cifra del Sig. Giovan Battista Belaso</i>  del 1553.<br>
+                    Pubblicato nel 1586, il cifrario di Blaise de Vigenère fu ritenuto per secoli inattaccabile, godendo di una fama in buona parte immeritata essendo molto più debole di altri cifrari polialfabetici precedenti, quali il disco cifrante dell'Alberti, o le cifre del Bellaso. Una fama che è durata per molti anni anche dopo la scoperta del primo metodo di crittanalisi da parte di Charles Babbage, e la successiva formalizzazione da parte del maggiore Friedrich Kasiski: il Metodo Kasiski del 1863.
+                  <div class="text-source pt-4">Source: Wikipedia.</div>
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="caption footer-container">
+          <div class="footer-link arrow-down">
+            Back to top
+            <i class="material-icons">keyboard_arrow_up</i>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/js/bootstrap-select.min.js"></script>
+    <script src="https://unpkg.com/d3@3/d3.min.js"></script>
+    <script src="https://unpkg.com/function-plot@1/dist/function-plot.js"></script>
+    <script type="text/javascript" src="./js/helpers.js"></script>
+    <script type="text/javascript" src="./js/ghostWriter.js"></script>
+    <script type="text/javascript" src="./js/navbarScrolling.js"></script>
+    <script type="text/javascript" src="./js/fromCriptToDecript.js"></script>
+    <script type="text/javascript" src="./js/hideShow.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        // Selectors
+        var PLACEHOLDER = '.gw-placeholder';
+
+        // Writer object -> It starts typing by default
+        var writer = $('.gw-text').ghostWriter();
+
+        // === Event Listeners ===
+        // Writer's event
+        $(PLACEHOLDER).on('click', function(e) {
+          e.stopPropagation();
+
+          var placeholder = $(this);
+          var input       = placeholder.prev();
+          var inputText   = input.val();
+
+          writer.stop();  // Stop typing
+          placeholder
+            .addClass('d-none');
+
+          var outputTextPresent = $('[id$="output"]').text() && $('[id$="output"]').text()[0] !== '.';
+          input
+            .removeClass('d-none')
+            .val(outputTextPresent ? inputText : '')
+            .focus();
+        });
+
+        // Window event for starting writing
+        $(window).on('click', function(e) {
+          if(e.target.nodeName === 'INPUT' || e.target.nodeName === 'BUTTON') {
+            e.stopPropagation();
+            return;
+          }
+
+          writer.play(); // Start typing again
+          $(PLACEHOLDER).removeClass('d-none');
+          $(PLACEHOLDER)
+            .prev()
+            .addClass('d-none')
+            .blur();
+        });
+
+        // Output Containers
+        var vigenereOutput = $('#vigenere-output');
+
+        // Methods
+        var vigenere = Encrypter.vigenere;
+
+        $(PLACEHOLDER).prev().on('keyup', function(e) {
+          var text = $(this).val();
+          var keyPressed  = e.key;
+
+          switch (keyPressed) {
+            case 'Shift':
+            case 'Alt':
+            case 'AltGraph':
+            case 'CapsLock':
+            case 'Control':
+            case 'Fn':
+            case 'FnLock':
+            case 'Alt':
+            case 'Hyper':
+            case 'Meta':
+            case 'NumLock':
+            case 'ScrollLock':
+            case 'Super':
+            case 'OS':
+            case 'Symbol':
+            case 'SymbolLock':
+            case 'Tab':
+            case 'ArrowUp':
+            case 'ArrowLeft':
+            case 'ArrowDown':
+            case 'ArrowRight':
+            case 'PageUp':
+            case 'PageDown':
+            case 'End':
+            case 'Home':
+            break;
+            default:
+              if ($('#vigenere-key').val()) {
+                var key = vigenere.utils.lengthenKey($('#vigenere-key').val(), text.length);
+              } else {
+                vigenereOutput.text('Non hai inserito la chiave!');
+                return;
+              }
+              if ($('#buttonCriptDecript > span').text() === 'Decripta')
+                encrypt(text, key);
+              else {
+                decrypt(vigenereOutput.text(), key);
+              }
+          }
+        });
+
+        //trapezi
+        $(document).ready(function() {
+
+          $('[name="btn"]').on('click', function() {
+            var a = parseInt( $('[name="a"]').val(), 10 );
+            var b = parseInt( $('[name="b"]').val(), 10 );
+            var iters =  parseInt( $('[name="iters"]').val(), 10 );
+
+            var fnString = $('[name="fn"]').val();
+            var fn = function(x) { return eval(fnString); };
+
+            var result = integrate(a, b, fn, iters);
+            $('#output').text(result);
+          });
+
+          function integrate(a, b, fn, iters) {
+            var h = (b - a) / iters;
+            var x = a + h;
+            var result = h * .5 * ( fn(a) + fn(b) );
+
+            for (var i = 0; i < iters; i++) {
+              result += fn(x);
+              x += h;
+            }
+
+            return result * h;
+          }
+        });
+
+
+
+        // Range select
+        $('.select').range({ from: -100, to: 100, step: 1 });
+        $('.select').selectpicker({
+                size: 5,
+               style: 'btn-card-funz',
+          dropupAuto: false,
+        }).selectpicker('val', '0');
+
+        // precision select
+        $('.precisionSelect').range({ from: 0, to: 10000, step: 10 });
+        $('.precisionSelect').selectpicker({
+                size: 5,
+               style: 'btn-card-funz',
+          dropupAuto: false,
+        }).selectpicker('val', '10');
+
+        // Run prettify.js
+        PR.prettyPrint();
+
+        //footer
+        $('.footer-link').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#top').offset().top-76
+          }, 1200);
+        });
+
+      });
+    </script>
+  </body>
+</html>

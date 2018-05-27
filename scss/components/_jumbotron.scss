@@ -10,6 +10,10 @@
     @include jumbotron-color("calc");
   }
 
+  &.jumbotron-funz {
+    @include jumbotron-color("funz");
+  }
+
   &.jumbotron-crypto {
     @include jumbotron-color("crypto");
   }

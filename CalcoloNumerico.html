@@ -49,76 +49,99 @@
     </header>
 
     <main class="container-fluid px-0" role="main">
-      <section class="jumbotron jumbotron-calc">
+      <section id="top" class="jumbotron jumbotron-calc">
         <h1 class="jumbotron-head">Calcolo Numerico</h1>
-        <p class="jumbotron-body">
+        <div class="jumbotron-body">
           Una raccolta di metodi per il calcolo numerico completi di descrizione, nel caso tu abbia dimenticato la calcolatrice.
-        </p>
-        <a class="arrow" href="#"><i class="material-icons md-48">keyboard_arrow_down</i></a>
+        </div>
+        <a class="arrow" href="#"><i class="material-icons">keyboard_arrow_down</i></a>
       </section>
 
-      <!-- Choice Container  -->
-      <section id="choices"> <!-- Container Start  -->
-        <div class="container-fluid px-4">
-          <h2 class="pt-4 pb-2">Algoritmi</h2>
-            <div class="row">
-              <div class="col-md-6 col-lg-3">
-                <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" src="./images/pi.png">
-                  <div class="card-body">
-                    <h3 class="">Pi Greco</h3>
-                    <div class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                    </div>
-                    <button type="button" class="btn btn-sm btn-card-blue">
-                      <a href="#">Vai</a>
-                    </button>
+
+      <!-- Subsitution Container  -->
+      <section id="algorithm"> <!-- Container Start  -->
+        <div class="container ">
+          <div class="text-title">
+            <h1 class="pt-4 pb-2">Algoritmi</h1>
+            <div class="hr hr-calc"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+               <div class="">
+                <img class="card-img-top card-image" alt="Immagine non trovata" src="./images/pi.svg" data-holder-rendered="true">
+               </div>
+                <div class="card-body">
+                  <h3> Pi Greco</h3>
+                  <div class="card-text">
+                    Ogni carattere del testo in chiaro viene sostituito sempre dal corrispondente carattere del crittogramma, secondo una tabella di sostituzione unica.
                   </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" src="./images/rad.png">
-                  <div class="card-body">
-                    <h3 class="">Radice quadrata</h3>
-                    <div class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                    </div>
-                    <button type="button" class="btn btn-sm btn-card-blue">
-                      <a href="#">Vai</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" src="./images/funz.png">
-                  <div class="card-body">
-                    <h3 class="">Funzioni</h3>
-                    <div class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                    </div>
-                    <button type="button" class="btn btn-sm btn-card-blue">
-                      <a href="#">Vai</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" src="./images/nep.png">
-                  <div class="card-body">
-                    <h3 class="">Numero di Nepero</h3>
-                    <div class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                    </div>
-                    <button type="button" class="btn btn-sm btn-card-blue">
-                      <a href="#">Vai</a>
-                    </button>
-                  </div>
+                  <a class="btn btn-md btn-card-blue" href="">Vai</a>
                 </div>
               </div>
             </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top card-image" alt="Immagine non trovata" src="./images/rad.svg">
+                  <div class="card-body">
+                    <h3> Radice quadrata</h3>
+                    <div class="card-text">
+                      Ogni carattere del testo in chiaro viene sostituito da un carattere variabile del crittogramma, che si determina per mezzo di una chiave e della tabella di sostituzione
+                    </div>
+                    <a class="btn btn-md btn-card-blue" href="">Vai</a>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top card-image" alt="Immagine non trovata" src="./images/nep.svg">
+                <div class="card-body">
+                  <h3> Numero di Nepero</h3>
+                  <div class="card-text">
+                    Ogni carattere del  testo in  chiaro viene sostituito sempre da uno [o più] caratteri corrispondenti del crittogramma, secondo una tabella di sostituzione unica.
+                  </div>
+                  <a class="btn btn-md btn-card-blue" href="">Vai</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> <!-- Container End  -->
+
+      <!-- Composed Section  -->
+      <section id="function"> <!-- Container Start  -->
+        <div class="container px-4">
+          <div class="text-title border-top">
+            <h1 class="pt-4 pb-2">Funzioni</h1>
+            <div class="hr hr-calc"></div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top card-image" alt="Immagine non trovata" src="./images/int.svg">
+                <div class="card-body">
+                  <h3> Integrazione</h3>
+                  <div class="card-text">
+                    Ogni carattere del  testo in  chiaro viene sostituito sempre da uno [o più] caratteri corrispondenti del crittogramma, secondo una tabella di sostituzione unica.
+                  </div>
+                  <a class="btn btn-md btn-card-blue" href="Funzioni.html">Vai</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top card-image" alt="Immagine non trovata" src="./images/zero.svg">
+                <div class="card-body">
+                  <h3> Zeri</h3>
+                  <div class="card-text">
+                    Ogni carattere del  testo in  chiaro viene sostituito sempre da uno [o più] caratteri corrispondenti del crittogramma, secondo una tabella di sostituzione unica.
+                  </div>
+                  <a class="btn btn-md btn-card-blue" href="">Vai</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section> <!-- Container End  -->
 
@@ -127,7 +150,7 @@
         <div class="container-fluid px-4">
           <div class="cover">
             <div class="caption">
-              <div class="caption-head ">
+              <div class="caption-head">
                 <h2 class="text-light pt-4 pb-2">Alcune precisazioni:</h2>
                 <hr class="bg-light">
               </div>
@@ -148,22 +171,21 @@
             </div>
           </div>
         </div>
-      </section> <!-- Container End  -->
+      </section>
     </main>
 
-    <footer class="text-muted">
-      <div class="container-fluid px-4">
-        <p class="float-right py-3">
-          <a href="#">Back to top</a>
-        </p>
+    <footer>
+      <div class="caption footer-container">
+        <div class="footer-link arrow-down">
+          Back to top
+          <i class="material-icons">keyboard_arrow_up</i>
+        </div>
       </div>
     </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
-
     <svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text  style="font-weight:bold;font-size:17pt; font-family:Arial, Helvetica, sans-serif">Thumbnail</text></svg>
 
     <!-- Optional JavaScript -->
@@ -177,6 +199,12 @@
       $('.jumbotron').click(function() {
         $('html, body').animate({
           scrollTop: $('#choices').offset().top
+        }, 1200);
+      });
+
+      $('.footer-link').click(function() {
+        $('html, body').animate({
+          scrollTop: $('#top').offset().top-76
         }, 1200);
       });
     </script>

@@ -22,4 +22,12 @@
   &.hr-pM{
     @include hr-color("pM");
   }
+
+  &.hr-funz{
+    @include hr-color("light-blue");
+  }
+
+  &.hr-calc{
+    @include hr-gradient("calc");
+  }
 }

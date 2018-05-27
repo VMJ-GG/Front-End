@@ -1,11 +1,8 @@
+//crittografia
+
 .btn-card-orange {
   padding: 0 20px;
   @include button-card-color("orange");
-}
-
-.btn-card-blue {
-  padding: 0 20px;
-  @include button-card-color("blue");
 }
 
 .btn-card-mM {
@@ -26,4 +23,16 @@
 .btn-card-cmpt {
   padding: 0 20px;
   @include button-card-color("cmpt");
+}
+
+//calcolo numerico
+
+.btn-card-blue {
+  padding: 0 20px;
+  @include button-card-color("blue");
+}
+
+.btn-card-funz {
+  padding: 0 20px;
+  @include button-card-color("light-blue");
 }
