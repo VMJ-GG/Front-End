@@ -65,7 +65,7 @@
         $('[name="btn"]').on('click', function() {
           var a = parseInt( $('[name="a"]').val(), 10 );
           var b = parseInt( $('[name="b"]').val(), 10 );
-          var iters =  parseInt( $('[name="iters"]').val(), 10 );
+          var iters =  parseInt( $('[name="iters"]').val(), 10 ) * 10000;
 
           var fnString = $('[name="fn"]').val();
           var fn = function(x) { return eval(fnString); };
@@ -75,16 +75,18 @@
         });
 
         function integrate(a, b, fn, iters) {
-          var h = (b - a) / iters;
-          var x = a;
-          var result = 0;
+          var yA = fn(a), yB = fn(b);
+          var deltaX = b - a, deltaY = yB - yA;
+          var x = null;
+          var inside = 0;
 
           for (var i = 0; i < iters; i++) {
-            result += (fn(x) + fn(x + h)) * .5 * h;
-            x += h;
+            var x = Math.random() * deltaX + a;
+            var y = Math.random() * deltaY + yA;
+            if (y < fn(x)) inside++;
           }
 
-          return result;
+          return (inside / iters) * deltaX * yB;
         }
       });
     </script>
