@@ -430,6 +430,7 @@
         // Methods
         var vigenere = Encrypter.vigenere;
 
+
         $(PLACEHOLDER).prev().on('keyup', function(e) {
           var text = $(this).val();
           var keyPressed  = e.key;
@@ -484,6 +485,7 @@
 
           var fnString = $('[name="fn"]').val();
           var fn = function(x) { return eval(fnString); };
+          var funz = fnString.replace(/Math./gi, "");
 
           var trapezes = trapezi(a, b, fn, iters);
           var monteCarlo = Carlo(a, b, fn, iters);
@@ -495,12 +497,12 @@
 
           functionPlot({
             target: '#root',
-            title: 'y='+ fnString,
+            title: 'y='+ funz,
             xAxis: {domain: [a - 2, b + 2]},
             yAxis: {domain: [fn(a) - 2, fn(b) + 2]},
             grid: true,
             data: [{
-              fn: fnString,
+              fn: funz,
               range: [a, b],
               closed: true
             }]
