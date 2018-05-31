@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="">
-            <button type="button" class="mt-5 btn btn-outline-light arrow-right" name="btn"><span>Calcola</span><i class="material-icons">keyboard_arrow_right</i></button>
+            <button type="button" class="mt-5 btn btn-outline-light arrow-right" name="btn">Calcola<i class="material-icons">keyboard_arrow_right</i></button>
           </div>
         </div>
       </section>
@@ -93,7 +93,9 @@
                     </div>
 
                     <div class="text-select text-select-funz mt-4">L'intervallo</div>
-                    <div class="" style="text-align: center;">
+                    <div class="input-select" style="text-align: center;">
+                       <!--<input  type="text" name="a" class="form-control" placeholder="Inserisci una chiave">
+                       <input  type="text" name="b" class="form-control" placeholder="Inserisci una chiave">-->
                        <select class="select-a" name="a"></select>
                        <select class="select-b" name="b"></select>
                     </div>
@@ -117,8 +119,9 @@
             <div class="caption">
               <div class="caption-body pt-4 pr-3">
 
-                  <div class="pl-3" style="height: 400px">
-                    <div id="root"></div>
+                  <div class="" style="height: 400px">
+                    <div id="formula" class="text-select text-select-funz"></div>
+                    <div id="root" class=""></div>
                   </div>
               </div>
             </div>
@@ -132,7 +135,7 @@
 
             <div class="caption" id="divOne">
               <div class="text-title">
-                  Trapezi
+                  Rettangoli
                 <div class="hr hr-funz"></div>
               </div>
               <div class="caption-body mb-5" id="hide-7">
@@ -140,7 +143,7 @@
                 Il risultato dell'integrale
                 </div>
                 <div class="border rounded" style=" font-size:1.7rem; height:40px;">
-                  <div id="trapezes" class="output" style="white-space: pre"></div>
+                  <div id="rectangles" class="output" style="white-space: pre"></div>
                 </div>
 
               </div>
@@ -157,8 +160,17 @@
                     <i class="material-icons text-muted">keyboard_arrow_down</i>
                   </div>
                   <div id="hide-1" class="overflow-box pl-3">
-                    <img src="./images/cesare_animated.svg" class="svg-img-methods mb-3" alt="Immagine non trovata.">
-                    Il cifrario di Cesare utilizza un metodo a sostituzione monografica monoalfabetica: ogni lettera del testo in chiaro è sostituita nel testo cifrato dalla lettera che si trova un certo numero di posizioni, determinate dalla chiave (che nella sua versione <i>standard</i> è 3), traslata nell'alfabeto.<br> Questi tipi di cifrari sono detti anche cifrari a scorrimento, a causa del loro modo di operare.
+                    <img src="./images/rettangoli_animated.svg" class="svg-img-methods mb-3" alt="Immagine non trovata.">
+                    Il metodo dei rettangoli è il più semplice dei metodi di integrazione numerica per l'approssimazione di un integrale definito della forma: \({ \int_{a}^{b} f(x)\,dx}\)<br><br>
+
+                    Questo metodo approssima l'integrazione (quindi l'area sottesa alla funzione) creando rettandoli di base  \(h = { b-a\over precision}\) e altezza \(f(x_n)\).<br><br>
+
+                    Il valore di \(x_n\) lo si determina con \(x_0 = a\),&nbsp;&nbsp;\(x_{n+1}=x_n + h\)<br><br>
+
+                    I rettangoli hanno quindi il vertice sinistro sulla funzione, impedendo così di rappresentare fedelmente l'integrale.<br>
+                    Per minimizzare l'errore si dovrà aumentare il numero di rettangoli riducendo la dimensione di \(h\) per imitare il ruolo del differenziale \(dx\).<br><br>
+
+                    In informatica \(h\) non può tendere a \(0\), ma può assumere valori abbastanza bassi da causare un errore trascurabile.
                   </div>
 
                   <hr>
@@ -179,13 +191,13 @@
                   <div class="overflow-box" id="hide-2">
                     <pre  class="prettyprint linenums">&lt;html&gt;
                       &nbsp;&nbsp;&lt;head&gt;
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Metodo dei Trapezi&lt;/title&gt;
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Metodo dei Rettangoli&lt;/title&gt;
                   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function f(x) {
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return eval(fn);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 
-                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Trapezi() {
+                  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Rettangoli() {
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = parseInt(document.f.a.value);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b = parseInt(document.f.b.value);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fn = document.f.fn.value;
@@ -197,7 +209,7 @@
 
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt; iters; i++)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += (f(x) + f(x + h)) * .5 * h;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += f(x) * h;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x += h;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.r.value = result;
@@ -206,7 +218,7 @@
                       &nbsp;&nbsp;&lt;/head&gt;
 
                     	&nbsp;&nbsp;&lt;body&gt;
-                  	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Metodo dei Trapezi&lt;/h2&gt;
+                  	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Metodo dei Rettangoli&lt;/h2&gt;
             		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
                 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
               				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
@@ -219,7 +231,7 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('&lt;option&gt;'+j);
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;&lt;br&gt;
-              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Integra" onclick="Trapezi()"&gt;&lt;br&gt;&lt;br&gt;
+              				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Integra" onclick="Rettangoli()"&gt;&lt;br&gt;&lt;br&gt;
 
               				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Risultato&lt;input type="text" name="r"&gt;
               			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
@@ -235,12 +247,7 @@
                     <i class="material-icons text-muted">keyboard_arrow_down</i>
                   </div>
                   <div id="hide-3" class="overflow-box pl-3">
-                    In crittografia il cifrario di Cesare è uno dei più antichi algoritmi crittografici di cui si abbia traccia storica.
-                    Il cifrario di Cesare prende il nome da Giulio Cesare, che lo utilizzava per proteggere i suoi messaggi segreti.<br> Grazie allo storico Svetonio sappiamo che Cesare utilizzava in genere una chiave di 3 per il cifrario, come nel caso della corrispondenza militare inviata alle truppe comandate da Quinto Tullio Cicerone. Al tempo era sicuro perché gli avversari spesso non erano neanche in grado di leggere un testo in chiaro, men che mai uno cifrato; inoltre non esistevano metodi di crittanalisi in grado di rompere tale codice, per quanto banale.<br>
-                    Conosciamo anche altri che usarono questo cifrario al tempo di Cesare: Augusto, suo nipote, lo utilizzava con chiave 1, ma senza ripartire da sinistra in caso di fine dell'alfabeto. Quindi, scriveva B per A, C per B ma usava AA per Z.
-                    <br>
-                    Dalla scoperta dell'analisi delle frequenze da parte del matematico arabo Al-Kindi nell'XI secolo circa, tutti i cifrari di questo tipo sono divenuti molto semplici da rompere; nessuno è adatto per comunicazioni sicure allo stato tecnologico attuale, né lo è stato negli ultimi 1000 anni.<br> Tuttavia, una forma di questo cifrario, chiamata ROT13, è ancora usata oggi per offuscare parti di un messaggio in modo da non renderle immediatamente comprensibili.
-                    <div class="text-source pt-4">Source: Wikipedia.</div>
+                    Non sono stati trovati dati storici inerenti al metodo.
                   </div>
                   <hr>
               </div>
@@ -248,12 +255,12 @@
           </div>
 
 
-          <!-- Monte Carlo -->
+          <!-- trapezi -->
           <div class="col-lg-6">
 
             <div class="caption" id="divSecond">
               <div class="text-title">
-                  Monte Carlo
+                  Trapezi
                 <div class="hr hr-funz"></div>
               </div>
               <div class="caption-body mb-5" id="hide-8">
@@ -262,7 +269,7 @@
                 </div>
 
                     <div class="border rounded" style=" font-size:1.7rem; height:40px;">
-                      <div id="monteCarlo" style="white-space: pre"></div>
+                      <div id="trapezes" style="white-space: pre"></div>
                     </div>
 
               </div>
@@ -278,9 +285,18 @@
                       <i class="material-icons text-muted">keyboard_arrow_down</i>
                     </div>
                     <div id="hide-4" class="overflow-box pr-3">
-                      <img src="./images/atbash_animated.svg" class="svg-img-methods mb-3" alt="Immagine non trovata.">
-                    L'atbash è un semplice cifrario a sostituzione monografica monoalfabetica in cui la prima lettera dell'alfabeto è sostituita con l'ultima, la seconda con la penultima, e così via, "invertendo" l'ordine alfabetico delle lettere. <br>
-                    In sostanza consiste nello scrivere metà alfabeto su un rigo e l'altra metà al contrario sul rigo a capo, così che alla A corrisponda la Z alla B la Y ecc.; in questo modo la lettura del cifrario risulta più semplice.
+                      <img src="./images/trapezi_animated.svg" class="svg-img-methods mb-3" alt="Immagine non trovata.">
+                      Il metodo dei Trapezi è una evoluzione del metodo dei Rettangoli ed è uno dei metodi di integrazione numerica più preciso per l'approssimazione di un integrale definito della forma: \({ \int_{a}^{b} f(x)\,dx}\)<br><br>
+
+                      Questo metodo approssima l'integrazione (quindi l'area sottesa alla funzione) creando trapezi rettangoli di altezza  \(h = { b-a\over precision}\) e due basi \(f(x_n)\) ed \(f(x_{n+1})\).<br><br>
+                      Di questi trapezi si ottiene l'area : \(A={(f(x_n)+f(x_{n+1}))\over 2}h\)<br>
+
+                      Il valore di \(x_n\) lo si determina con \(x_0 = a\),&nbsp;&nbsp;\(x_{n+1}=x_n + h\)<br><br>
+
+                      I trapezi hanno quindi i vertici adiacenti al lato obliquo sulla funzione, rappresentando quasi fedelmente l'integrale.<br>
+                      Per minimizzare l'errore si dovrà aumentare il numero di trapezi riducendo la dimensione di \(h\) per imitare il ruolo del differenziale \(dx\).<br><br>
+
+                      In informatica \(h\) non può tendere a \(0\), ma può assumere valori abbastanza bassi da causare un errore trascurabile.
                     </div>
                     <hr>
 
@@ -297,37 +313,34 @@
                     <div class="overflow-box" id="hide-5">
                       <pre lang="html" class="prettyprint linenums">&lt;html&gt;
                         &nbsp;&nbsp;&lt;head&gt;
-                    		&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Monte Carlo Integrazione&lt;/title&gt;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Metodo dei Trapezi&lt;/title&gt;
                     		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function f(x) {
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return eval(fn);
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 
-                    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function MonteCarlo() {
+                    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function Trapezi() {
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = parseInt(document.f.a.value);
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b = parseInt(document.f.b.value);
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fn = document.f.fn.value;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iters= parseInt(document.f.k.value);
 
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yA = f(a), yB = f(b);
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deltaX = b - a, deltaY = yB - yA;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = 0;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inside = 0;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h = (b - a) / iters;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = a;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = 0;
 
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt; iters; i++)
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = Math.random() * deltaX + a;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = Math.random() * deltaY + yA;
-
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (y &lt; f(x)) inside++;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += (f(x) + f(x + h)) * .5 * h;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x += h;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.r.value = (inside / iters) * deltaX * yB;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.f.r.value = result;
                   		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                         &nbsp;&nbsp;&lt;/head&gt;
 
                       	&nbsp;&nbsp;&lt;body&gt;
-                    	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Monte Carlo Integrazione&lt;/h2&gt;
+                    	  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Metodo dei Trapezi&lt;/h2&gt;
               		      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
                   			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form name="f"&gt;
                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;
@@ -340,7 +353,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('&lt;option&gt;'+j);
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;&lt;br&gt;
-                				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Integra" onclick="MonteCarlo()"&gt;&lt;br&gt;&lt;br&gt;
+                				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="button" value="Integra" onclick="Trapezi()"&gt;&lt;br&gt;&lt;br&gt;
 
                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Risultato&lt;input type="text" name="r"&gt;
                 			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
@@ -355,9 +368,7 @@
                       <i class="material-icons text-muted">keyboard_arrow_down</i>
                     </div>
                     <div id="hide-6" class="overflow-box pr-3">
-                      L'origine di questo cifrario si può trovare nella Bibbia, nel libro di Geremia, dove è stato usato per codificare le parole Kasdim (Caldei) in Leb Kamai e Babel (Babele) in Sheshakh. La prima parola decifrata fu Sheshach che veniva ripetuta varie volte nel libro di Geremia (Il re di Sheshach, il popolo di Sheshach, la città di Sheshach) ma dopo varie ricerche non si riusciva a trovare la città nelle cartine. Infine uno studioso applicò il cifrario atbash e venne fuori la parola Babel. <br>Il metodo in cui l'atbash fu usato è molto semplice. In ebraico Sheshach si scrive SH-SH-K, che corrisponde a B-B-L, la cui pronuncia è Babel, cioè Babele.<br>
-                      Il nome stesso del cifrario viene dalla lingua ebraica: la prima lettera dell'alfabeto ebraico è aleph, l'ultima taw, la seconda beth, e la penultima shin; messe assieme, formano la parola atbash.
-                      <div class="text-source pt-4">Source: Wikipedia.</div>
+                      Non sono stati trovati dati storici inerenti al metodo.
                     </div>
                     <hr>
                   </div>
@@ -389,6 +400,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/js/bootstrap-select.min.js"></script>
     <script src="https://unpkg.com/d3@3/d3.min.js"></script>
     <script src="https://unpkg.com/function-plot@1/dist/function-plot.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <script type="text/javascript" src="./js/helpers.js"></script>
     <script type="text/javascript" src="./js/ghostWriter.js"></script>
     <script type="text/javascript" src="./js/navbarScrolling.js"></script>
@@ -420,7 +432,6 @@
           var outputTextPresent = $('[id$="output"]').text() && $('[id$="output"]').text()[0] !== '.';
           input
             .removeClass('d-none')
-            .val(outputTextPresent ? inputText : '')
             .focus();
         });
 

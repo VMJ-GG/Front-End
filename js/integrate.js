@@ -1,7 +1,7 @@
 //trapezi
 $('[name="btn"]').on('click', function() {
-  var a = parseInt( $('[name="a"]').val(), 10 );
-  var b = parseInt( $('[name="b"]').val(), 10 );
+  var a = parseFloat( $('[name="a"]').val(), 10 );
+  var b = parseFloat( $('[name="b"]').val(), 10 );
   var iters =  parseInt( $('[name="iters"]').val(), 10 );
 
   var fnString = $('[name="fn"]').val();
@@ -11,12 +11,15 @@ $('[name="btn"]').on('click', function() {
   var maxdepth = 20;
 
   var trapezes = trapezi(a, b, fn, iters);
-  var monteCarlo = Carlo(a, b, fn, iters);
+  var rectangles = rettangoli(a, b, fn, iters);
   var risultato = integrate (fn, a, b, tol, maxdepth)
+  var formula = 'y = '+funz;
 
   $('#trapezes').text(trapezes);
-  $('#monteCarlo').text(monteCarlo);
+  $('#rectangles').text(rectangles);
   $('#risultato').text(risultato);
+  $('#formula').text(formula);
+
 
 
   functionPlot({
@@ -45,32 +48,30 @@ $('[name="btn"]').on('click', function() {
 });
 
 
+function rettangoli(a, b, fn, iters) {
+  var h = (b - a) / iters;
+  var x = a;
+  var result = 0;
+
+  for (var i = 0 ; i < iters ; i++) {
+    result += fn(x) * h;
+    x += h;
+  }
+  return result;
+}
+
 function trapezi(a, b, fn, iters) {
   var h = (b - a) / iters;
   var x = a;
   var result = 0;
 
-  for (var i = 0; i < iters; i++) {
+  for (var i = 0 ; i < iters ; i++) {
     result += (fn(x) + fn(x + h)) * .5 * h;
     x += h;
   }
   return result;
 }
 
-function Carlo(a, b, fn, iters) {
-  var yA = fn(a), yB = fn(b);
-  var deltaX = b - a, deltaY = yB - yA;
-  var x = null;
-  var inside = 0;
-
-  for (var i = 0; i < iters; i++) {
-    var x = Math.random() * deltaX + a;
-    var y = Math.random() * deltaY + yA;
-    if (y < fn(x)) inside++;
-  }
-
-  return (inside / iters) * deltaX * yB;
-}
 
 
 //risultato esatto
